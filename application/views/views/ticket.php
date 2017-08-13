@@ -1,11 +1,11 @@
 <div class="row">
 	<div class="col-sm-12">
-		<h2>Bus List</h2>
+		<h2>Ticket List</h2>
 	</div>
 </div>
 <div class="row">
 	<div class="col-sm-4">
-		<a href="<?php echo site_url('index.php/bus/add1') ?>" class="btn btn-primary">Add New Bus</a>
+		<a href="<?php echo site_url('index.php/ticket/add1') ?>" class="btn btn-primary">Book A Ticket</a>
 	</div>
 </div>
 <div class="row">
@@ -14,13 +14,10 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Excise Reg #</th>
-					<th>Capacity</th>
-					<th>Class</th>
-					<th>Description</th>
-					<th>Inducion Time</th>
-					<th>Tracker</th>
-					<th>Camera</th>
+					<th>Booking Status</th>
+					<th>Issuance Time</th>
+					<th>User ID</th>
+					<th>Schedule ID</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -28,38 +25,35 @@
 			<?php if (count($info) >= 1) {
 				foreach ($info as $p) {?>
 					<tr>
-						<td> <?php echo $p['bus_id'] ?></td>
-						<td> <?php echo $p['regs_no'] ?></td>
-						<td> <?php echo $p['seats'] ?> </td>
-						<td> <?php echo $p['class'] ?> </td>
-						<td> <?php echo $p['des'] ?> </td>
+						<td> <?php echo $p['t_id'] ?></td>
+						<td> <?php echo $p['state'] ?></td>
 						<td> <?php echo $p['created_at'] ?> </td>
-						<td> <form action="<?php echo site_url('index.php/tracker/spec') ?>" method="get" class="form-horizontal">
-						<input type="hidden" name="tracker_id" value="<?php echo $p['tracker_id'] ?>">
+						<td> <form action="<?php echo site_url('index.php/ticket/spec_u') ?>" method="get" class="form-horizontal">
+						<input type="hidden" name="trav_id" value="<?php echo $p['trav_id'] ?>">
 						<div class="form-group">
 							<div class="col-sm-4">
-								<input type="submit" class="btn btn-success" value="View Tracker">
+								<input type="submit" class="btn btn-success" value="<?php echo $p['trav_id'] ?>">
 							</div>
 						</div>
 						</form></td>
-						<td> <form action="<?php echo site_url('index.php/cam/spec') ?>" method="get" class="form-horizontal">
-						<input type="hidden" name="cam_id" value="<?php echo $p['cam_id'] ?>">
+						<td> <form action="<?php echo site_url('index.php/ticket/spec_s') ?>" method="get" class="form-horizontal">
+						<input type="hidden" name="schedule_id" value="<?php echo $p['schedule_id'] ?>">
 						<div class="form-group">
 							<div class="col-sm-4">
-								<input type="submit" class="btn btn-success" value="View Cam">
+								<input type="submit" class="btn btn-success" value="<?php echo $p['schedule_id'] ?>">
 							</div>
 						</div>
 						</form></td>
-						<td><form action="<?php echo site_url('index.php/bus/edit') ?>" method="get" class="form-horizontal">
-						<input type="hidden" name="bus_id" value="<?php echo $p['bus_id'] ?>">
+						<td><form action="<?php echo site_url('index.php/ticket/edit') ?>" method="get" class="form-horizontal">
+						<input type="hidden" name="t_id" value="<?php echo $p['t_id'] ?>">
 						<div class="form-group">
 							<div class="col-sm-4">
-								<input type="submit" class="btn btn-info" value="Edit">
+								<input type="submit" class="btn btn-info" value="Edit Status">
 							</div>
 						</div>
 						</form>
-						<form action="<?php echo site_url('index.php/bus/del') ?>" method="post" class="form-horizontal">
-						<input type="hidden" name="bus_id" value="<?php echo $p['bus_id'] ?>">
+						<form action="<?php echo site_url('index.php/ticket/del') ?>" method="post" class="form-horizontal">
+						<input type="hidden" name="t_id" value="<?php echo $p['t_id'] ?>">
 						<div class="form-group">
 							<div class="col-sm-4">
 								<input type="submit" class="btn btn-danger" value="Delete">
@@ -72,15 +66,7 @@
 				}
 				else { ?>
 					<tr>
-						<?php echo count($info) ?>
-						<td> <?php echo $info['bus_id'] ?></td>
-						<td> <?php echo $info['regs_no'] ?></td>
-						<td> <?php echo $info['seats'] ?> </td>
-						<td> <?php echo $info['class'] ?> </td>
-						<td> <?php echo $info['des'] ?> </td>
-						<td> <a href="<?php echo site_url('index.php/bus/tview?id='.$info['tracker_id']) ?>" class="btn btn-info">View</a></td>
-						<td> <a href="<?php echo site_url('index.php/bus/cview?id='.$info['cam_id']) ?>" class="btn btn-info">View</a></td>
-						<td><a href="<?php echo site_url('index.php/bus/edit?id='.$info['bus_id']) ?>" class="btn btn-warning">Edit</a></td>
+					
 					</tr>
 				<?php } ?>
 			</tbody>
