@@ -1,0 +1,116 @@
+CREATE TABLE Role
+(
+  role_id INT NOT NULL,
+  type VARCHAR(10) NOT NULL,
+  Role VARCHAR(20) NOT NULL,
+  PRIMARY KEY (role_id)
+);
+
+CREATE TABLE Visitor_passenger
+(
+  v_pass_id INT NOT NULL,
+  name VARCHAR(20) NOT NULL,
+  cnic VARCHAR(13) NOT NULL,
+  image BLOB NOT NULL,
+  from_to_dep_arr VARCHAR(50) NOT NULL,
+  fare INT NOT NULL,
+  PRIMARY KEY (v_pass_id)
+);
+
+CREATE TABLE Route
+(
+  route_id INT NOT NULL,
+  source VARCHAR(20) NOT NULL,
+  destination VARCHAR(20) NOT NULL,
+  departure DATE NOT NULL,
+  arrival DATE NOT NULL,
+  fare INT NOT NULL,
+  PRIMARY KEY (route_id)
+);
+
+CREATE TABLE Tracker
+(
+  tracker_id INT NOT NULL,
+  position VARCHAR(40) NOT NULL,
+  PRIMARY KEY (tracker_id)
+);
+
+CREATE TABLE Camera
+(
+  cam_id INT NOT NULL,
+  model VARCHAR(10) NOT NULL,
+  PRIMARY KEY (cam_id)
+);
+
+CREATE TABLE User
+(
+  user_id INT NOT NULL,
+  fname VARCHAR(15) NOT NULL,
+  lname VARCHAR(15) NOT NULL,
+  email VARCHAR(30) NOT NULL,
+  phone VARCHAR(11) NOT NULL,
+  image BLOB NOT NULL,
+  password VARCHAR(16) NOT NULL,
+  cnic VARCHAR(13) NOT NULL,
+  address VARCHAR(50) NOT NULL,
+  role_id INT NOT NULL,
+  PRIMARY KEY (user_id),
+  FOREIGN KEY (role_id) REFERENCES Role(role_id)
+);
+
+CREATE TABLE Bus
+(
+  regs_no VARCHAR(10) NOT NULL,
+  seats INT NOT NULL,
+  class VARCHAR(20) NOT NULL,
+  desc VARCHAR(150) NOT NULL,
+  bus_id INT NOT NULL,
+  tracker_id INT NOT NULL,
+  cam_id INT NOT NULL,
+  PRIMARY KEY (bus_id),
+  FOREIGN KEY (tracker_id) REFERENCES Tracker(tracker_id),
+  FOREIGN KEY (cam_id) REFERENCES Camera(cam_id)
+);
+
+CREATE TABLE Passenger
+(
+  trav_id INT NOT NULL,
+  user_id INT NOT NULL,
+  v_pass_id INT NOT NULL,
+  PRIMARY KEY (trav_id),
+  FOREIGN KEY (user_id) REFERENCES User(user_id),
+  FOREIGN KEY (v_pass_id) REFERENCES Visitor_passenger(v_pass_id)
+);
+
+CREATE TABLE Schedule
+(
+  schedule_id INT NOT NULL,
+  route_id INT NOT NULL,
+  bus_id INT NOT NULL,
+  PRIMARY KEY (schedule_id),
+  FOREIGN KEY (route_id) REFERENCES Route(route_id),
+  FOREIGN KEY (bus_id) REFERENCES Bus(bus_id)
+);
+
+CREATE TABLE Ticket
+(
+  ticket_id INT NOT NULL,
+  status VARCHAR(15) NOT NULL,
+  schedule_id INT NOT NULL,
+  trav_id INT NOT NULL,
+  PRIMARY KEY (ticket_id),
+  FOREIGN KEY (schedule_id) REFERENCES Schedule(schedule_id),
+  FOREIGN KEY (trav_id) REFERENCES Passenger(trav_id)
+);
+
+CREATE TABLE ticket
+(
+  t_id INT NOT NULL,
+  status INT NOT NULL,
+  created_at INT NOT NULL,
+  trav_id INT NOT NULL,
+  schedule_id INT NOT NULL,
+  PRIMARY KEY (t_id),
+  FOREIGN KEY (trav_id) REFERENCES Passenger(trav_id),
+  FOREIGN KEY (schedule_id) REFERENCES Schedule(schedule_id)
+);

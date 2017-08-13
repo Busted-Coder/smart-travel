@@ -1,0 +1,79 @@
+<div class="row">
+	<div class="col-sm-12">
+		<h2>Route List</h2>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-4">
+		<a href="<?php echo site_url('index.php/route/add1') ?>" class="btn btn-primary">Add New Route</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Source</th>
+					<th>Destination</th>
+					<th>Stops</th>
+					<th>Departure</th>
+					<th>Arrival</th>
+					<th>Arrival Day</th>
+					<th>Fare</th>
+					<th>Start Date</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php if (count($info)>0) {
+				foreach ($info as $p) {?>
+					<tr>
+						<td> <?php echo $p['route_id'] ?></td>
+						<td> <?php echo $p['source'] ?></td>
+						<td> <?php echo $p['destination'] ?> </td>
+						<td> <?php echo $p['stops'] ?> </td>
+						<td> <?php echo $p['departure'] ?> </td>
+						<td> <?php echo $p['arrival'] ?> </td>
+						<td> <?php echo $p['day'] ?> </td>
+						<td> <?php echo $p['fare'] ?> </td>
+						<td> <?php echo $p['created_at'] ?> </td>
+						<td><form action="<?php echo site_url('index.php/route/edit') ?>" method="get" class="form-horizontal">
+						<input type="hidden" name="route_id" value="<?php echo $p['route_id'] ?>">
+						<div class="form-group">
+							<div class="col-sm-4">
+								<input type="submit" class="btn btn-info" value="Edit">
+							</div>
+						</div>
+						</form>
+						<form action="<?php echo site_url('index.php/route/del') ?>" method="post" class="form-horizontal">
+						<input type="hidden" name="route_id" value="<?php echo $p['route_id'] ?>">
+						<div class="form-group">
+							<div class="col-sm-4">
+								<input type="submit" class="btn btn-danger" value="Delete">
+							</div>
+						</div>
+						</form></td>
+					</tr>
+				<?php } 
+				}
+				else if (count($info) <= 1) {
+				foreach ($info as $p) {?>
+					<tr>
+						<?php echo $p[0][0];?>
+						<td><?php echo $p['route_id'] ?></td>
+						<td> <?php echo $p['source'] ?></td>
+						<td> <?php echo $p['destination'] ?> </td>
+						<td> <?php echo $p['stops'] ?> </td>
+						<td> <?php echo $p['departure'] ?> </td>
+						<td> <?php echo $p['arrival'] ?> </td>
+						<td> <?php echo $p['day'] ?> </td>
+						<td> <?php echo $p['fare'] ?> </td>
+						<td><a href="<?php echo site_url('index.php/route/edit?id='.$p['route_id']) ?>" class="btn btn-danger">Edit</a></td>
+					</tr>
+				<?php }
+				} ?>
+			</tbody>
+		</table>
+	</div>
+</div>

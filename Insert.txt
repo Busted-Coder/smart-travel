@@ -1,0 +1,21 @@
+INSERT INTO `route` (`route_id`,`source`,`destination`,`departure`,`arrival`,`fare`) 
+VALUES (1,'KHI','FSD','15:10:00','11:25:00',3580);
+
+INSERT INTO `camera` (`cam_id`,`model`) 
+VALUE (11,'High Resolution.');
+
+INSERT INTO `tracker` (`tracker_id`,`position`) 
+VALUE (11,'37.0625/-95.677068');
+
+INSERT INTO `bus` (`bus_id`,`regs_no`,`class`,`des`,`seats`,`tracker_id`,`cam_id`) 
+VALUES('K8','AYT-793','Royal Luxury-I','Business Class',42,8,17);
+
+INSERT INTO `schedule` (`schedule_id`,`route_id`,`bus_id`) 
+VALUES (1,1,'K1');
+
+INSERT INTO `role` (`role_id`,`type`,`role`) 
+VALUES(1,'Admin','FULL');
+
+INSERT INTO `user` (`user_id`,`fname`,`lname`,`email`,`phone`,`image`,`password`,`cnic`,`address`,`role_id`) 
+VALUES(1,'Nisar','Hassan','k132387@nu.edu.pk','03070167259',LOAD_FILE('d:\\nisar.png'),'nisar9928','3310416842103','Model Colony, Malir ,Karachi',1);
+
