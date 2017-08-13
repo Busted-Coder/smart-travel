@@ -1,11 +1,12 @@
 <div class="row">
 	<div class="col-sm-12">
-		<h2>Route List</h2>
+		<h2>User List</h2>
 	</div>
 </div>
 <div class="row">
 	<div class="col-sm-4">
 		<a href="<?php echo site_url('index.php/user/add1') ?>" class="btn btn-primary">Add New User</a>
+		<a class="btn btn-primary">Total Records : <?php echo count($info); ?></a>
 	</div>
 </div>
 <div class="row">
@@ -21,6 +22,7 @@
 					<th>CNIC</th>
 					<th>Image</th>
 					<th>Adress</th>
+					<th>Activity</th>
 					<th>Role</th>
 					<th>Action</th>
 				</tr>
@@ -37,6 +39,14 @@
 						<td> <?php echo $p['cnic'] ?> </td>
 						<td> <?php echo $p['image'] ?> </td>
 						<td> <?php echo $p['address'] ?> </td>
+						<td><form action="<?php echo site_url('index.php/ticket/user') ?>" method="get" class="form-horizontal">
+						<input type="hidden" name="user_id" value="<?php echo $p['user_id'] ?>">
+						<div class="form-group">
+							<div class="col-sm-4">
+								<input type="submit" class="btn btn-success" value="View Tickets">
+							</div>
+						</div>
+						</form></td>
 						<td><form action="<?php echo site_url('index.php/role/spec') ?>" method="get" class="form-horizontal">
 						<input type="hidden" name="role_id" value="<?php echo $p['role_id'] ?>">
 						<div class="form-group">

@@ -6,6 +6,7 @@
 <div class="row">
 	<div class="col-sm-4">
 		<a href="<?php echo site_url('index.php/ticket/add1') ?>" class="btn btn-primary">Book A Ticket</a>
+		<a  class="btn btn-primary">Total Records : <?php echo count($info); ?></a>
 	</div>
 </div>
 <div class="row">

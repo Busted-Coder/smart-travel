@@ -9,7 +9,7 @@ class Tracker_model extends CI_Model {
     }
 
     public function getList(){
-       return $this->db->order_by("tracker_id", "asc")->get('tracker')->result_array();
+       return $this->db->order_by("tracker_id", "desc")->get('tracker')->result_array();
     }
 
     public function getspec($id){

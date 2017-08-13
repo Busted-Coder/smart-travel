@@ -6,6 +6,8 @@
 <div class="row">
 	<div class="col-sm-4">
 		<a href="<?php echo site_url('index.php/role/add1') ?>" class="btn btn-primary">Add New Role</a>
+		<a  class="btn btn-primary">Total Records : <?php echo count($role); ?></a>
+
 	</div>
 </div>
 <div class="row">

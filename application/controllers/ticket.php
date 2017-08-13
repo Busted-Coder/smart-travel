@@ -18,7 +18,7 @@ class Ticket extends MY_Controller {
 	}
 
 	
-public function edit(){
+	public function edit(){
 		$this->OnlyAdmin();
 		if($this->input->get()){
 			$ticket = $this->TicketModel->Get($this->input->get('t_id'));
@@ -61,6 +61,11 @@ public function edit(){
 		if($this->input->post()){
 		$this->TicketModel->delet($this->input->post());
 		redirect('index.php/ticket/lists');}
+	}
+	public function user(){
+		$this->OnlyAdmin();
+		$info = $this->TicketModel->getListUser($this->input->get('user_id'));
+		$this->loadView('views/ticket', array('info'=> $info), true);
 	}
 
 }

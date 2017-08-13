@@ -9,7 +9,7 @@ class Cam_model extends CI_Model {
     }
 
     public function getList(){
-       return $this->db->order_by("cam_id", "asc")->get('camera')->result_array();
+       return $this->db->order_by("cam_id", "desc")->get('camera')->result_array();
     }
 
     public function getspec($id){

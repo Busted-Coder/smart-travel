@@ -4,6 +4,11 @@
 	</div>
 </div>
 <div class="row">
+	<div class="col-sm-4">
+		<a class="btn btn-primary">Total Records : <?php echo count($info); ?></a>
+	</div>
+</div>
+<div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
 		<table class="table">
 			<thead>

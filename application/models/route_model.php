@@ -9,7 +9,7 @@ class Route_model extends CI_Model {
     }
 
     public function getList(){
-       return $this->db->get('route')->result_array();
+       return $this->db->order_by("route_id", "desc")->get('route')->result_array();
     }
 
     public function getroute($route_id){
@@ -29,6 +29,7 @@ class Route_model extends CI_Model {
         $this->db->where('route_id', $route['route_id'])->update('route', $route);
     }
     public function delet($route){
+        $this->db->where('route_id',$route['route_id'])->delete('schedule');
         $this->db->where('route_id',$route['route_id'])->delete('route');
     }
     public function Get($id){

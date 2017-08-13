@@ -9,7 +9,7 @@ class Ticket_model extends CI_Model {
     }
 
     public function getList(){
-       return $this->db->order_by("t_id", "asc")->get('ticket')->result_array();
+       return $this->db->order_by("t_id", "desc")->get('ticket')->result_array();
     }  
     public function getticket($ticket_id){
 		return $this->db->where('t_id', $ticket_id)->get('ticket')->row();     
@@ -62,9 +62,9 @@ class Ticket_model extends CI_Model {
             array_push($list1, $data1);
         }
         return array('d0'=>$list,'d1'=>$list1);
-
-
-
+    }
+    public function getListUser($id){
+        return $this->db->where('trav_id',$id)->order_by("t_id", "desc")->get('ticket')->result_array(); 
     }
 }
 ?>

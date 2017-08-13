@@ -9,7 +9,7 @@ class Bus_model extends CI_Model {
     }
 
     public function getList(){
-       return $this->db->order_by("bus_id", "asc")->get('bus')->result_array();
+       return $this->db->order_by("bus_id", "desc")->get('bus')->result_array();
     }  
     public function getbus($bus_id){
 		return $this->db->where('bus_id', $bus_id)->get('bus')->row();     
@@ -49,6 +49,7 @@ class Bus_model extends CI_Model {
         $this->db->where('bus_id', $bus['bus_id'])->update('bus', $bus);
     }
     public function delet($bus){
+        $this->db->where('bus_id',$bus['bus_id'])->delete('schedule');
         $this->db->where('bus_id',$bus['bus_id'])->delete('bus');
     }
     public function getspec($id){

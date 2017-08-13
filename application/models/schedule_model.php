@@ -9,7 +9,7 @@ class Schedule_model extends CI_Model {
     }
 
     public function getList(){
-       return $this->db->get('schedule')->result_array();
+       return $this->db->order_by("schedule_id", "desc")->get('schedule')->result_array();
     }    
     public function Get($id){
         $d2 = $this->db->where('schedule_id', $id)->get('schedule')->row();
