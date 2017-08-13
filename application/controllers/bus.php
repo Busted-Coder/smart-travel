@@ -31,7 +31,15 @@ public function edit(){
 
 	public function add1(){
 		$this->OnlyAdmin();
-		$this->loadView('add/tracker',false,true);
+		$data = $this->BusModel->gettracker();
+		if(count($data) > 0){
+			//$this->loadView('add/select_tracker',array('data' => $data), true);
+			$detail = $this->BusModel->getcam();
+			$this->loadView('add/cam_bus_track',array('detail' => $detail),true);
+		}
+		else{
+			$this->loadView('add/tracker',false,true);
+		}
 	}
 
 	public function add(){

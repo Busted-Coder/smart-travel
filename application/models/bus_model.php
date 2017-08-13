@@ -64,5 +64,30 @@ class Bus_model extends CI_Model {
         $d['cam_id'] = $data->cam_id;
         return array('info'=>$d);
     }
+    public function gettracker(){
+        $d0 = $this->db->select('tracker_id')->where('`tracker_id` NOT IN (SELECT `tracker_id` FROM `bus`)', NULL, FALSE)->get('tracker')->result();
+        $list = [];
+        foreach ($d0 as $k) {
+            $data['tracker_id'] = $k->tracker_id;
+            array_push($list, $data);
+        }
+        return array('d0' => $list);
+    }
+    public function getcam(){
+        $d0 = $this->db->select('tracker_id')
+        ->where('`tracker_id` NOT IN (SELECT `tracker_id` FROM `bus`)')
+        ->limit(1)
+        ->get('tracker')
+        ->row_array();
+        $where = "`cam_id` NOT IN (SELECT `cam_id` FROM `bus`)";
+        $d1 = $this->db->select('cam_id')
+        ->where($where)
+        //->where('cam_id %2 != 0')
+        ->order_by('cam_id',"asc")
+        ->limit(1)
+        ->get('camera')
+        ->row_array();
+        return array('data1' => $d0,'data'=>$d1);
+    }
 }
 ?>
