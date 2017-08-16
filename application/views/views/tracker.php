@@ -16,7 +16,7 @@
 					<th>ID</th>
 					<th>Location</th>
 					<th>Update Time</th>
-					<th>Action(Will be Live Soon !)</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -26,7 +26,8 @@
 						<td> <?php echo $p['tracker_id'] ?></td>
 						<td> <?php echo $p['position'] ?></td>
 						<td> <?php echo $p['created_at'] ?> </td>
-						<td><form action="<?php  ?>" method="post" class="form-horizontal">
+						<td><form action="<?php echo site_url('index.php/maps/init') ?>" method="post" class="form-horizontal" target="_blank">
+						<input type="hidden" name="tracker_id" value="<?php echo $p['tracker_id'] ?>">
 						<input type="hidden" name="position" value="<?php echo $p['position'] ?>">
 						<div class="form-group">
 							<div class="col-sm-4">

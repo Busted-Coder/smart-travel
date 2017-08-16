@@ -19,7 +19,7 @@
 					<th>Capacity</th>
 					<th>Class</th>
 					<th>Description</th>
-					<th>Inducion Time</th>
+					<th>Induction Time</th>
 					<th>Tracker</th>
 					<th>Camera</th>
 					<th>Action</th>
