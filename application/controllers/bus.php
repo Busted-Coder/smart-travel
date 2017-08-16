@@ -18,7 +18,7 @@ class Bus extends MY_Controller {
 	}
 
 	
-public function edit(){
+	public function edit(){
 		$this->OnlyAdmin();
 		if($this->input->get()){
 			$bus = $this->BusModel->Get($this->input->get('bus_id'));
@@ -32,13 +32,13 @@ public function edit(){
 	public function add1(){
 		$this->OnlyAdmin();
 		$data = $this->BusModel->gettracker();
-		if(count($data) > 0){
+		if(count($data) < 1){
 			//$this->loadView('add/select_tracker',array('data' => $data), true);
-			$detail = $this->BusModel->getcam();
-			$this->loadView('add/cam_bus_track',array('detail' => $detail),true);
+			$this->loadView('add/tracker',false,true);	
 		}
 		else{
-			$this->loadView('add/tracker',false,true);
+			$detail = $this->BusModel->getcam();
+			$this->loadView('add/cam_bus_track',array('detail' => $detail),true);
 		}
 	}
 
@@ -51,7 +51,7 @@ public function edit(){
 	public function spec(){
 		$this->OnlyAdmin();
 		$info = $this->BusModel->getspec($this->input->get('bus_id'));
-		$this->loadView('views/bus', array('info'=> $info), true);	 
+		$this->loadView('views/bus', array('info'=> $info), true); 
 	}
 
 	public function tview(){

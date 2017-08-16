@@ -79,15 +79,16 @@ class Bus_model extends CI_Model {
         ->limit(1)
         ->get('tracker')
         ->row_array();
-        $where = "`cam_id` NOT IN (SELECT `cam_id` FROM `bus`)";
         $d1 = $this->db->select('cam_id')
-        ->where($where)
-        //->where('cam_id %2 != 0')
-        ->order_by('cam_id',"asc")
-        ->limit(1)
+        ->where('`cam_id` NOT IN (SELECT `cam_id` FROM `bus`)')
         ->get('camera')
-        ->row_array();
-        return array('data1' => $d0,'data'=>$d1);
+        ->result_array();
+        foreach ($d1 as $k) {
+            if($k['cam_id'] % 2 != 0){
+                $d1['cam_id'] = $k['cam_id'];
+                return array('data1' => $d0,'data'=> $d1);
+            }
+        }
     }
 }
 ?>
