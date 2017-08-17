@@ -20,9 +20,13 @@
   </head>
 
   <body>
-    <div id="dom-target" style="display : none;">
+    <div id="dom-lat" style="display : none;">
         <?php 
           echo htmlspecialchars($info['lat']);
+        ?>
+    </div>
+    <div id="dom-lng" style="display : none;">
+        <?php 
           echo htmlspecialchars($info['lng']);
         ?>
     </div> 
@@ -30,10 +34,11 @@
     <script>
       var map, infoWindow;
      function initMap() {
-        var div = document.getElementById("dom-target");
-        var myData = div.textContent;
-        document.write(myData);
-        var LatLng = {lat: 24.8555963, lng: 67.2119216};
+        var lat = Number(document.getElementById("dom-lat").textContent);
+        console.log(lat);
+        var lng = Number(document.getElementById("dom-lng").textContent);
+        console.log(lng);
+        var LatLng = {lat,lng};
 
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
