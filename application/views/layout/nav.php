@@ -31,13 +31,13 @@
                 <!-- RD Navbar Top Panel Toggle-->
                 <button data-rd-navbar-toggle=".rd-navbar, .rd-navbar-top-panel" class="rd-navbar-top-panel-toggle"><span></span></button>
                 <!-- Navbar Brand-->
-                <div class="rd-navbar-brand"><a href="index.html"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-light.png' alt=''/></a></div>
+                <div class="rd-navbar-brand"><a href="<?php echo base_url();?>index.php/Welcome/index"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-light.png' alt=''/></a></div>
               </div>
               <div class="rd-navbar-menu-wrap">
                 <div class="rd-navbar-nav-wrap">
                   <div class="rd-navbar-mobile-scroll">
                     <!-- Navbar Brand Mobile-->
-                    <div class="rd-navbar-mobile-brand"><a href="index.html"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-light.png' alt=''/></a></div>
+                    <div class="rd-navbar-mobile-brand"><a href="<?php echo base_url();?>index.php/Welcome/index"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-light.png' alt=''/></a></div>
                     <div class="form-search-wrap">
                       <!-- RD Search Form-->
                       <form action="search-results.html" method="GET" class="form-search rd-search">
@@ -51,7 +51,9 @@
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
                       <!-- <li class="active"><a href="<?php //echo site_url('/nav/index2') ?>">Home</a></li> -->
-                      
+                      <li><a href="<?php echo base_url();?>index.php/auth/login_loader">Login</a>
+                        <!-- RD Navbar Dropdown-->
+                      </li>
                       <li><a href="<?php echo base_url();?>index.php/nav_about/history">About</a>
                         <!-- RD Navbar Dropdown-->
                         <ul class="rd-navbar-dropdown">

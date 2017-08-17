@@ -26,7 +26,8 @@ class MY_Controller extends CI_Controller {
             $this->load->view('layout/admin/footer');            
 
         }else{
-    		$this->load->view('layout/header');	
+    		$this->load->view('layout/header');
+            $this->load->view('layout/nav');
     		if(!is_null($data))
     			$this->load->view($name, $data);
     		else
