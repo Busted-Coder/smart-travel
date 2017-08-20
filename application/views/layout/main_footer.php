@@ -9,7 +9,7 @@
                 <!-- Footer brand-->
                 <div class="footer-brand"><a href="index.html"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-dark.png' alt=''/></a></div>
                 <div class="offset-top-30 inset-sm-right-20">
-                  <p class="text-gray">BusExpress is the leading go-to website for booking inter-city bus ticket online. Our booking system allows travelers to search and book bus tickets for over a hundred bus companies throughout the United States, Mexico, Canada and Europe.</p>
+                  <p class="text-gray">Smart Travel is the leading go-to website for booking inter-city bus ticket online. Our booking system allows travelers to search and book bus tickets all over Pakistan.</p>
                 </div>
               </div>
               <div class="cell-xs-10 cell-sm-7 cell-md-4 offset-top-60 offset-md-top-0">
@@ -23,13 +23,13 @@
                   <!-- Contact Info-->
                   <address class="contact-info text-left">
                     <div>
-                      <div class="reveal-inline-block"><a href="callto:#" class="unit unit-middle unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-phone"></span></span><span class="unit-body"><span class="text-gray-darker">1-800-1234-567</span></span></a></div>
+                      <div class="reveal-inline-block"><a href="callto:#" class="unit unit-middle unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-phone"></span></span><span class="unit-body"><span class="text-gray-darker">021-36502089, 0332-2345718</span></span></a></div>
                     </div>
                     <div class="offset-top-10">
-                      <div class="reveal-inline-block"><a href="mailto:#" class="unit unit-middle unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-email-outline"></span></span><span class="unit-body"><span class="text-gray-darker">info@demolink.org</span></span></a></div>
+                      <div class="reveal-inline-block"><a href="mailto:#" class="unit unit-middle unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-email-outline"></span></span><span class="unit-body"><span class="text-gray-darker">info@smarttravel.pk</span></span></a></div>
                     </div>
                     <div class="offset-top-10">
-                      <div class="reveal-inline-block"><a href="#" class="unit unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-map-marker"></span></span><span class="unit-body"><span class="text-gray-darker">2130 Fulton Street San Diego, <br> CA 94117-1080 USA</span></span></a></div>
+                      <div class="reveal-inline-block"><a href="#" class="unit unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-map-marker"></span></span><span class="unit-body"><span class="text-gray-darker">Karachi, Pakistan</span></span></a></div>
                     </div>
                   </address>
                 </div>
@@ -52,7 +52,7 @@
                   <div class="text-subline"></div>
                 </div>
                 <div class="offset-top-25">
-                  <p class="text-gray">Enter your email address to get the latest BusExpress news, special events and student activities delivered right to your inbox.</p>
+                  <p class="text-gray">Enter your email address to get the latest Smart Travel news, special events and student activities delivered right to your inbox.</p>
                 </div>
                 <div class="offset-top-20">
                         <form data-form-output="form-subscribe-footer" data-form-type="subscribe" method="post" action="bat/rd-mailform.php" class="rd-mailform rd-mailform-subscribe">

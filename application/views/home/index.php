@@ -28,7 +28,7 @@
                       <div class="cell-xs-10 cell-lg-7 cell-xl-6">
                         <h1 data-caption-animate="fadeInDown" data-caption-delay="200" class="text-bold">Comfort & Style <br class="veil reveal-lg-inline-block"> Over Every Mile</h1>
                         <div data-caption-animate="fadeInUp" data-caption-delay="600" class="offset-top-20 offset-lg-top-49">
-                          <p class="h6 text-mercury">BusExpress is the leading go-to website for booking inter-city bus <br class="veil reveal-lg-inline-block"> online.</p>
+                          <p class="h6 text-mercury">Smart Travel is the leading go-to website for booking inter-city bus <br class="veil reveal-lg-inline-block"> online.</p>
                         </div>
                         <div data-caption-animate="fadeInUp" data-caption-delay="800" class="offset-top-20"><a href="deals.html" class="btn btn-default btn-skew">Learn More</a></div>
                       </div>
@@ -70,10 +70,19 @@
                               <label for="form-filter-location-from" class="form-label form-label-outside">Traveling From</label>
                               <div class="select2-whitout-border shadow-drop-md">
                                 <select id="form-filter-location-from" name="location-from" data-minimum-results-for-search="Infinity" class="form-control">
-                                  <option value="1">New York</option>
-                                  <option value="2">Lisbon</option>
-                                  <option value="3">Melbourne</option>
-                                  <option value="4">Berlin</option>
+                                  <option value="1">Lahore</option>
+                                  <option value="2">Karachi</option>
+                                  <option value="3">Islamabad</option>
+                                  <option value="4">Faisalabad</option>
+                                  <option value="5">Peshawer</option>
+                                  <option value="6">Hyderabad</option>
+                                  <option value="7">Murree</option>
+                                  <option value="8">Sialkot</option>
+                                  <option value="9">Quetta</option>
+                                  <option value="10">Multan</option>
+                                  <option value="11">Gujranwala</option>
+                                  <option value="12">Bahawalpur</option>
+                                  
                                 </select>
                               </div>
                             </div>
@@ -83,10 +92,18 @@
                               <label for="form-filter-location-to" class="form-label form-label-outside">Traveling To</label>
                               <div class="select2-whitout-border shadow-drop-md">
                                 <select id="form-filter-location-to" name="location-to" data-minimum-results-for-search="Infinity" class="form-control">
-                                  <option value="1">Chicago</option>
-                                  <option value="2">San Francisco</option>
-                                  <option value="3">London</option>
-                                  <option value="4">Los Angeles</option>
+                                  <option value="1">Lahore</option>
+                                  <option value="2">Karachi</option>
+                                  <option value="3">Islamabad</option>
+                                  <option value="4">Faisalabad</option>
+                                  <option value="5">Peshawer</option>
+                                  <option value="6">Hyderabad</option>
+                                  <option value="7">Murree</option>
+                                  <option value="8">Sialkot</option>
+                                  <option value="9">Quetta</option>
+                                  <option value="10">Multan</option>
+                                  <option value="11">Gujranwala</option>
+                                  <option value="12">Bahawalpur</option>
                                 </select>
                               </div>
                             </div>
@@ -198,32 +215,32 @@
             <div class="range range-xs-center offset-top-60">
               <div class="cell-xs-10 cell-sm-6 cell-md-4">
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
-                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/post-01-370x280.jpg" width="370" height="280" alt="" class="img-responsive"/>
+                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/1.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
                       <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
-                        <div class="post-ticket-price text-bold text-shark"><span>$</span><span>16.00</span><span>/pers.</span></div>
+                        <div class="post-ticket-price text-bold text-shark"><span>.</span></div>
                       </div>
                     </div>
-                  </div>
+                </div>
                   <div class="post-ticket-body text-left">
                     <!-- List Inline-->
                     <div>
                       <ul class="group-xs list list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-primary">
-                        <li class="h5 text-bold text-primary">Boston</li>
-                        <li class="h5 text-bold text-primary">New York</li>
+                        <li class="h5 text-bold text-primary">Islamabad</li>
+                        <li class="h5 text-bold text-primary">Murree</li>
                       </ul>
                     </div>
                     <div class="offset-top-10">
-                      <div class="post-meta text-gray">5 hours 10 minutes</div>
+                      <div class="post-meta text-gray">2 hours</div>
                     </div>
                   </div></a>
               </div>
               <div class="cell-xs-10 cell-sm-6 cell-md-4 offset-top-30 offset-sm-top-0">
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
-                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/post-02-370x280.jpg" width="370" height="280" alt="" class="img-responsive"/>
+                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/kyber-pass.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
                       <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
-                        <div class="post-ticket-price text-bold text-shark"><span>$</span><span>19.00</span><span>/pers.</span></div>
+                        <div class="post-ticket-price text-bold text-shark"></div>
                       </div>
                     </div>
                   </div>
@@ -231,18 +248,84 @@
                     <!-- List Inline-->
                     <div>
                       <ul class="group-xs list list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-primary">
-                        <li class="h5 text-bold text-primary">Washington, D.C.</li>
-                        <li class="h5 text-bold text-primary">Boston</li>
+                        <li class="h5 text-bold text-primary">Peshawer</li>
+                        <li class="h5 text-bold text-primary">Lahore</li>
                       </ul>
                     </div>
                     <div class="offset-top-10">
-                      <div class="post-meta text-gray">8 hours 45 minutes</div>
+                      <div class="post-meta text-gray">6 hours</div>
                     </div>
                   </div></a>
               </div>
               <div class="cell-xs-10 cell-sm-6 cell-md-4 offset-top-30 offset-md-top-0">
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
-                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/post-03-370x280.jpg" width="370" height="280" alt="" class="img-responsive"/>
+                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/Quaid-eazam.jpg" alt="" class="img-responsive"/>
+                    <div class="post-ticket-price-svg-wrap">
+                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
+                        <div class="post-ticket-price text-bold text-shark"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-ticket-body text-left">
+                    <!-- List Inline-->
+                    <div>
+                      <ul class="group-xs list list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-primary">
+                        <li class="h5 text-bold text-primary">Karachi</li>
+                        <li class="h5 text-bold text-primary">Lahore</li>
+                      </ul>
+                    </div>
+                    <div class="offset-top-10">
+                      <div class="post-meta text-gray">16 hours</div>
+                    </div>
+                  </div></a>
+              </div>
+              <div class="cell-xs-10 cell-sm-6 cell-md-4 offset-top-30">
+                <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
+                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/islamabad.jpg" alt="" class="img-responsive"/>
+                    <div class="post-ticket-price-svg-wrap">
+                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
+                        <div class="post-ticket-price text-bold text-shark"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-ticket-body text-left">
+                    <!-- List Inline-->
+                    <div>
+                      <ul class="group-xs list list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-primary">
+                        <li class="h5 text-bold text-primary">Islamabad</li>
+                        <li class="h5 text-bold text-primary">Karachi</li>
+                      </ul>
+                    </div>
+                    <div class="offset-top-10">
+                      <div class="post-meta text-gray">22 hours</div>
+                    </div>
+                  </div></a>
+              </div>
+              <div class="cell-xs-10 cell-sm-6 cell-md-4 offset-top-30">
+                <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
+                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/Minar-e-Pakistan.jpg" alt="" class="img-responsive"/>
+                    <div class="post-ticket-price-svg-wrap">
+                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
+                        <div class="post-ticket-price text-bold text-shark"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-ticket-body text-left">
+                    <!-- List Inline-->
+                    <div>
+                      <ul class="group-xs list list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-primary">
+                        <li class="h5 text-bold text-primary">Lahore </li>
+                        <li class="h5 text-bold text-primary">Islamabad</li>
+                      </ul>
+                    </div>
+                    <div class="offset-top-10">
+                      <div class="post-meta text-gray">5 hours</div>
+                    </div>
+                  </div></a>
+              </div>
+              <div class="cell-xs-10 cell-sm-6 cell-md-4 offset-top-30">
+                <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
+                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/faisalabad-clock-tower-1462778325-6796.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
                       <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
                         <div class="post-ticket-price text-bold text-shark"><span>$</span><span>15.00</span><span>/pers.</span></div>
@@ -253,78 +336,12 @@
                     <!-- List Inline-->
                     <div>
                       <ul class="group-xs list list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-primary">
-                        <li class="h5 text-bold text-primary">Sacramento</li>
-                        <li class="h5 text-bold text-primary">San Diego</li>
+                        <li class="h5 text-bold text-primary">Faisalabad</li>
+                        <li class="h5 text-bold text-primary">Lahore</li>
                       </ul>
                     </div>
                     <div class="offset-top-10">
-                      <div class="post-meta text-gray">6 hours 21 minutes</div>
-                    </div>
-                  </div></a>
-              </div>
-              <div class="cell-xs-10 cell-sm-6 cell-md-4 offset-top-30">
-                <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
-                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/post-04-370x280.jpg" width="370" height="280" alt="" class="img-responsive"/>
-                    <div class="post-ticket-price-svg-wrap">
-                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
-                        <div class="post-ticket-price text-bold text-shark"><span>$</span><span>42.00</span><span>/pers.</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="post-ticket-body text-left">
-                    <!-- List Inline-->
-                    <div>
-                      <ul class="group-xs list list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-primary">
-                        <li class="h5 text-bold text-primary">Colorado Springs</li>
-                        <li class="h5 text-bold text-primary">Huntington Beach</li>
-                      </ul>
-                    </div>
-                    <div class="offset-top-10">
-                      <div class="post-meta text-gray">8 hours 45 minutes</div>
-                    </div>
-                  </div></a>
-              </div>
-              <div class="cell-xs-10 cell-sm-6 cell-md-4 offset-top-30">
-                <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
-                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/post-05-370x280.jpg" width="370" height="280" alt="" class="img-responsive"/>
-                    <div class="post-ticket-price-svg-wrap">
-                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
-                        <div class="post-ticket-price text-bold text-shark"><span>$</span><span>19.00</span><span>/pers.</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="post-ticket-body text-left">
-                    <!-- List Inline-->
-                    <div>
-                      <ul class="group-xs list list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-primary">
-                        <li class="h5 text-bold text-primary">Sacramento</li>
-                        <li class="h5 text-bold text-primary">San Francisco</li>
-                      </ul>
-                    </div>
-                    <div class="offset-top-10">
-                      <div class="post-meta text-gray">5 hours 45 minutes</div>
-                    </div>
-                  </div></a>
-              </div>
-              <div class="cell-xs-10 cell-sm-6 cell-md-4 offset-top-30">
-                <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
-                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/post-06-370x280.jpg" width="370" height="280" alt="" class="img-responsive"/>
-                    <div class="post-ticket-price-svg-wrap">
-                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
-                        <div class="post-ticket-price text-bold text-shark"><span>$</span><span>15.00</span><span>/pers.</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="post-ticket-body text-left">
-                    <!-- List Inline-->
-                    <div>
-                      <ul class="group-xs list list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-primary">
-                        <li class="h5 text-bold text-primary">New York</li>
-                        <li class="h5 text-bold text-primary">Chicago</li>
-                      </ul>
-                    </div>
-                    <div class="offset-top-10">
-                      <div class="post-meta text-gray">8 hours 45 minutes</div>
+                      <div class="post-meta text-gray">2 hours</div>
                     </div>
                   </div></a>
               </div>
