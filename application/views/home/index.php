@@ -37,7 +37,7 @@
                 </div>
               </div>
             </div>
-            <div data-slide-bg="<?php echo PATH; ?>images/backgrounds/background-03-1920x950.jpg" class="swiper-slide">
+            <div data-slide-bg="<?php echo PATH; ?>images/backgrounds/slidercollage.jpg" class="swiper-slide">
               <div class="swiper-slide-caption-wrap">
                 <div class="swiper-slide-caption">
                   <div class="shell">
@@ -175,10 +175,10 @@
                         <!-- Box Icon-->
                         <div class="box-icon"><span class="icon icon-xlg icon-circle icon-outlined icon-chathams-primary-filled mdi mdi-taxi"></span>
                           <div class="offset-top-30">
-                            <h5 class="text-bold">Shuttle to the Bus</h5>
+                            <h5 class="text-bold">Bus Alternatives</h5>
                           </div>
                           <div class="offset-top-10">
-                            <p class="text-gray">Free taxi to the bus</p>
+                            <p class="text-gray">Alternate bus in case of any trouble</p>
                           </div>
                         </div>
                       </div>
@@ -217,7 +217,7 @@
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
                   <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/1.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
-                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
+                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"></svg>
                         <div class="post-ticket-price text-bold text-shark"><span>.</span></div>
                       </div>
                     </div>
@@ -239,7 +239,7 @@
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
                   <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/kyber-pass.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
-                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
+                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"></svg>
                         <div class="post-ticket-price text-bold text-shark"></div>
                       </div>
                     </div>
@@ -261,7 +261,7 @@
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
                   <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/Quaid-eazam.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
-                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
+                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"></svg>
                         <div class="post-ticket-price text-bold text-shark"></div>
                       </div>
                     </div>
@@ -283,7 +283,7 @@
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
                   <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/islamabad.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
-                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
+                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"></svg>
                         <div class="post-ticket-price text-bold text-shark"></div>
                       </div>
                     </div>
@@ -305,7 +305,7 @@
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
                   <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/Minar-e-Pakistan.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
-                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
+                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"></svg>
                         <div class="post-ticket-price text-bold text-shark"></div>
                       </div>
                     </div>
@@ -327,8 +327,8 @@
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
                   <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/faisalabad-clock-tower-1462778325-6796.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
-                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"><path d="m 0.01190457,18.011904 0,-17.99999966 70.00000343,0 69.999992,0 0,5.50000006 c 0,4.157048 -0.35675,5.4999996 -1.46104,5.4999996 -2.34992,0 -5.53896,4.138795 -5.53896,7.188561 0,3.025049 3.05738,6.811439 5.5,6.811439 1.15152,0 1.5,1.277778 1.5,5.5 l 0,5.5 -69.999992,0 -70.00000343,0 0,-18 z"/></svg>
-                        <div class="post-ticket-price text-bold text-shark"><span>$</span><span>15.00</span><span>/pers.</span></div>
+                      <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"></svg>
+                        <div class="post-ticket-price text-bold text-shark">&nbsp;</div>
                       </div>
                     </div>
                   </div>

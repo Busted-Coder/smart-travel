@@ -34,7 +34,7 @@
                 <h2 class="text-bold text-center text-md-left">Where Will You Go?</h2>
                 <hr class="divider hr-md-left-0 bg-chathams-blue">
                 <div class="offset-top-30 offset-md-top-60">
-                  <p>If you’re planning to travel to America, there are so many places to visit. From the historic landmarks of Boston and Washington to the rich, vibrant culture of San Francisco and the famous Staute of Liberty in New York, so when it comes to planning your American trip it’s essential to book your bus tickets well in advance.</p>
+                  <p>If you’re planning to travel across Pakistan, there are so many places to visit. From the historic landmarks of Islamabad and Karachi to the rich, vibrant culture of Lahore, so when it comes to planning your trip it’s essential to book your bus tickets well in advance.</p>
                 </div>
                 <div class="range range-xs-center offset-top-30 offset-md-top-60">
                   <div class="cell-xs-10 cell-sm-6">

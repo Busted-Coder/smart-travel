@@ -264,7 +264,7 @@
                       <div class="cell-xs-10 cell-md-7 cell-lg-6 cell-xl-7">
                         <h1 data-caption-animate="fadeInDown" data-caption-delay="200" class="text-bold">Comfort & Style <br class="veil reveal-xl-inline-block"> Over Every Mile</h1>
                         <div data-caption-animate="fadeInUp" data-caption-delay="600" class="offset-top-20 offset-lg-top-49">
-                          <p class="h6 text-mercury">BusExpress is the leading go-to website for booking inter-city bus <br class="veil reveal-xl-inline-block"> ticket online.</p>
+                          <p class="h6 text-mercury">Smart Travel is the leading go-to website for booking inter-city bus <br class="veil reveal-xl-inline-block"> ticket online.</p>
                         </div>
                         <div data-caption-animate="fadeInUp" data-caption-delay="800" class="offset-top-20"><a href="deals.html" class="btn btn-default btn-skew">Learn More</a></div>
                       </div>
