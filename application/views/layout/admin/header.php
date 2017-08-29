@@ -33,6 +33,8 @@
 	        <li><a href="<?php echo site_url('index.php/tracker/lists') ?>">Tracker</a></li>
 	        <li><a href="<?php echo site_url('index.php/user/lists') ?>">User</a></li>
 	        <li><a href="<?php echo site_url('index.php/schedule/lists') ?>">Schedule</a></li>
+	        <li><a href="<?php echo site_url('index.php/report/lists') ?>">Reporting</a></li>
+	        <li><a href="<?php echo site_url('index.php/request/lists') ?>">Seat Requests</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	        <li class="dropdown">
