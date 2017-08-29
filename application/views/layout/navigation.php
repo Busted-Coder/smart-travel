@@ -7,9 +7,9 @@
                 <div class="left-side">
                   <!-- Contact Info-->
                   <address class="contact-info text-left">
-                    <div class="reveal-inline-block"><a href="callto:#" class="unit unit-middle unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-phone"></span></span><span class="unit-body"><span class="text-gray-darker">1-800-1234-567</span></span></a></div>
-                    <div class="reveal-inline-block"><a href="mailto:#" class="unit unit-middle unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-email-outline"></span></span><span class="unit-body"><span class="text-gray-darker">info@demolink.org</span></span></a></div>
-                    <div class="reveal-inline-block"><a href="#" class="unit unit-middle unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-map-marker"></span></span><span class="unit-body"><span class="text-gray-darker">2130 Fulton Street San Diego, CA 94117-1080 USA</span></span></a></div>
+                    <div class="reveal-inline-block"><a href="callto:#" class="unit unit-middle unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-phone"></span></span><span class="unit-body"><span class="text-gray-darker">021-36502089</span></span></a></div>
+                    <div class="reveal-inline-block"><a href="mailto:#" class="unit unit-middle unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-email-outline"></span></span><span class="unit-body"><span class="text-gray-darker">info@smarttravel.pk</span></span></a></div>
+                    <div class="reveal-inline-block"><a href="#" class="unit unit-middle unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-map-marker"></span></span><span class="unit-body"><span class="text-gray-darker">Karachi, Pakistan</span></span></a></div>
                   </address>
                 </div>
                 <div class="right-side">
@@ -29,13 +29,13 @@
                 <!-- RD Navbar Top Panel Toggle-->
                 <button data-rd-navbar-toggle=".rd-navbar, .rd-navbar-top-panel" class="rd-navbar-top-panel-toggle"><span></span></button>
                 <!-- Navbar Brand-->
-                <div class="rd-navbar-brand"><a href="<?php echo base_url();?>index.php/Welcome/index"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-light.png' alt=''/></a></div>
+                <div class="rd-navbar-brand"><a href="<?php echo base_url();?>index.php/Welcome/index"><img width='107' height='58' src='<?php echo PATH; ?>images/logo-light1.png' alt=''/></a></div>
               </div>
               <div class="rd-navbar-menu-wrap">
                 <div class="rd-navbar-nav-wrap">
                   <div class="rd-navbar-mobile-scroll">
                     <!-- Navbar Brand Mobile-->
-                    <div class="rd-navbar-mobile-brand"><a href="<?php echo base_url();?>index.php/Welcome/index"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-light.png' alt=''/></a></div>
+                    <div class="rd-navbar-mobile-brand"><a href="<?php echo base_url();?>index.php/Welcome/index"><img width='105' height='57' src='<?php echo PATH; ?>images/logo-light1.png' alt=''/></a></div>
                     <div class="form-search-wrap">
                       <!-- RD Search Form-->
                       <form action="search-results.html" method="GET" class="form-search rd-search">
@@ -58,15 +58,12 @@
                           <li><a href="<?php echo site_url('index.php/nav_about/history') ?>">Our History</a></li>
                           <li><a href="<?php echo site_url('index.php/nav_about/team')?>">Our Team</a></li>
                           <li><a href="<?php echo site_url('index.php/nav_about/testimonials') ?>">Testimonials</a></li>
-                          <li><a href="<?php echo site_url('index.php/nav_about/faq') ?>">FAQ Page</a></li>
-                          <li><a href="<?php echo site_url('index.php/nav_about/press') ?>">Press</a></li>
                         </ul>
                       </li>
                       <li class="rd-navbar--has-dropdown rd-navbar-submenu"><a href="<?php echo site_url('index.php/nav_destinations/destinations') ?>">Destinations</a>
                         <!-- RD Navbar Dropdown-->
                         <ul class="rd-navbar-dropdown">
                           <li><a href="<?php echo site_url('index.php/nav_destinations/destinations') ?>">All Destinations</a></li>
-                          <li><a href="<?php echo site_url('index.php/nav_destinations/single_tour') ?>">Single Tour</a></li>
                           <li><a href="<?php echo site_url('index.php/nav_destinations/ticket_catalog') ?>">Ticket Catalog</a></li>
                           <li><a href="<?php echo site_url('index.php/nav_destinations/single_ticket') ?>">Single Ticket</a></li>
                         </ul>

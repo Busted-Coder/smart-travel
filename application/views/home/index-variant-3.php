@@ -42,7 +42,7 @@
                   <!-- Contact Info-->
                   <address class="contact-info text-left">
                     <div>
-                      <div class="reveal-inline-block"><a href="callto:#" class="unit unit-middle unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-phone"></span></span><span class="unit-body"><span class="text-gray-darker reveal-inline-block offset-top-4">1-800-1234-567</span></span></a></div>
+                      <div class="reveal-inline-block"><a href="callto:#" class="unit unit-middle unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-phone"></span></span><span class="unit-body"><span class="text-gray-darker reveal-inline-block offset-top-4">021-36502089, 0332-2345718</span></span></a></div>
                     </div>
                     <div class="offset-top-10">
                       <div class="reveal-inline-block"><a href="mailto:#" class="unit unit-middle unit-horizontal unit-spacing-xs"><span class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-email-outline"></span></span><span class="unit-body"><span class="text-gray-darker reveal-inline-block offset-top-4">info@demolink.org</span></span></a></div>
@@ -70,13 +70,13 @@
                 <!-- RD Navbar Top Panel Toggle-->
                 <button data-rd-navbar-toggle=".rd-navbar, .rd-navbar-sidebar-panel-dub" class="rd-navbar-top-panel-toggle veil-lg"><span></span></button>
                 <!-- Navbar Brand-->
-                <div class="rd-navbar-brand"><a href="index.html"><img width='97' height='57' src='images/logo-light.png' alt=''/></a></div>
+                <div class="rd-navbar-brand"><a href="index.html"><img width='105' height='57' src='images/logo-light1.png' alt=''/></a></div>
               </div>
               <div class="rd-navbar-menu-wrap">
                 <div class="rd-navbar-nav-wrap">
                   <div class="rd-navbar-mobile-scroll">
                     <!-- Navbar Brand Mobile-->
-                    <div class="rd-navbar-mobile-brand"><a href="index.html"><img width='97' height='57' src='images/logo-light.png' alt=''/></a></div>
+                    <div class="rd-navbar-mobile-brand"><a href="index.html"><img width='97' height='57' src='images/logo-light1.png' alt=''/></a></div>
                     <div class="veil"></div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
