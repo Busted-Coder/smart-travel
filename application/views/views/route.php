@@ -52,7 +52,7 @@
 						<input type="hidden" name="route_id" value="<?php echo $p['route_id'] ?>">
 						<div class="form-group">
 							<div class="col-sm-4">
-								<input type="submit" class="btn btn-danger" value="Delete">
+								<input type="submit" class="btn btn-danger" value="Delete" onClick="return doconfirm();">
 							</div>
 						</div>
 						</form></td>
@@ -79,3 +79,13 @@
 		</table>
 	</div>
 </div>
+<script>
+function doconfirm()
+{
+    job = confirm("Are you sure to Delete?");
+    if(job != true)
+    {
+        return false;
+    }
+}
+</script>
