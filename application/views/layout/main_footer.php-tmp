@@ -7,7 +7,7 @@
             <div class="range range-xs-center text-md-left">
               <div class="cell-xs-10 cell-sm-7 cell-md-4">
                 <!-- Footer brand-->
-                <div class="footer-brand"><a href="index.html"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-dark.png' alt=''/></a></div>
+                <div class="footer-brand"><a href="index.html"><img width='97' height='57' src='<?php echo PATH;?>images/logo-dark.png' alt=''/></a></div>
                 <div class="offset-top-30 inset-sm-right-20">
                   <p class="text-gray">Smart Travel is the leading go-to website for booking inter-city bus ticket online. Our booking system allows travelers to search and book bus tickets all over Pakistan.</p>
                 </div>
@@ -116,8 +116,8 @@
       </div>
     </div>
     <!-- Java script-->
-    <script src="<?php echo PATH; ?>js/core.min.js"></script>
-    <script src="<?php echo PATH; ?>js/script.js"></script>
+    <script src="<?php echo PATH;?>js/core.min.js"></script>
+    <script src="<?php echo PATH;?>js/script.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
       <script>
     $(document).ready(function(){

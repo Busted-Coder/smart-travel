@@ -48,6 +48,12 @@ class Route_model extends CI_Model {
         $d['created_at'] = $data->created_at;
         return array('info'=>$d);
     }
+
+    public function get_where($source,$dest)
+    {
+        return $this->db->get_where('route',array('source'=>$source,'destination'=>$dest))->row_array();
+
+    }
 }
 
 ?>

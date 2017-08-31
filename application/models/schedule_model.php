@@ -18,6 +18,8 @@ class Schedule_model extends CI_Model {
         $d['bus_id'] = $d2->bus_id;
         return array('d2'=> $d);
     }
+
+
     public function Edit($schedule){
         $this->db->where('schedule_id', $schedule['schedule_id'])->update('schedule', $schedule);
     }
@@ -46,5 +48,42 @@ class Schedule_model extends CI_Model {
 
 
     }
+
+    // public function get_where($route_id,$bd)
+    // {
+    //     // return $this->db->get_where('schedule',array('route_id'=>$route_id, 'bus_time >=' $bd))->row_array();
+
+    //      return $this->db->select('*')
+    //     ->from('schedule')     
+    //     ->where('schedule.route_id', $route_id)     
+    //     ->where('schedule.bus_time >=', $bd." 00:00:00")
+    //     ->where('schedule.bus_time <=', $bd." 23:59:59")
+    //     ->get()->result();
+
+    // }
+
+    public function getavailablebuses($ticket)
+    {
+        return $this->db->select('*')
+        ->from('schedule')   
+        ->join('route', 'route.route_id = schedule.route_id')
+        ->where('route.source',$ticket['source'])
+        ->where('route.destination',$ticket['dest'])
+        ->where('schedule.bus_time', $ticket['busdate'])
+        ->get()->result();
+    }
+
+      public function Getbyid($id){
+
+       $data =  $this->db->select('*')
+        ->from('schedule')   
+        ->join('route', 'route.route_id = schedule.route_id')
+        ->where('schedule.schedule_id', $id)
+        ->get()->result();
+        $data = json_encode($data);
+        $data = json_decode($data,true);
+        return $data[0];
+    }
+    
 }
 ?>

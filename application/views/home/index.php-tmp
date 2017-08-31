@@ -3,10 +3,9 @@
   <head>
 <?php
 //include '../header.php';
-    $this->load->view('layout/header.php');
+$this->load->view('layout/header.php');
 ?>
-
-  </head>
+</head>
   <body>
     <!-- Page-->
     <div class="page text-center">
@@ -15,12 +14,12 @@
 
 <?php
 
-    $this->load->view('layout/navigation.php');
-    ?>
+$this->load->view('layout/navigation.php');
+?>
         <!-- Swiper-->
         <div data-height="" data-min-height="200px" data-slide-effect="fade" data-simulate-touch="false" class="swiper-container swiper-slider context-dark text-lg-left">
           <div class="swiper-wrapper">
-            <div data-slide-bg="<?php echo PATH; ?>images/backgrounds/background-02-1920x950.jpg" class="swiper-slide">
+            <div data-slide-bg="<?php echo PATH;?>images/backgrounds/background-02-1920x950.jpg" class="swiper-slide">
               <div class="swiper-slide-caption-wrap">
                 <div class="swiper-slide-caption">
                   <div class="shell">
@@ -37,7 +36,7 @@
                 </div>
               </div>
             </div>
-            <div data-slide-bg="<?php echo PATH; ?>images/backgrounds/slidercollage.jpg" class="swiper-slide">
+            <div data-slide-bg="<?php echo PATH;?>images/backgrounds/slidercollage.jpg" class="swiper-slide">
               <div class="swiper-slide-caption-wrap">
                 <div class="swiper-slide-caption">
                   <div class="shell">
@@ -62,7 +61,7 @@
                   <!-- Panel-->
                   <div class="panel panel-lg bg-overlay-chathams-blue text-lg-left">
                     <h3><span class="small text-bold text-white">Find Bus Tickets</span></h3>
-                    <form action="<?php echo site_url('index.php/Find_ticket/searchTicket') ?>" method="post" class="range range-md-bottom offset-top-20">
+                    <form action="<?php echo site_url('index.php/Find_ticket/searchTicket')?>" method="post" class="range range-md-bottom offset-top-20">
                       <div class="cell-md-9 cell-lg-10">
                         <div class="group group-top">
                           <div class="group-item element-fullwidth">
@@ -72,10 +71,9 @@
 
                                   <select id="form-filter-location-from" style="background-color: white;" name="source" class="form-control">
                                       <option>Select City</option>
-                                      <?php foreach ($cityarray as $value) {?>
-                                          <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
-                                  
-                                   </select>
+<?php foreach ($cityarray as $value) {?>
+	                                          <option value=<?=$value['shortcode']?>><?php echo $value['name']?> </option> <?php }?>
+</select>
                               </div>
                             </div>
                           </div>
@@ -85,8 +83,8 @@
                               <div class="select2-whitout-border shadow-drop-md">
                                 <select style="background-color: white;" id="form-filter-location-to" name="dest" class="form-control">
                                         <option>Select City</option>
-                                        <?php foreach ($cityarray as $value) {?>
-                                            <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
+<?php foreach ($cityarray as $value) {?>
+	                                            <option value=<?=$value['shortcode']?>><?php echo $value['name']?> </option> <?php }?>
 
                                 </select>
                               </div>
@@ -100,7 +98,7 @@
                               </div>
                             </div>
                           </div>
-                          
+
                         </div>
                       </div>
                       <div class="cell-md-3 cell-lg-2">
@@ -184,7 +182,7 @@
             <div class="range range-xs-center offset-top-60">
               <div class="cell-xs-10 cell-sm-6 cell-md-4">
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
-                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/1.jpg" alt="" class="img-responsive"/>
+                  <div class="post-ticket-header"><img src="<?php echo PATH;?>images/blog/1.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
                       <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"></svg>
                         <div class="post-ticket-price text-bold text-shark"><span>.</span></div>
@@ -206,7 +204,7 @@
               </div>
               <div class="cell-xs-10 cell-sm-6 cell-md-4 offset-top-30 offset-sm-top-0">
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
-                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/kyber-pass.jpg" alt="" class="img-responsive"/>
+                  <div class="post-ticket-header"><img src="<?php echo PATH;?>images/blog/kyber-pass.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
                       <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"></svg>
                         <div class="post-ticket-price text-bold text-shark"></div>
@@ -228,7 +226,7 @@
               </div>
               <div class="cell-xs-10 cell-sm-6 cell-md-4 offset-top-30 offset-md-top-0">
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
-                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/Quaid-eazam.jpg" alt="" class="img-responsive"/>
+                  <div class="post-ticket-header"><img src="<?php echo PATH;?>images/blog/Quaid-eazam.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
                       <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"></svg>
                         <div class="post-ticket-price text-bold text-shark"></div>
@@ -250,7 +248,7 @@
               </div>
               <div class="cell-xs-10 cell-sm-6 cell-md-4 offset-top-30">
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
-                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/islamabad.jpg" alt="" class="img-responsive"/>
+                  <div class="post-ticket-header"><img src="<?php echo PATH;?>images/blog/islamabad.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
                       <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"></svg>
                         <div class="post-ticket-price text-bold text-shark"></div>
@@ -272,7 +270,7 @@
               </div>
               <div class="cell-xs-10 cell-sm-6 cell-md-4 offset-top-30">
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
-                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/Minar-e-Pakistan.jpg" alt="" class="img-responsive"/>
+                  <div class="post-ticket-header"><img src="<?php echo PATH;?>images/blog/Minar-e-Pakistan.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
                       <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"></svg>
                         <div class="post-ticket-price text-bold text-shark"></div>
@@ -294,7 +292,7 @@
               </div>
               <div class="cell-xs-10 cell-sm-6 cell-md-4 offset-top-30">
                 <!-- Post Ticket--><a href="single-ticket.html" class="post-ticket">
-                  <div class="post-ticket-header"><img src="<?php echo PATH; ?>images/blog/faisalabad-clock-tower-1462778325-6796.jpg" alt="" class="img-responsive"/>
+                  <div class="post-ticket-header"><img src="<?php echo PATH;?>images/blog/faisalabad-clock-tower-1462778325-6796.jpg" alt="" class="img-responsive"/>
                     <div class="post-ticket-price-svg-wrap">
                       <div class="post-ticket-price-svg"><svg viewBox="0 0 140 36"></svg>
                         <div class="post-ticket-price text-bold text-shark">&nbsp;</div>
@@ -322,7 +320,7 @@
         <section>
           <!-- RD Parallax-->
           <div data-on="false" data-md-on="true" class="bg-gray-base context-dark rd-parallax">
-            <div data-speed="0.15" data-type="media" data-url="<?php echo PATH; ?>images/backgrounds/background-04-1920x950.jpg" class="rd-parallax-layer"></div>
+            <div data-speed="0.15" data-type="media" data-url="<?php echo PATH;?>images/backgrounds/background-04-1920x950.jpg" class="rd-parallax-layer"></div>
             <div data-speed="0" data-type="html" data-md-fade="false" class="rd-parallax-layer">
               <div class="shell section-90 section-md-162">
                 <h2 class="text-bold text-white">Special Service: Bus Rental with Driver</h2>
@@ -338,7 +336,7 @@
               <div class="cell-xs-8 cell-sm-12">
                 <div class="owl-items-middle">
                   <!-- Partners-->
-                  <div data-items="2" data-xs-items="2" data-sm-items="3" data-md-items="6" data-nav="false" data-dots="true" data-stage-padding="5" data-sm-stage-padding="20" data-margin="10" data-sm-margin="75" class="owl-carousel owl-carousel-classic"><a href="#"><img src="<?php echo PATH; ?>images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="i<?php echo PATH; ?>mages/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a>
+                  <div data-items="2" data-xs-items="2" data-sm-items="3" data-md-items="6" data-nav="false" data-dots="true" data-stage-padding="5" data-sm-stage-padding="20" data-margin="10" data-sm-margin="75" class="owl-carousel owl-carousel-classic"><a href="#"><img src="<?php echo PATH;?>images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH;?>images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="i<?php echo PATH;?>mages/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a>
                   </div>
                 </div>
               </div>
@@ -356,7 +354,7 @@
                 <div class="reveal-block">
                   <div class="post post-boxed">
                     <!-- Post media-->
-                    <header class="post-media"><img width="570" height="310" src="<?php echo PATH; ?>images/blog/post-07-570x310.jpg" alt="" class="img-responsive"/></header>
+                    <header class="post-media"><img width="570" height="310" src="<?php echo PATH;?>images/blog/post-07-570x310.jpg" alt="" class="img-responsive"/></header>
                     <!-- Post content-->
                     <section class="post-content text-left">
                       <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
@@ -384,7 +382,7 @@
                 <div class="reveal-block">
                   <div class="post post-boxed">
                     <!-- Post media-->
-                    <header class="post-media"><img width="570" height="310" src="<?php echo PATH; ?>images/blog/post-08-570x310.jpg" alt="" class="img-responsive"/></header>
+                    <header class="post-media"><img width="570" height="310" src="<?php echo PATH;?>images/blog/post-08-570x310.jpg" alt="" class="img-responsive"/></header>
                     <!-- Post content-->
                     <section class="post-content text-left">
                       <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
@@ -412,7 +410,7 @@
                 <div class="reveal-block">
                   <div class="post post-boxed">
                     <!-- Post media-->
-                    <header class="post-media"><img width="570" height="310" src="<?php echo PATH; ?>images/blog/post-09-570x310.jpg" alt="" class="img-responsive"/></header>
+                    <header class="post-media"><img width="570" height="310" src="<?php echo PATH;?>images/blog/post-09-570x310.jpg" alt="" class="img-responsive"/></header>
                     <!-- Post content-->
                     <section class="post-content text-left">
                       <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
@@ -440,7 +438,7 @@
                 <div class="reveal-block">
                   <div class="post post-boxed">
                     <!-- Post media-->
-                    <header class="post-media"><img width="570" height="310" src="<?php echo PATH; ?>images/blog/post-10-570x310.jpg" alt="" class="img-responsive"/></header>
+                    <header class="post-media"><img width="570" height="310" src="<?php echo PATH;?>images/blog/post-10-570x310.jpg" alt="" class="img-responsive"/></header>
                     <!-- Post content-->
                     <section class="post-content text-left">
                       <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
@@ -481,6 +479,6 @@
       </main>
       <!-- Page Footer-->
       <!-- Footer Default-->
-      <?php
-      $this->load->view('layout/main_footer.php');
-      ?>
+<?php
+$this->load->view('layout/main_footer.php');
+?>

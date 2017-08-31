@@ -12,7 +12,7 @@
 				<div class="col-sm-4">
 					<select name="route_id" class="form-control" required>
 						<option>Select Route ID</option>
-						<?php foreach ($data['d0'] as $k) {	?>		
+						<?php foreach ($data['d0'] as $k) {	?>
 						<option><?php echo $k['route_id']?></option> <?php } ?>
 					</select>
 				</div>
