@@ -12,7 +12,8 @@ class Maps extends MY_Controller {
 
 	public function init(){
 		$this->OnlyAdmin();
-		$loc = explode('/', $this->input->post('position'));
+		$loc1['position'] = $this->MapsModel->getloc($this->input->post('tracker_id'));
+		$loc = explode('/', $loc1['position']);
 		$info['lat'] = $loc[0];
 		$info['lng'] = $loc[1];
 		$this->load->view('views/maps',array('info' => $info));
