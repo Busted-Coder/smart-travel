@@ -15,7 +15,7 @@
 				<tr>
 					<th>ID</th>
 					<th>Model</th>
-					<th>Action(Will be Live Soon !)</th>
+					<th style= "color: red;">Action(Will be Live Soon !)</th>
 				</tr>
 			</thead>
 			<tbody>

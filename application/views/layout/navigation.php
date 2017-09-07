@@ -49,7 +49,7 @@
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
                       <!-- <li class="active"><a href="<?php //echo site_url('/nav/index2') ?>">Home</a></li> -->
-                      <li><a href="<?php echo base_url();?>index.php/auth/login_loader">Login</a>
+                      <li><a href="<?php echo base_url();?>index.php/auth/login_loader">Login/Register</a>
                         <!-- RD Navbar Dropdown-->
                       </li>
                       <li><a href="<?php echo base_url();?>index.php/nav_about/history">About</a>
