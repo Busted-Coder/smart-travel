@@ -9,7 +9,7 @@ class Auth_model extends CI_Model {
     }
 
     public function login(){
-        return $this->db->select('email')->select('password')->get('user')->result_array();
+        return $this->db->get('user')->result_array();
     } 
     
 }

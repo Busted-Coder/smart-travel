@@ -36,10 +36,10 @@
                   <div data-group="tabs-group-default" class="resp-tabs-container text-sm-left tabs-group-default">
                     <div>
                       <!-- RD Mailform-->
-                      <form ction="<?php echo site_url('index.php/auth/login') ?>" method="post" class="rd-mailform text-left" >
+                      <form action="<?php echo site_url('index.php/auth/login') ?>" method="post" >
                         <div class="form-group form-group-label-outside">
                           
-                          <input id="username" type="email" name="email" placeholder= "Enter E-mail" data-constraints="@Email @Required" class="form-control">
+                          <input id="username" type="email" name="username" placeholder= "Enter Username (E-mail)" data-constraints="@Email @Required" class="form-control">
                         </div>
                         <div class="form-group form-group-label-outside offset-top-20">
                           
