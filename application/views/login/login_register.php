@@ -55,8 +55,8 @@
                             </div>
                             <div class="reveal-xs-inline-block inset-xs-left-20 text-middle offset-top-10 offset-xs-top-0">
                               <ul class="list-inline list-inline-2 inset-left-0">
-                                <li><a href="#" class="icon icon-xxs icon-silver-filled icon-circle fa fa-facebook"></a></li>
-                                <li><a href="#" class="icon icon-xxs icon-silver-filled icon-circle fa fa-twitter"></a></li>
+                                <li><a href="https://www.facebook.com" target="_blank" class="icon icon-xxs icon-silver-filled icon-circle fa fa-facebook"></a></li>
+                                <li><a href="https://twitter.com/login?lang=en" target="_blank" class="icon icon-xxs icon-silver-filled icon-circle fa fa-twitter"></a></li>
                               </ul>
                             </div>
                           </div>

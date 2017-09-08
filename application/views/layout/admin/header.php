@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Admin Pnael</title>
+	<title>Admin Panel</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.css') ?>">
 
 	<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
@@ -19,7 +19,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand">Brand Logo</a>
+	      <a class="navbar-brand">Smart-Travel</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -34,13 +34,13 @@
 	        <li><a href="<?php echo site_url('index.php/user/lists') ?>">User</a></li>
 	        <li><a href="<?php echo site_url('index.php/schedule/lists') ?>">Schedule</a></li>
 	        <li><a href="<?php echo site_url('index.php/report/lists') ?>">Reporting</a></li>
-	        <li><a href="<?php echo site_url('index.php/request/lists') ?>">Seat Requests</a></li>
+	        <li><a href="<?php echo site_url('index.php/request/lists') ?>">Out Sourcing</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome, Admin <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
-	            <li><a href="<?php echo site_url('index.php/admin/logout') ?>">Logout</a></li>
+	            <li><a href="<?php echo site_url('index.php/admin/logout') ?>">Sign Off</a></li>
 	          </ul>
 	        </li>
 	      </ul>
