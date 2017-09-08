@@ -7,7 +7,7 @@
             <div class="range range-xs-center text-md-left">
               <div class="cell-xs-10 cell-sm-7 cell-md-4">
                 <!-- Footer brand-->
-                <div class="footer-brand"><a href="index.html"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-dark.png' alt=''/></a></div>
+                <div class="footer-brand"><a href="<?php echo base_url();?>index.php/Welcome/index"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-dark.png' alt=''/></a></div>
                 <div class="offset-top-30 inset-sm-right-20">
                   <p class="text-gray">Smart Travel is the leading go-to website for booking inter-city bus ticket online. Our booking system allows travelers to search and book bus tickets all over Pakistan.</p>
                 </div>
@@ -36,11 +36,11 @@
                 <div class="offset-top-20">
                   <!-- List Inline-->
                   <ul class="list-inline list-inline-2">
-                    <li><a href="#" class="icon icon-xxs icon-silver-filled icon-circle fa fa-facebook"></a></li>
-                    <li><a href="#" class="icon icon-xxs icon-silver-filled icon-circle fa fa-twitter"></a></li>
-                    <li><a href="#" class="icon icon-xxs icon-silver-filled icon-circle fa fa-google-plus"></a></li>
-                    <li><a href="#" class="icon icon-xxs icon-silver-filled icon-circle fa fa-instagram"></a></li>
-                    <li><a href="#" class="icon icon-xxs icon-silver-filled icon-circle fa fa-rss"></a></li>
+                    <li><a href="https://www.facebook.com" target="_blank" class="icon icon-xxs icon-silver-filled icon-circle fa fa-facebook"></a></li>
+                    <li><a href="https://twitter.com/login?lang=en" target="_blank" class="icon icon-xxs icon-silver-filled icon-circle fa fa-twitter"></a></li>
+                    <li><a href="https://plus.google.com/discover" target="_blank" class="icon icon-xxs icon-silver-filled icon-circle fa fa-google-plus"></a></li>
+                    <li><a href="https://www.instagram.com/?hl=en" target="_blank" class="icon icon-xxs icon-silver-filled icon-circle fa fa-instagram"></a></li>
+                    <li><a href="" class="icon icon-xxs icon-silver-filled icon-circle fa fa-rss"></a></li>
                   </ul>
                 </div>
               </div>

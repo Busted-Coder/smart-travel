@@ -1,11 +1,12 @@
 <div class="row">
 	<div class="col-sm-12">
-		<h2>Out-Source Request List</h2>
+		<h2>My Out-Source Service</h2>
 	</div>
 </div>
 <div class="row">
 	<div class="col-sm-12">
-	<a href="<?php echo site_url('index.php/request/mydata') ?>" class="btn btn-primary">My Requests</a>
+	<!-- <a href="<?php echo site_url('index.php/request/mydata') ?>" class="btn btn-primary">My Un-Accepted Requests</a> -->
+	<a href="<?php echo site_url('index.php/request/lists') ?>" class="btn btn-primary">View All Requests</a>
 	<a href="<?php echo site_url('index.php/request/add') ?>" class="btn btn-primary">Push New Request</a>
 	<a class="btn btn-primary">Total Records : <?php echo count($info); ?></a>
 	<a href="<?php echo site_url('index.php/request/emer') ?>" class="btn btn-danger">Emergency Pick-up</a>
@@ -17,12 +18,14 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Request Source</th>
+					<th>Source</th>
 					<th>From Where</th>
 					<th>To Where</th>
 					<th># of Seats</th>
+					<th>Emergency Status</th>
 					<th>Departure Time</th>
 					<th>Request Time</th>
+					<th>Acceptance Time</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -35,45 +38,46 @@
 						<td> <?php echo $p['from_loc'] ?> </td>
 						<td> <?php echo $p['to_loc'] ?> </td>
 						<td> <?php echo $p['seats'] ?> </td>
-						<td> <?php echo $p['time'] ?> </td>
+						<td> <?php  if($p['is_emergency'] == 1){ echo "YES";}else{echo "NO";} ?> </td>
+						<td> <?php echo $p['dep_time'] ?> </td>
 						<td> <?php echo $p['req_time'] ?> </td>
-						<td> <?php if($p['source'] == "Smart-Travel"){?> <form  method="get" class="form-horizontal">
+						<td> <?php echo $p['accept_time'] ?> </td>
+						<!-- <td> <form action="<?php echo site_url('index.php/request/edit') ?>" method="get" class="form-horizontal">
 						<input type="hidden" name="req_id" value="<?php echo $p['req_id'] ?>">
 						<div class="form-group">
 							<div class="col-sm-4">
-								<input type="submit" class="btn btn-success" value="Just Can't">
+								<input type="submit" class="btn btn-info" value="Edit Request">
 							</div>
 						</div>
-						</form><?php }
-						else {?>
-						<form action="<?php echo site_url('index.php/request/accept') ?>" method="get" class="form-horizontal">
+						</form> <form action="<?php echo site_url('index.php/request/del') ?>" method="post" class="form-horizontal">
 						<input type="hidden" name="req_id" value="<?php echo $p['req_id'] ?>">
 						<div class="form-group">
 							<div class="col-sm-4">
-								<input type="submit" class="btn btn-info" value="Accept Request">
+								<input type="submit" class="btn btn-danger" value="Delete Request" onClick="return doconfirm();">
 							</div>
 						</div>
-						</form>
-						<?php }
-						?>
-						</td>
+						</form></td> -->
 					</tr>
 				    <?php } 
 				}
 				else { ?>
 					<tr>
 						<?php echo count($info) ?>
-						<td> <?php echo $info['bus_id'] ?></td>
-						<td> <?php echo $info['regs_no'] ?></td>
-						<td> <?php echo $info['seats'] ?> </td>
-						<td> <?php echo $info['class'] ?> </td>
-						<td> <?php echo $info['des'] ?> </td>
-						<td> <a href="<?php echo site_url('index.php/bus/tview?id='.$info['tracker_id']) ?>" class="btn btn-info">View</a></td>
-						<td> <a href="<?php echo site_url('index.php/bus/cview?id='.$info['cam_id']) ?>" class="btn btn-info">View</a></td>
-						<td><a href="<?php echo site_url('index.php/bus/edit?id='.$info['bus_id']) ?>" class="btn btn-warning">Edit</a></td>
+						<td> <?php echo "No Data Found !!!"; ?></td>
 					</tr>
 				<?php } ?>
 			</tbody>
 		</table>
 	</div>
 </div>
+
+<script>
+function doconfirm()
+{
+    job = confirm("Are you sure to Delete?");
+    if(job != true)
+    {
+        return false;
+    }
+}
+</script>
