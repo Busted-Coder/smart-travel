@@ -62,16 +62,7 @@
 				else if (count($info) <= 1) {
 				foreach ($info as $p) {?>
 					<tr>
-						<?php echo $p[0][0];?>
-						<td><?php echo $p['route_id'] ?></td>
-						<td> <?php echo $p['source'] ?></td>
-						<td> <?php echo $p['destination'] ?> </td>
-						<td> <?php echo $p['stops'] ?> </td>
-						<td> <?php echo $p['departure'] ?> </td>
-						<td> <?php echo $p['arrival'] ?> </td>
-						<td> <?php echo $p['day'] ?> </td>
-						<td> <?php echo $p['fare'] ?> </td>
-						<td><a href="<?php echo site_url('index.php/route/edit?id='.$p['route_id']) ?>" class="btn btn-danger">Edit</a></td>
+						<td> <?php echo "No Data Found !!!"; ?></td>
 					</tr>
 				<?php }
 				} ?>
