@@ -9,7 +9,7 @@
                 <!-- Footer brand-->
                 <div class="footer-brand"><a href="<?php echo base_url();?>index.php/Welcome/index"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-dark.png' alt=''/></a></div>
                 <div class="offset-top-30 inset-sm-right-20">
-                  <p class="text-gray">Smart Travel is the leading go-to website for booking inter-city bus ticket online. Our booking system allows travelers to search and book bus tickets all over Pakistan.</p>
+                  <p class="text-gray">Smart Travel is the leading go-to website for booking Inter-City bus ticket online. Our booking system allows travellers to search and book bus tickets all over Pakistan.</p>
                 </div>
               </div>
               <div class="cell-xs-10 cell-sm-7 cell-md-4 offset-top-60 offset-md-top-0">
@@ -52,7 +52,7 @@
                   <div class="text-subline"></div>
                 </div>
                 <div class="offset-top-25">
-                  <p class="text-gray">Enter your email address to get the latest Smart Travel news, special events and student activities delivered right to your inbox.</p>
+                  <p class="text-gray">Enter your email address to get the latest about Smart-Travel, Special events and Student activities delivered right to your inbox.</p>
                 </div>
                 <div class="offset-top-20">
                         <form data-form-output="form-subscribe-footer" data-form-type="subscribe" method="post" action="bat/rd-mailform.php" class="rd-mailform rd-mailform-subscribe">
