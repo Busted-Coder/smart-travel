@@ -47,6 +47,7 @@
                         </div>
                         <div class="offset-top-15 offset-sm-top-30 text-center text-md-left">
                           <div class="reveal-xs-inline-block text-middle">
+                          <?php if($Error != "NULL") echo $Error;?>
                             <button type="submit" class="btn btn-ripe-lemon">sign in</button>
                           </div>
                           <div class="reveal-xs-inline-block inset-xs-left-15 offset-top-15 offset-sm-top-0">
@@ -65,22 +66,47 @@
                     </div>
                     <div>
                       <!-- RD Mailform-->
-                      <form class="rd-mailform text-left">
+                      <form action="<?php echo site_url('index.php/auth/register');?>" method="post">
                         <div class="form-group form-group-label-outside">
-                          <label for="register-name" class="form-label form-label-outside text-dark">Your name</label>
-                          <input id="register-name" type="text" name="name" data-constraints="@Required" class="form-control">
+                          <label for="fname" class="form-label form-label-outside text-dark">First-Name</label>
+                          <input id="fname" type="text" name="fname" data-constraints="@Required" class="form-control">
                         </div>
-                        <div class="form-group form-group-label-outside offset-top-20">
-                          <label for="register-email" class="form-label form-label-outside text-dark">Your e-mail</label>
-                          <input id="register-email" type="email" name="email" data-constraints="@Email @Required" class="form-control">
+                        <div class="form-group form-group-label-outside">
+                          <label for="lname" class="form-label form-label-outside text-dark">Last-Name</label>
+                          <input id="lname" type="text" name="lname" data-constraints="@Required" class="form-control">
                         </div>
-                        <div class="form-group form-group-label-outside offset-top-20">
-                          <label for="register-password" class="form-label form-label-outside text-dark">Password</label>
-                          <input id="register-password" type="password" name="password" data-constraints="@Required" class="form-control">
+
+                         <div class="form-group form-group-label-outside">
+                          <label for="phone" class="form-label form-label-outside text-dark">Contact #</label>
+                          <input id="phone" type="text" name="phone" data-constraints="@Required" class="form-control">
                         </div>
-                        <div class="form-group form-group-label-outside offset-top-20">
-                          <label for="register-repeat-password" class="form-label form-label-outside text-dark">Repeat a password</label>
-                          <input id="register-repeat-password" type="password" name="password" data-constraints="@Required" class="form-control">
+
+                        <div class="form-group form-group-label-outside">
+                          <label for="cnic" class="form-label form-label-outside text-dark">CNIC</label>
+                          <input id="cnic" type="text" name="cnic" data-constraints="@Required" class="form-control">
+                        </div>
+                        <div class="form-group form-group-label-outside">
+                          <label for="address" class="form-label form-label-outside text-dark">Address</label>
+                          <input id="address" type="text" name="address" data-constraints="@Required" class="form-control">
+                        </div>
+                        
+                        <div class="form-group form-group-label-outside">
+                          <label for="email" class="form-label form-label-outside text-dark">E-mail Address</label>
+                          <input id="email" type="email" name="email" data-constraints="@Email @Required" class="form-control">
+                        </div>
+                        <div class="form-group form-group-label-outside">
+                          <label for="image" class="form-label form-label-outside text-dark">Image</label>
+                          <input type="text" class="form-control">
+                        </div>
+                    
+                        
+                        <div class="form-group form-group-label-outside">
+                          <label for="password" class="form-label form-label-outside text-dark">Password</label>
+                          <input id="password" type="password" name="password" data-constraints="@Required" class="form-control">
+                        </div>
+                        <div class="form-group form-group-label-outside">
+                          <label for="r_password" class="form-label form-label-outside text-dark">Repeat Password</label>
+                          <input id="r_password" type="password" name="r_password" data-constraints="@Required" class="form-control">
                         </div>
                         <div class="form-group offset-top-15 text-center text-md-left">
                           <label class="checkbox-inline">

@@ -4,14 +4,13 @@ class MY_Controller extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        session_start();
     }
 
     public function OnlyAdmin()
     {
     	$role = $_SESSION['Role'];
     	if($role != 'Admin')
-    		redirect('index.php/admin/login', 'refresh');
+    	redirect('index.php/admin/login', 'refresh');
 
     }
 
