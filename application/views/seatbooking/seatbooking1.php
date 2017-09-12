@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="wide wow-animation smoothscroll scrollTo">
   <head>
-  <?php// $this->load->view('layout/header.php');?>
-    <meta charset="utf-8">
+<?php
+//include '../header.php';
+    $this->load->view('layout/header.php');
+?>
+ <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Seat Booking</title>
 
-    
-    
-
-   <!-- Latest compiled and minified CSS -->
 <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -74,7 +73,6 @@ div.seatCharts-seat {
 }
 div.seatCharts-row {
   height: 35px;
-  width: 225px;
 }
 div.seatCharts-seat.available {
   background-color: #B9DEA0;
@@ -95,7 +93,7 @@ div.seatCharts-seat.unavailable {
 }
 div.seatCharts-container {
   border-right: 1px dotted #adadad;
-  width: 225px;
+  width: 200px;
   padding: 20px;
   float: left;
 }
@@ -126,150 +124,119 @@ span.seatCharts-legendDescription {
 
   </head>
   <body>
-  <?php
 
-   // $this->load->view('layout/navigation.php');
+<?php
+
+    $this->load->view('layout/navigation.php');
     ?>
-<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
-				<div class="navbar-header">
-					 
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> <a class="navbar-brand" href="#">Smart Travel</a>
-				</div>
-				
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active">
-							<a href="<?php echo base_url();?>">Home</a>
-						</li>
-						
-					</ul>
-					
-					<ul class="nav navbar-nav navbar-right">
-						<?php if ($this->session->userdata('userData'))
-						{?>
-						<li>
-							<a href="logout">Logout</a>
-						</li>
-						<?php }
-						else{
-						?>
-						<li>
-							<a href="login">Login</a>
-						</li>
-						<?php } ?>
-					</ul>
-				</div>
-				
-			</nav>
+    
     <div class="container-fluid" style="margin-top: 75px;">
-	<div class="row">
-		<div class="col-md-12" align="center">
-			<h2>
-			Seat Booking
-			</h2>
-			<div class="row">
-				
-				<div class="col-md-6">
-				<a id="modal-788038" href="#modal-container-788038" role="button" style="margin-top: 75px;" class="btn btn-primary" data-toggle="modal">Select a Seat here!</a>
-					
-					<div class="modal fade" id="modal-container-788038" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									 
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-										×
-									</button>
-									<h4 class="modal-title" id="myModalLabel">
-										Book a Ticket
-									</h4>
-								</div>
-								<div class="modal-body" style="width: 760px">
-									<div class="wrapper" style="margin-top: 0px">
-									  <div class="container" style="margin-top: 0px">
-									  <h1>Book a Seat</h1>
-									    <div id="seat-map">
-									      <div class="front-indicator">Front</div>
-									    </div>
-									    <div class="booking-details">
-									      <h2>Booking Details</h2>
-									      <h3> Selected Seats (<span id="counter">0</span>):</h3>
-									      <ul id="selected-seats">
-									      </ul>
-									      Total: <b>Rs. <span id="total">0</span></b>
-									      <button class="checkout-button">Checkout &raquo;</button>
-									      <div id="legend"></div>
-									    </div>
-									  </div>
-									</div>
-								</div>
-								<div class="modal-footer">
-									 
-									<button type="button" class="btn btn-default" data-dismiss="modal">
-										Close
-									</button> 
-									<button type="button" class="btn btn-primary">
-										Save changes
-									</button>
-								</div>
-							</div>
-							
-						</div>
-					
-				</div>
-			</div>
-			<div class="col-md-6" style="margin-top: 50px; ">
-			<h3>Enter Details</h3>
-			<br>
-					<form role="form" action = "confirmseat" method="POST" name="seatform">
-						<div class="form-group">
-							 
-							<label for="fname">
-								First Name
-							</label>
-							<input style="width: 400px;" type="text"  name="fname" class="form-control" id="fname">
-						</div>
-						<div class="form-group">
-							 
-							<label for="lname">
-								Last Name
-							</label>
-							<input style="width: 400px;" type="text" name="lname" class="form-control" id="lname">
-						</div>
-
-						<div class="form-group">
-							 
-							<label for="email">
-								Email address
-							</label>
-							<input style="width: 400px;" type="email" name="email" class="form-control" id="email" required>
-						</div>
-						<div class="form-group">
-							 
-							<label for="phone">
-								Phone
-							</label>
-							<input style="width: 400px;" type="text" name="phone" class="form-control" id="phone" required>
-						</div>
-						<div class="form-group">
-							 
-							<label for="cnic">
-								CNIC
-							</label>
-							<input style="width: 400px;" type="text" name="cnic" class="form-control" id="cnic" required>
-            	<input style="width: 400px;" type="text" hidden name="seatstobook" id="seatstobook" required>						  
+  <div class="row">
+    <div class="col-md-12" align="center">
+      <h2>
+      Seat Booking
+      </h2>
+      <div class="row">
+        
+        <div class="col-md-6">
+        <a id="modal-788038" href="#modal-container-788038" role="button" style="margin-top: 75px;" class="btn btn-primary" data-toggle="modal">Select a Seat here!</a>
+          
+          <div class="modal fade" id="modal-container-788038" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                   
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                  </button>
+                  <h4 class="modal-title" id="myModalLabel">
+                    Book a Ticket
+                  </h4>
+                </div>
+                <div class="modal-body" style="width: 760px">
+                  <div class="wrapper" style="margin-top: 0px">
+                    <div class="container" style="margin-top: 0px">
+                    <h1>Book a Seat</h1>
+                      <div id="seat-map">
+                        <div class="front-indicator">Front</div>
+                      </div>
+                      <div class="booking-details">
+                        <h2>Booking Details</h2>
+                        <h3> Selected Seats (<span id="counter">0</span>):</h3>
+                        <ul id="selected-seats">
+                        </ul>
+                        Total: <b>Rs. <span id="total">0</span></b>
+                        <button class="checkout-button">Checkout &raquo;</button>
+                        <div id="legend"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                   
+                  <button type="button" class="btn btn-default" data-dismiss="modal">
+                    Close
+                  </button> 
+                  <button type="button" class="btn btn-primary">
+                    Save changes
+                  </button>
+                </div>
+              </div>
+              
+            </div>
+          
+        </div>
+      </div>
+      <div class="col-md-6" style="margin-top: 50px; ">
+      <h3>Enter Details</h3>
+      <br>
+          <form role="form" action = "confirmseat" method="POST" name="seatform">
+            <div class="form-group">
+               
+              <label for="fname">
+                First Name
+              </label>
+              <input style="width: 400px;" type="text"  name="fname" class="form-control" id="fname">
+            </div>
+            <div class="form-group">
+               
+              <label for="lname">
+                Last Name
+              </label>
+              <input style="width: 400px;" type="text" name="lname" class="form-control" id="lname">
             </div>
 
-						<button type="submit" class="btn btn-default">
-							Submit
-						</button>
-					</form>
-				</div>
-			
-		</div>
-	</div>
+            <div class="form-group">
+               
+              <label for="email">
+                Email address
+              </label>
+              <input style="width: 400px;" type="email" name="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+               
+              <label for="phone">
+                Phone
+              </label>
+              <input style="width: 400px;" type="text" name="phone" class="form-control" id="phone" required>
+            </div>
+            <div class="form-group">
+               
+              <label for="cnic">
+                CNIC
+              </label>
+              <input style="width: 400px;" type="text" name="cnic" class="form-control" id="cnic" required>
+
+              <input style="width: 400px;" type="text" hidden name="seatstobook" value="" id="seatstobook" required>
+            </div>
+            <button type="submit" class="btn btn-default">
+              Submit
+            </button>
+          </form>
+        </div>
+      
+    </div>
+  </div>
 </div>
 
 <!-- Latest compiled and minified JavaScript -->
@@ -295,7 +262,7 @@ span.seatCharts-legendDescription {
             'ee_ee',
             'ee_ee',
             'ee_ee',
-            'ee_ee',
+            'eeeee',
           ],
           seats: {
             e: {
@@ -314,7 +281,7 @@ span.seatCharts-legendDescription {
           legend : {
             node : $('#legend'),
               items : [
-              [ 'e', 'available',   'Available Seats'],
+              [ 'e', 'available',   'Economy Class'],
               [ 'f', 'unavailable', 'Already Booked']
               ]         
           },
@@ -379,5 +346,11 @@ span.seatCharts-legendDescription {
     }
     
     </script>
-  </body>
-</html>
+
+    </body>
+    
+
+
+      <?php
+      $this->load->view('layout/main_footer.php');
+      ?>
