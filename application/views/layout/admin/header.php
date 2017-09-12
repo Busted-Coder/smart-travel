@@ -19,7 +19,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand">Smart-Travel</a>
+	      <a class="navbar-brand" href="<?php echo site_url('index.php/ticket/lists') ?>">Smart-Travel</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->

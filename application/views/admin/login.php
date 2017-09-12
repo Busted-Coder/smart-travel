@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="text-center" style="padding:50px 0">
-		<div class="logo">Login</div>
+		<div class="logo">Admin Login</div>
 		<!-- Main Form -->
 		<div class="login-form-1">
 			<form id="login-form" class="text-left" method="post" action="<?php echo site_url('index.php/admin/login')?>">
@@ -19,17 +19,19 @@
 					<div class="login-group">
 						<div class="form-group">
 							<label for="lg_username" class="sr-only">Username</label>
-							<input type="text" class="form-control" id="lg_username" name="username" placeholder="username">
+							<input type="text" class="form-control" id="lg_username" name="username" placeholder="username" required>
 						</div>
 						<div class="form-group">
 							<label for="lg_password" class="sr-only">Password</label>
-							<input type="password" class="form-control" id="lg_password" name="password" placeholder="password">
+							<input type="password" class="form-control" id="lg_password" name="password" placeholder="password" required>
 						</div>
+						<?php if($Error != "NULL"){?>
 						<p class="text-danger">
 							<?php echo $Error ?>
 						</p>
+						<?php }?>
 					</div>
-					<button type="submit" class="login-button"><i class="glyphicon glyphicon-play"></i></button>
+					<button type="submit" class="login-button"><i class="glyphicon glyphicon-log-in"></i></button>
 				</div>
 
 			</form>

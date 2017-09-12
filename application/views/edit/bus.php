@@ -6,18 +6,21 @@
 			<div class="form-group">
 				<div class="col-sm-4">
 					<input type="hidden" name="bus_id" value="<?php echo $bus->bus_id ?>">
+					<div><b>Excise #</b></div>
 					<input name="regs_no" type="text" placeholder="Excise #" class="form-control" required 
 					value="<?php echo $bus->regs_no ?>">
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
-					<input name="seats" type="number" placeholder="Seating Capacity " class="form-control"
+					<div><b>Seating Capacity</b></div>
+					<input name="seats" type="number" placeholder="Seating Capacity" class="form-control"
 					value="<?php echo $bus->seats ?>">
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Class Type</b></div>
 					<select required name="class" class="form-control">
 						<option>Select Class</option>
 						<option <?php echo $bus->class =='Gold Luxury' ? 'selected':'' ?>>Gold Luxury</option>
@@ -28,25 +31,28 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+				<div><b>Description</b></div>
 					<textarea name="des" class="form-control" required cols="40" rows="10" placeholder="Description"><?php echo $bus->des ?></textarea>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+				<div><b>Tracker</b></div>
 					<input name="tracker_id" type="number" placeholder="Tracker ID " class="form-control"
-					value="<?php echo $bus->tracker_id ?>">
+					value="<?php echo $bus->tracker_id ?>" readonly>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Camera</b></div>
 					<input name="cam_id" type="number" placeholder="Cam ID " class="form-control"
-					value="<?php echo $bus->cam_id ?>">
+					value="<?php echo $bus->cam_id ?>" readonly>
 				</div>
 			</div>
 			
 			<div class="form-group">
 				<div class="col-sm-4">
-					<input type="submit" class="btn btn-primary" value="Submit">
+					<input type="submit" class="btn btn-success" value="Submit">
 				</div>
 			</div>
 		</form>

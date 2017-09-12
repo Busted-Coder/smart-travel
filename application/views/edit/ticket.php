@@ -10,6 +10,7 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Ticket Status</b></div>
 					<select required name="state" class="form-control">
 						<option>Select Status</option>
 						<option <?php echo $ticket->state =='1' ? 'selected':'' ?>>1</option>
@@ -21,12 +22,14 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Traveller ID</b></div>
 					<input name="trav_id" type="number" placeholder="Traveller ID" class="form-control"
 					value="<?php echo $ticket->trav_id ?>" readonly>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Schedule</b></div>
 					<input name="schedule_id" type="number" placeholder="Schedule ID " class="form-control"
 					value="<?php echo $ticket->schedule_id ?>" readonly>
 				</div>
@@ -34,7 +37,7 @@
 			
 			<div class="form-group">
 				<div class="col-sm-4">
-					<input type="submit" class="btn btn-primary" value="Submit">
+					<input type="submit" class="btn btn-success" value="Submit">
 				</div>
 			</div>
 		</form>

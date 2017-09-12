@@ -22,7 +22,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($info as $p) {?>
+				<?php if (count($info) >= 1) { 
+				foreach ($info as $p) {?>
 					<tr>
 						<td> <?php echo $p['schedule_id'] ?></td>
 						<td> <form action="<?php echo site_url('index.php/route/spec') ?>" method="get" class="form-horizontal">
@@ -57,6 +58,12 @@
 							</div>
 						</div>
 						</form>
+					</tr>
+				<?php }
+				}
+				else { ?>
+					<tr>
+						<td> <?php echo "No Data Found !!!"; ?></td>
 					</tr>
 				<?php } ?>
 			</tbody>

@@ -73,15 +73,7 @@
 				}
 				else { ?>
 					<tr>
-						<?php echo count($info) ?>
-						<td> <?php echo $info['bus_id'] ?></td>
-						<td> <?php echo $info['regs_no'] ?></td>
-						<td> <?php echo $info['seats'] ?> </td>
-						<td> <?php echo $info['class'] ?> </td>
-						<td> <?php echo $info['des'] ?> </td>
-						<td> <a href="<?php echo site_url('index.php/bus/tview?id='.$info['tracker_id']) ?>" class="btn btn-info">View</a></td>
-						<td> <a href="<?php echo site_url('index.php/bus/cview?id='.$info['cam_id']) ?>" class="btn btn-info">View</a></td>
-						<td><a href="<?php echo site_url('index.php/bus/edit?id='.$info['bus_id']) ?>" class="btn btn-warning">Edit</a></td>
+						<td> <?php echo "No Data Found !!!"; ?></td>
 					</tr>
 				<?php } ?>
 			</tbody>

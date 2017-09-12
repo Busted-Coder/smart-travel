@@ -67,7 +67,7 @@
 				}
 				else { ?>
 					<tr>
-					
+						<td> <?php echo "No Data Found !!!"; ?></td>
 					</tr>
 				<?php } ?>
 			</tbody>

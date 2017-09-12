@@ -6,6 +6,7 @@
 			<div class="form-group">
 				<div class="col-sm-4">
 					<input type="hidden" name="schedule_id" value="<?php echo $schedule['s']['d2']['schedule_id'] ?>">
+					<div><b>Route</b></div>
 					<select name="route_id" class="form-control" required>
 						<option><?php echo $schedule['s']['d2']['route_id'] ?></option>
 						<?php foreach ($schedule['data']['d0'] as $k) {	?>		
@@ -18,6 +19,7 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Bus</b></div>
 					<select name="bus_id" class="form-control" required>
 						<option><?php echo $schedule['s']['d2']['bus_id'] ?></option>
 						<?php foreach ($schedule['data']['d1'] as $k) {	?>		
@@ -28,7 +30,7 @@
 			
 			<div class="form-group">
 				<div class="col-sm-4">
-					<input type="submit" class="btn btn-primary" value="Submit">
+					<input type="submit" class="btn btn-success" value="Submit">
 				</div>
 			</div>
 		</form>
