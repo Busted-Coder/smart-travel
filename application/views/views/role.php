@@ -22,7 +22,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($role as $p) {?>
+				<?php if (count($role) >= 1) { 
+				foreach ($role as $p) {?>
 					<tr>
 						<td><?php echo $p['role_id'] ?></td>
 						<td> <?php echo $p['type'] ?></td>
@@ -43,6 +44,12 @@
 							</div>
 						</div>
 						</form></td>
+					</tr>
+				<?php } 
+				}
+				else { ?>
+					<tr>
+						<td> <?php echo "No Data Found !!!"; ?></td>
 					</tr>
 				<?php } ?>
 			</tbody>

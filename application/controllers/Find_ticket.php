@@ -37,8 +37,21 @@ class Find_ticket extends CI_Controller
      	else{
      		$viewdata['available_buses']=false;	
      		}	
+<<<<<<< HEAD
 
             $this->load->view('seatbooking/available_buses',$viewdata);
+=======
+<<<<<<< HEAD
+     $this->load->view('layout/header');
+     $this->load->view('layout/nav');
+     //echo count($viewdata);
+     $this->load->view('seatbooking/available_buses',$viewdata);
+     $this->load->view('layout/footer');
+=======
+
+            $this->load->view('seatbooking/available_buses',$viewdata);
+>>>>>>> 2f3dbb42d28a5cac349159ce5fe617101f3dcf91
+>>>>>>> 495c4ee5a0fa89e2e58be919e5e85f1c3491ad81
      
 
  }

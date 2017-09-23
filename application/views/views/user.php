@@ -26,7 +26,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php
+				<?php if (count($info) >= 1) {
 				foreach ($info as $p) {?>
 					<tr>
 						<td> <?php echo $p['user_id'] ?></td>
@@ -61,7 +61,13 @@
 						</div>
 						</form></td>
 					</tr>
-				<?php }?>
+				<?php }
+				} 
+				else {?>
+					<tr>
+						<td> <?php echo "No Data Found !!!"; ?></td>
+					</tr>
+				<?php } ?>
 			</tbody>
 		</table>
 	</div>

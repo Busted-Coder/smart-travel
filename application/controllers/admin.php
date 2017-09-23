@@ -10,8 +10,7 @@ class Admin extends MY_Controller {
 	}
 
 	public function index(){
-		$this->OnlyAdmin();
-		$this->loadView('admin/index', null, true);
+		$this->load->view('admin/login', array('Error' => 'NULL'));
 	}
 
 	public function Login(){
@@ -20,12 +19,12 @@ class Admin extends MY_Controller {
 		if($username|| $password){
 			if($username == 'admin' && $password == 'admin'){
 				$_SESSION['Role'] = 'Admin';
-				redirect('index.php/role/lists');
+				redirect('index.php/ticket/lists');
 			}else{
-				$this->load->view('admin/login', array('Error'=> 'Incorrect Username or password!'));
+				$this->load->view('admin/login', array('Error' => 'Incorrect Username or Password !'));
 			}
 		}else{
-			$this->load->view('admin/login', array('Error'=>''));
+			$this->load->view('admin/login', array('Error' => 'NULL'));
 		}
 	}
 

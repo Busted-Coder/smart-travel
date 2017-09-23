@@ -6,65 +6,78 @@
 			<div class="form-group">
 				<div class="col-sm-4">
 					<input type="hidden" name="user_id" value="<?php echo $user->user_id ?>">
+					<div><b>First Name</b></div>
 					<input name="fname" type="text" placeholder="First Name" class="form-control" required 
 					value="<?php echo $user->fname ?>">
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Last Name</b></div>
 					<input name="lname" type="text" placeholder="Last Name" class="form-control"
 					value="<?php echo $user->lname ?>">
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>E-mail</b></div>
 					<input name="email" type="email" placeholder="E-mail " class="form-control"
 					value="<?php echo $user->email ?>">
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Contact #</b></div>
 					<input name="phone" type="tel" placeholder="Phone " class="form-control"
 					value="<?php echo $user->phone ?>">
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
-					<input name="image" type="image" placeholder="Image " class="form-control"
-					value="<?php echo $user->image ?>">
+					<div><b>Image</b></div>
+					<input name="image" type="text" placeholder="Image " class="form-control"
+					value="<?php echo $user->image ?>" readonly>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Password</b></div>
 					<input name="password" type="password" placeholder="Password " class="form-control"
-					value="<?php echo $user->password ?>">
+					value="<?php echo $user->password ?>" readonly>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>CNIC</b></div>
 					<input name="cnic" type="number" placeholder="CNIC " class="form-control"
 					value="<?php echo $user->cnic ?>">
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Address</b></div>
 					<textarea name="address" class="form-control" required cols="40" rows="10" placeholder="Address"><?php echo $user->address ?></textarea>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Control Level</b></div>
 					<select required name="role_id" class="form-control">
-						<option>Select Role</option>
-						<option <?php echo $user->role_id =='1' ? 'selected':'' ?>>1</option>
-						<option <?php echo $user->role_id =='2' ? 'selected':'' ?>>2</option>
-						<option <?php echo $user->role_id =='3' ? 'selected':'' ?>>3</option>
+						<?php foreach ($user->avail_role as $r) {
+							if($user->role_id == $r['role_id']){
+							?><option> <?php  echo $r['role_id'];}?></option>
+						<?php } ?>
+						<?php foreach ($user->avail_role as $r) {
+							if($user->role_id != $r['role_id']){
+							?><option> <?php  echo $r['role_id'];}?></option>
+						<?php } ?>
 					</select>
 				</div>
 			</div>
 			
 			<div class="form-group">
 				<div class="col-sm-4">
-					<input type="submit" class="btn btn-primary" value="Submit">
+					<input type="submit" class="btn btn-success" value="Submit">
 				</div>
 			</div>
 		</form>

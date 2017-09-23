@@ -28,5 +28,8 @@ class User_model extends CI_Model {
     public function delet($user){
         $this->db->where('user_id',$user['user_id'])->delete('user');
     }
+    public function getListrole(){
+       return $this->db->get('role')->result_array();
+    }
 }
 ?>

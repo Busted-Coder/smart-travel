@@ -14,6 +14,7 @@
 					<th>From Where</th>
 					<th>To Where</th>
 					<th># of Seats</th>
+					<th>Emergency Status</th>
 					<th>Departure Time</th>
 					<th>Request Time</th>
 					<th>Action</th>
@@ -28,6 +29,7 @@
 						<td> <?php echo $p['from_loc'] ?> </td>
 						<td> <?php echo $p['to_loc'] ?> </td>
 						<td> <?php echo $p['seats'] ?> </td>
+						<td> <?php  if($p['is_emergency'] == 1){ echo "YES";}else{echo "NO";} ?> </td>
 						<td> <?php echo $p['time'] ?> </td>
 						<td> <?php echo $p['req_time'] ?> </td>
 						<td> <form action="<?php echo site_url('index.php/request/edit') ?>" method="get" class="form-horizontal">

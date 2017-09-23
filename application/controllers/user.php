@@ -21,6 +21,8 @@ class User extends MY_Controller {
 		$this->OnlyAdmin();
 		if($this->input->get()){
 			$user = $this->UserModel->Get($this->input->get('user_id'));
+			$avail_role = $role = $this->UserModel->getListrole();
+			$user->avail_role = $avail_role;
 			$this->loadView('edit/user', array('user'=> $user), true);
 		}else if($this->input->post()){
 			$this->UserModel->Edit($this->input->post());

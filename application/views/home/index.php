@@ -86,7 +86,7 @@
                                 <select style="background-color: white;" id="form-filter-location-to" name="dest" class="form-control">
                                         <option>Select City</option>
                                         <?php foreach ($cityarray as $value) {?>
-                                            <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
+                                            <option value = <?php $value['shortcode'] ?> > <?php echo $value['name']?> </option> <?php } ?>
 
                                 </select>
                               </div>
@@ -96,16 +96,32 @@
                             <div class="form-group text-left">
                               <label for="form-filter-location-from-date" class="form-label form-label-outside">Depart Date</label>
                               <div class="select2-whitout-border shadow-drop-md">
+<<<<<<< HEAD
                                 <input style="background-color: white; " id="date" type="date" class="form-control" name="busdate"></input>
+=======
+<<<<<<< HEAD
+                                <input style="background-color: white; " id="date" type="date" class="form-control" name="busdate"></input>                              
+=======
+                                <input style="background-color: white; " id="date" type="date" class="form-control" name="busdate"></input>
+>>>>>>> 2f3dbb42d28a5cac349159ce5fe617101f3dcf91
+>>>>>>> 495c4ee5a0fa89e2e58be919e5e85f1c3491ad81
                               </div>
-                            </div>
+                            </div>   
                           </div>
-                          
                         </div>
                       </div>
                       <div class="cell-md-3 cell-lg-2">
                         <div class="reveal-block reveal-md-inline-block">
+<<<<<<< HEAD
                           <input type="submit" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth"></input>
+=======
+<<<<<<< HEAD
+                          <input type="submit" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth">
+                          </input>
+=======
+                          <input type="submit" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth"></input>
+>>>>>>> 2f3dbb42d28a5cac349159ce5fe617101f3dcf91
+>>>>>>> 495c4ee5a0fa89e2e58be919e5e85f1c3491ad81
                         </div>
                       </div>
                     </form>
