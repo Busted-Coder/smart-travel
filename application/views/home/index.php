@@ -96,7 +96,7 @@
                             <div class="form-group text-left">
                               <label for="form-filter-location-from-date" class="form-label form-label-outside">Depart Date</label>
                               <div class="select2-whitout-border shadow-drop-md">
-                                <input style="background-color: white; " id="date" type="date" class="form-control" name="busdate">
+                                <input style="background-color: white; " id="date" type="date" class="form-control" name="busdate"></input>
                               </div>
                             </div>
                           </div>
@@ -105,7 +105,7 @@
                       </div>
                       <div class="cell-md-3 cell-lg-2">
                         <div class="reveal-block reveal-md-inline-block">
-                          <input type="submit" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth"</input>
+                          <input type="submit" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth"></input>
                         </div>
                       </div>
                     </form>

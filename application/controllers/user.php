@@ -43,11 +43,18 @@ class User extends MY_Controller {
 		$this->UserModel->delet($this->input->post());
 		redirect('index.php/user/lists');}
 	}
-	public function part(){
+	/*public function part(){
 		$this->OnlyAdmin();
 		$route_id = $this->input->get('id');
 		$info= $this->RouteModel->getroute($route_id);
 		$this->loadView('views/route', array('info'=>$info), true);
+	}*/
+	//This will return the technical info of user by pressing tech info button at user main panel.
+	public function tech(){
+		$this->OnlyAdmin();
+		$user_id = $this->input->post('user_id');
+		$info = $this->UserModel->getuser($user_id);
+		$this->loadView('views/user_tech', array('info'=>$info), true);
 	}
 
 }

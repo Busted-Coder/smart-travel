@@ -17,7 +17,7 @@
 						<option <?php echo $role->role =='FULL CRUD' ? 'selected':'' ?>>FULL CRUD</option>
 						<option <?php echo $role->role =='INTER CRUD' ? 'selected':'' ?>>INTER CRUD</option>
 						<option <?php echo $role->role =='RU' ? 'selected':'' ?>>RU</option>
-						<option <?php echo $role->role =='U' ? 'selected':'' ?>>U</option>
+						<option <?php echo $role->role =='R' ? 'selected':'' ?>>R</option>
 					</select>
 				</div>
 			</div>

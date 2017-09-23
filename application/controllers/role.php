@@ -17,7 +17,7 @@ class Role extends MY_Controller {
 	}
 	public function spec(){
 		$this->OnlyAdmin();
-		$role = $this->RoleModel->getspec($this->input->get('role_id'));
+		$role = $this->RoleModel->getspec($this->input->post('role_id'));
 		$this->loadView('views/role', array('role'=> $role), true);	 
 	}
 	public function edit(){
