@@ -19,11 +19,8 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-<<<<<<< HEAD
+
 	      <a class="navbar-brand"><img width='40' height='25' src='<?php echo PATH; ?>images/logo-dark.png' alt=''/></a>
-=======
-	      <a class="navbar-brand" href="<?php echo site_url('index.php/ticket/lists') ?>">Smart-Travel</a>
->>>>>>> 495c4ee5a0fa89e2e58be919e5e85f1c3491ad81
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->

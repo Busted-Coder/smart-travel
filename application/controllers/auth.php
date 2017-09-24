@@ -9,10 +9,7 @@ class Auth extends MY_Controller {
 		$this->load->helper('url');
 		$this->load->model('auth_model','AuthModel');
 		$this->load->library('session');
-<<<<<<< HEAD
 		$this->load->library('email');
-=======
->>>>>>> 495c4ee5a0fa89e2e58be919e5e85f1c3491ad81
 
 	}
 	public function login_loader(){
@@ -76,7 +73,6 @@ class Auth extends MY_Controller {
 		}
 		else{
 			$this->AuthModel->AddNewUser($postedData);
-<<<<<<< HEAD
 			$to = $postedData['email'];
 			$subject = "Account successfully created on Smart-Travel";
 			$txt = "Greetings,
@@ -101,8 +97,7 @@ class Auth extends MY_Controller {
          	}
          	else
          		echo "Hum to yaro beech bichary lut gaiy";
-=======
->>>>>>> 495c4ee5a0fa89e2e58be919e5e85f1c3491ad81
+
 		}
 	}
 
