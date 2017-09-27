@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="wide wow-animation smoothscroll scrollTo">
   <head>
-<<<<<<< HEAD
     <!-- Site Title-->
     <title>Smart Travel</title>
     <meta charset="utf-8">
@@ -18,12 +17,6 @@
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"></script>
     <![endif]-->
-=======
-<?php
-    $this->load->view('layout/header.php');
-?>
-
->>>>>>> f2058138578cf3939d8b0e6a1bfda38d933318ea
   </head>
   <body>
     <!-- Page-->
@@ -194,7 +187,6 @@
                       <li><a href="<?php echo site_url('index.php/nav_contact/contact') ?>">Contacts</a></li>
                     </ul>
 
-<<<<<<< HEAD
                   </div>
                 </div>
                 <!-- RD Navbar Search-->
@@ -211,11 +203,6 @@
             </div>
           </nav>
         </div>
-=======
-<?php
-    $this->load->view('layout/navigation.php');
-    ?>
->>>>>>> f2058138578cf3939d8b0e6a1bfda38d933318ea
         <!-- Swiper-->
         <div data-height="" data-min-height="200px" data-slide-effect="fade" data-simulate-touch="false" class="swiper-container swiper-slider context-dark text-lg-left">
           <div class="swiper-wrapper">
