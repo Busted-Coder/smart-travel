@@ -31,5 +31,37 @@ class User_model extends CI_Model {
     public function getListrole(){
        return $this->db->get('role')->result_array();
     }
+	public function viewTrips($id){
+		
+		return $this->db->select('*')
+			->from('passenger')
+			->join('schedule','schedule.schedule_id=passenger.schedule_id')
+			->join('route','schedule.route_id=route.route_id')
+			->where('passenger.user_id',$id)
+			->get()->result();
+	}
+	public function editProfile($d){
+		$this->db->set('fname', $d['fname']);
+		$this->db->set('lname', $d['lname']);
+		$this->db->set('email', $d['email']);
+		$this->db->set('cnic', $d['cnic']);
+		$this->db->set('phone', $d['phone']);
+		$this->db->set('address', $d['address']);
+		$this->db->where('email',$d['email']);
+		$this->db->update('user');		
+		
+		
+	}
+    public function getPassword($id){
+        return $this->db->select('*')
+        ->from('user')
+        ->where('user_id',$id)
+        ->get()->result();
+    }
+    public function changePassword($id,$pass){
+        $this->db->set('password',$pass);
+        $this->db->where('$id',$id);
+        $this->db->update('user');
+    }
 }
 ?>

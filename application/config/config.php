@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 //$config['base_url'] = 'localhost/smart-travel';
 
-$config['base_url'] = 'http://localhost:80/smart-travel';
+$config['base_url'] = 'http://localhost:8080/smart-travel';
 
 
 define('PATH', $config['base_url'] . '/assets/');

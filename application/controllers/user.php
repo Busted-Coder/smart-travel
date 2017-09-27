@@ -51,5 +51,6 @@ class User extends MY_Controller {
 		$info= $this->RouteModel->getroute($route_id);
 		$this->loadView('views/route', array('info'=>$info), true);
 	}
-
+	
+	
 }
