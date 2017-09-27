@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="wide wow-animation smoothscroll scrollTo">
-  <head>
-    <!-- Site Title-->
+  <head>    <!-- Site Title-->
     <title>Smart Travel</title>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
@@ -13,10 +12,20 @@
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:400,400italic,700%7CLato:400">
     <link rel="stylesheet" href="<?php echo PATH; ?>css/style.css">
-    <!--[if lt IE 10]>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <script src="<?php echo PATH; ?>js/core.min.js"></script>
+    <script src="<?php echo PATH; ?>js/script.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <style>
+     input[type=date]::-webkit-inner-spin-button, 
+      input[type=date]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0;}
+    </style>-->
+        <!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"></script>
-    <![endif]-->
+        <![endif]-->
   </head>
   <body>
     <!-- Page-->
@@ -191,7 +200,7 @@
                 </div>
                 <!-- RD Navbar Search-->
                 <div class="rd-navbar-search rd-navbar-search-top-panel"><a data-rd-navbar-toggle=".rd-navbar-inner,.rd-navbar-search" href="#" class="rd-navbar-search-toggle mdi"><span></span></a>
-                  <form action="search-results.html" data-search-live="rd-search-results-live" method="GET" class="rd-navbar-search-form search-form-icon-right rd-search">
+                  <form action="<?php echo site_url('index.php/nav_search/search') ?>" data-search-live="rd-search-results-live" method="GET" class="rd-navbar-search-form search-form-icon-right rd-search">
                     <div class="form-group">
                       <label for="rd-navbar-search-form-input" class="form-label rd-input-label">Type and hit enter...</label>
                       <input id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off" class="rd-navbar-search-form-input form-control form-control-gray-lightest"/>
@@ -203,6 +212,7 @@
             </div>
           </nav>
         </div>
+
         <!-- Swiper-->
         <div data-height="" data-min-height="200px" data-slide-effect="fade" data-simulate-touch="false" class="swiper-container swiper-slider context-dark text-lg-left">
           <div class="swiper-wrapper">
@@ -231,7 +241,7 @@
                       <div class="cell-xs-10 cell-lg-9 cell-xl-7">
                         <h1 data-caption-animate="fadeInDown" data-caption-delay="200" class="text-bold">Providing quality service at unbeatable rates.</h1>
                         <div data-caption-animate="fadeInUp" data-caption-delay="600" class="offset-top-20 offset-lg-top-49">
-                          <p class="h6 text-mercury">We provide affordable and reliable bus ticket booking services online <br class="veil reveal-lg-inline-block"> all over the Pakistan.</p>
+                          <p class="h6 text-mercury">We provide affordable and reliable bus ticket booking services online <br class="veil reveal-lg-inline-block"> all over the world.</p>
                         </div>
                         <div data-caption-animate="fadeInUp" data-caption-delay="800" class="offset-top-20"><a href="deals.html" class="btn btn-default btn-skew">Learn More</a></div>
                       </div>
@@ -255,11 +265,13 @@
                             <div class="form-group text-left">
                               <label for="form-filter-location-from" class="form-label form-label-outside">Traveling From</label>
                               <div class="select2-whitout-border shadow-drop-md">
-                                <select id="form-filter-location-from" name="location-from" data-minimum-results-for-search="Infinity" class="form-control">
-                                  <option>Select City</option>
+
+                                  <select id="form-filter-location-from" style="background-color: white;" name="source" class="form-control">
+                                      <option>Select City</option>
                                       <?php foreach ($cityarray as $value) {?>
                                           <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
-                                </select>
+                                  
+                                   </select>
                               </div>
                             </div>
                           </div>
@@ -267,10 +279,11 @@
                             <div class="form-group text-left">
                               <label for="form-filter-location-to" class="form-label form-label-outside">Traveling To</label>
                               <div class="select2-whitout-border shadow-drop-md">
-                                <select id="form-filter-location-to" name="location-to" data-minimum-results-for-search="Infinity" class="form-control">
-                                  <option>Select City</option>
+                                <select style="background-color: white;" id="form-filter-location-to" name="dest" class="form-control">
+                                        <option>Select City</option>
                                         <?php foreach ($cityarray as $value) {?>
                                             <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
+
                                 </select>
                               </div>
                             </div>
@@ -279,31 +292,16 @@
                             <div class="form-group text-left">
                               <label for="form-filter-location-from-date" class="form-label form-label-outside">Depart Date</label>
                               <div class="select2-whitout-border shadow-drop-md">
-                                <input id="form-filter-location-from-date" name="date" type="date" data-minimum-results-for-search="Infinity" class="form-control" style="background-color: white;">
-                                  <!--<option value="1">7-11-2016</option>
-                                  <option value="2">2-12-2016</option>
-                                  <option value="3">14-11-2016</option>
-                                  <option value="4">3-10-2016</option>-->
-                                </input>
+                                <input style="background-color: white; " id="date" type="date" class="form-control" name="busdate"></input>
                               </div>
                             </div>
                           </div>
-                          <!--<div class="group-item element-fullwidth">
-                            <div class="form-group text-left">
-                              <label for="form-filter-location-to-date" class="form-label form-label-outside">Ticket Type</label>
-                              <div class="select2-whitout-border shadow-drop-md">
-                                <select id="form-filter-location-to-date" name="date-to" data-minimum-results-for-search="Infinity" class="form-control">
-                                  <option value="1">One Way</option>
-                                  <option value="2">Round Trip</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>-->
+                          
                         </div>
                       </div>
                       <div class="cell-md-3 cell-lg-2">
                         <div class="reveal-block reveal-md-inline-block">
-                          <button type="button" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth">search</button>
+                          <input type="submit" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth"></input>
                         </div>
                       </div>
                     </form>
@@ -516,161 +514,8 @@
             <div class="offset-top-60"><a href="destinations.html" class="btn btn-default">View All Destinations</a></div>
           </div>
         </section>
-        <!-- Special Service: Bus Rental with Driver-->
-        <!--<section>
-          <div data-on="false" data-md-on="true" class="bg-gray-base context-dark rd-parallax">
-            <div data-speed="0.15" data-type="media" data-url="images/backgrounds/background-04-1920x950.jpg" class="rd-parallax-layer"></div>
-            <div data-speed="0" data-type="html" data-md-fade="false" class="rd-parallax-layer">
-              <div class="shell section-90 section-md-162">
-                <h2 class="text-bold text-white">Special Service: Bus Rental with Driver</h2>
-                <div class="offset-top-30"><a href="deals.html" class="btn btn-primary">Book Now</a></div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section-top-90 section-bottom-90 section-md-top-111">
-          <div class="shell owl-dots-60">
-            <div class="range range-xs-center">
-              <div class="cell-xs-8 cell-sm-12">
-                <div class="owl-items-middle">
-                  <div data-items="2" data-xs-items="2" data-sm-items="3" data-md-items="6" data-nav="false" data-dots="true" data-stage-padding="5" data-sm-stage-padding="20" data-margin="10" data-sm-margin="75" class="owl-carousel owl-carousel-classic"><a href="#"><img src="images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section-90 section-md-111 bg-zircon">
-          <div class="shell">
-            <h2 class="text-bold">Latest News</h2>
-            <hr class="divider bg-chathams-blue">
-            <div class="range range-xs-center offset-top-60">
-              <div class="cell-xs-10 cell-sm-6">
-                <div class="reveal-block">
-                  <div class="post post-boxed">
-                    <header class="post-media"><img width="570" height="310" src="images/blog/post-07-570x310.jpg" alt="" class="img-responsive"/></header>
-                    
-                    <section class="post-content text-left">
-                      <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
-                      </div>
-                      <div class="post-body">
-                        
-                        <div class="post-title">
-                          <div class="h4 text-bold text-white"><a href="single-post.html">5 Reasons to Take the Bus in the USA</a></div>
-                        </div>
-                        <div class="post-meta">
-                          <ul class="list-inline list-inline-sm p">
-                            <li><span class="text-middle icon-xxs mdi mdi-calendar"></span>
-                              <time datetime="2016-01-01" class="text-middle inset-left-6 text-ripe-lemon">2 days ago</time>
-                            </li>
-                            <li class="text-middle">by&nbsp;<span class="inset-left-3 text-ripe-lemon">Michael Ford</span></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </div>
-              </div>
-              <div class="cell-xs-10 cell-sm-6 offset-top-30 offset-sm-top-0">
-                
-                <div class="reveal-block">
-                  <div class="post post-boxed">
-                    
-                    <header class="post-media"><img width="570" height="310" src="images/blog/post-08-570x310.jpg" alt="" class="img-responsive"/></header>
-                   
-                    <section class="post-content text-left">
-                      <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
-                      </div>
-                      <div class="post-body">
-                        
-                        <div class="post-title">
-                          <div class="h4 text-bold text-white"><a href="single-post.html">Bus Booking in the USA – 7 Things You Need to Know Before Booking Your Ticket</a></div>
-                        </div>
-                        <div class="post-meta">
-                          <ul class="list-inline list-inline-sm p">
-                            <li><span class="text-middle icon-xxs mdi mdi-calendar"></span>
-                              <time datetime="2016-01-01" class="text-middle inset-left-6 text-ripe-lemon">2 days ago</time>
-                            </li>
-                            <li class="text-middle">by&nbsp;<span class="inset-left-3 text-ripe-lemon">Joyce Contreras</span></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </div>
-              </div>
-              <div class="cell-xs-10 cell-sm-6 offset-top-30">
-           
-                <div class="reveal-block">
-                  <div class="post post-boxed">
-          
-                    <header class="post-media"><img width="570" height="310" src="images/blog/post-09-570x310.jpg" alt="" class="img-responsive"/></header>
-            
-                    <section class="post-content text-left">
-                      <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
-                      </div>
-                      <div class="post-body">
-                 
-                        <div class="post-title">
-                          <div class="h4 text-bold text-white"><a href="single-post.html">How To Take Long Bus Trips Like a Pro</a></div>
-                        </div>
-                        <div class="post-meta">
-                          <ul class="list-inline list-inline-sm p">
-                            <li><span class="text-middle icon-xxs mdi mdi-calendar"></span>
-                              <time datetime="2016-01-01" class="text-middle inset-left-6 text-ripe-lemon">2 days ago</time>
-                            </li>
-                            <li class="text-middle">by&nbsp;<span class="inset-left-3 text-ripe-lemon">Michael Ford</span></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </div>
-              </div>
-              <div class="cell-xs-10 cell-sm-6 offset-top-30">
-            
-                <div class="reveal-block">
-                  <div class="post post-boxed">
-                
-                    <header class="post-media"><img width="570" height="310" src="images/blog/post-10-570x310.jpg" alt="" class="img-responsive"/></header>
-                  
-                    <section class="post-content text-left">
-                      <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
-                      </div>
-                      <div class="post-body">
-              
-                        <div class="post-title">
-                          <div class="h4 text-bold text-white"><a href="single-post.html">Wi-Fi on Buses: How Often Does It Work In the United States ?</a></div>
-                        </div>
-                        <div class="post-meta">
-                          <ul class="list-inline list-inline-sm p">
-                            <li><span class="text-middle icon-xxs mdi mdi-calendar"></span>
-                              <time datetime="2016-01-01" class="text-middle inset-left-6 text-ripe-lemon">2 days ago</time>
-                            </li>
-                            <li class="text-middle">by&nbsp;<span class="inset-left-3 text-ripe-lemon">Laura Wallace</span></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="offset-top-60"><a href="blog-classic.html" class="btn btn-default">View All News</a></div>
-          </div>
-        </section>-->
-        
-        <section class="section-57 section-bg-animation context-dark">
-          <div class="shell">
-            <div class="range range-xs-center range-xs-middle">
-              <div class="cell-md-10 cell-lg-8 text-center text-md-right">
-                <h2 class="text-bold">Take Part in the Discount Campaign</h2>
-              </div>
-              <div class="cell-lg-3 offset-top-30 offset-lg-top-0 text-lg-left"><a href="single-tour.html" class="btn btn-ripe-lemon">Get Started</a></div>
-            </div>
-          </div>
-        </section>
-      </main>
+       
+        </main>
       <!-- Page Footer-->
       <!-- Footer Default-->
       <footer class="page-footer">
@@ -679,7 +524,7 @@
             <div class="range range-xs-center text-md-left">
               <div class="cell-xs-10 cell-sm-7 cell-md-4">
                 <!-- Footer brand-->
-                <div class="footer-brand"><a href="<?php echo base_url();?>index.php/Welcome/index"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-dark1.png' alt=''/></a></div>
+                <div class="footer-brand"><a href="<?php echo base_url();?>index.php/Welcome/index"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-dark.png' alt=''/></a></div>
                 <div class="offset-top-30 inset-sm-right-20">
                   <p class="text-gray">Smart Travel is the leading go-to website for booking Inter-City bus ticket online. Our booking system allows travellers to search and book bus tickets all over Pakistan.</p>
                 </div>
@@ -747,7 +592,7 @@
             </p>
           </div>
         </section>
-      </footer>
+    </footer>
     </div>
     <!-- Global Mailform Output-->
     <div id="form-output-global" class="snackbars"></div>
@@ -787,7 +632,21 @@
       </div>
     </div>
     <!-- Java script-->
-    <script src="<?php echo PATH; ?>js/core.min.js"></script>
+      <script src="<?php echo PATH; ?>js/core.min.js"></script>
     <script src="<?php echo PATH; ?>js/script.js"></script>
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>-->
+      <script>
+        $(document).ready(function(){
+        var date_input=$('input[name="date"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        var options={
+          format: 'mm/dd/yyyy',
+          container: container,
+          todayHighlight: true,
+          autoclose: true,
+        };
+        date_input.datepicker(options);
+      })
+      </script>
   </body>
 </html>

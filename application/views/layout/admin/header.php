@@ -1,8 +1,8 @@
 <html>
 <head>
-	<title>Admin Panel</title>
+	<title>Smart Travel - Admin</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.css') ?>">
-
+	<link rel="icon" href="<?php echo PATH; ?>images/favicon.ico" type="image/x-icon">
 	<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 
