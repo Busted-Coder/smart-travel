@@ -13,7 +13,11 @@ class Auth extends MY_Controller {
 
 	}
 	public function login_loader(){
-		$this->loadView('login/login_register',array('Error' => 'NULL'),false);
+		$this->load->view('layout/header');
+		$this->load->view('layout/nav');
+		$this->load->view('login/login_register',array('Error' => 'NULL'));
+		$this->load->view('layout/footer');
+		//$this->loadView('login/login_register',array('Error' => 'NULL'),false);
 	}
 	public function login(){
 		$username = $this->input->post('username');

@@ -20,7 +20,7 @@
 	        <span class="icon-bar"></span>
 	      </button>
 
-	      <a class="navbar-brand"><img width='40' height='25' src='<?php echo PATH; ?>images/logo-dark.png' alt=''/></a>
+	      <a class="navbar-brand"><img width='40' height='25' src='<?php echo PATH; ?>images/logo-dark1.png' alt=''/></a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -55,7 +55,7 @@
 	      			<li role="separator" class="divider"></li>
 	      			<li class="dropdown-header" style=" color: blue;">About Ticket</li>
 	      			<li><a href="<?php echo site_url('index.php/ticket/lists') ?>">Ticket</a></li>
-	      			<li><a href="<?php echo site_url('index.php/ticket/lists') ?>">Offers &nbsp;/&nbsp; Deals</a></li>
+	      			<li><a href="<?php echo site_url('index.php/offer/lists') ?>">Offers &nbsp;/&nbsp; Deals</a></li>
 
 	      		</ul>
 	      	</li>

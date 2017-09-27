@@ -86,7 +86,7 @@
                                 <select style="background-color: white;" id="form-filter-location-to" name="dest" class="form-control">
                                         <option>Select City</option>
                                         <?php foreach ($cityarray as $value) {?>
-                                            <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
+                                            <option value = <?php $value['shortcode'] ?> > <?php echo $value['name']?> </option> <?php } ?>
 
                                 </select>
                               </div>
@@ -96,15 +96,16 @@
                             <div class="form-group text-left">
                               <label for="form-filter-location-from-date" class="form-label form-label-outside">Depart Date</label>
                               <div class="select2-whitout-border shadow-drop-md">
+
                                 <input style="background-color: white; " id="date" type="date" class="form-control" name="busdate"></input>
-                              </div>
-                            </div>
+
+                            </div>   
                           </div>
-                          
                         </div>
                       </div>
                       <div class="cell-md-3 cell-lg-2">
                         <div class="reveal-block reveal-md-inline-block">
+
                           <input type="submit" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth"></input>
                         </div>
                       </div>
@@ -318,8 +319,167 @@
             <div class="offset-top-60"><a href="destinations.html" class="btn btn-default">View All Destinations</a></div>
           </div>
         </section>
-       
-        </main>
+        <!-- Special Service: Bus Rental with Driver-->
+        <section>
+          <!-- RD Parallax-->
+          <div data-on="false" data-md-on="true" class="bg-gray-base context-dark rd-parallax">
+            <div data-speed="0.15" data-type="media" data-url="<?php echo PATH; ?>images/backgrounds/background-04-1920x950.jpg" class="rd-parallax-layer"></div>
+            <div data-speed="0" data-type="html" data-md-fade="false" class="rd-parallax-layer">
+              <div class="shell section-90 section-md-162">
+                <h2 class="text-bold text-white">Special Service: Bus Rental with Driver</h2>
+                <div class="offset-top-30"><a href="deals.html" class="btn btn-primary">Book Now</a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Partners-->
+        <section class="section-top-90 section-bottom-90 section-md-top-111">
+          <div class="shell owl-dots-60">
+            <div class="range range-xs-center">
+              <div class="cell-xs-8 cell-sm-12">
+                <div class="owl-items-middle">
+                  <!-- Partners-->
+                  <div data-items="2" data-xs-items="2" data-sm-items="3" data-md-items="6" data-nav="false" data-dots="true" data-stage-padding="5" data-sm-stage-padding="20" data-margin="10" data-sm-margin="75" class="owl-carousel owl-carousel-classic"><a href="#"><img src="<?php echo PATH; ?>images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="<?php echo PATH; ?>images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="i<?php echo PATH; ?>mages/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Latest News-->
+        <section class="section-90 section-md-111 bg-zircon">
+          <div class="shell">
+            <h2 class="text-bold">Latest News</h2>
+            <hr class="divider bg-chathams-blue">
+            <div class="range range-xs-center offset-top-60">
+              <div class="cell-xs-10 cell-sm-6">
+                <!-- Post Boxed-->
+                <div class="reveal-block">
+                  <div class="post post-boxed">
+                    <!-- Post media-->
+                    <header class="post-media"><img width="570" height="310" src="<?php echo PATH; ?>images/blog/post-07-570x310.jpg" alt="" class="img-responsive"/></header>
+                    <!-- Post content-->
+                    <section class="post-content text-left">
+                      <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
+                      </div>
+                      <div class="post-body">
+                        <!-- Post Title-->
+                        <div class="post-title">
+                          <div class="h4 text-bold text-white"><a href="single-post.html">5 Reasons to Take the Bus in the USA</a></div>
+                        </div>
+                        <div class="post-meta">
+                          <ul class="list-inline list-inline-sm p">
+                            <li><span class="text-middle icon-xxs mdi mdi-calendar"></span>
+                              <time datetime="2016-01-01" class="text-middle inset-left-6 text-ripe-lemon">2 days ago</time>
+                            </li>
+                            <li class="text-middle">by&nbsp;<span class="inset-left-3 text-ripe-lemon">Michael Ford</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              <div class="cell-xs-10 cell-sm-6 offset-top-30 offset-sm-top-0">
+                <!-- Post Boxed-->
+                <div class="reveal-block">
+                  <div class="post post-boxed">
+                    <!-- Post media-->
+                    <header class="post-media"><img width="570" height="310" src="<?php echo PATH; ?>images/blog/post-08-570x310.jpg" alt="" class="img-responsive"/></header>
+                    <!-- Post content-->
+                    <section class="post-content text-left">
+                      <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
+                      </div>
+                      <div class="post-body">
+                        <!-- Post Title-->
+                        <div class="post-title">
+                          <div class="h4 text-bold text-white"><a href="single-post.html">Bus Booking in the USA – 7 Things You Need to Know Before Booking Your Ticket</a></div>
+                        </div>
+                        <div class="post-meta">
+                          <ul class="list-inline list-inline-sm p">
+                            <li><span class="text-middle icon-xxs mdi mdi-calendar"></span>
+                              <time datetime="2016-01-01" class="text-middle inset-left-6 text-ripe-lemon">2 days ago</time>
+                            </li>
+                            <li class="text-middle">by&nbsp;<span class="inset-left-3 text-ripe-lemon">Joyce Contreras</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              <div class="cell-xs-10 cell-sm-6 offset-top-30">
+                <!-- Post Boxed-->
+                <div class="reveal-block">
+                  <div class="post post-boxed">
+                    <!-- Post media-->
+                    <header class="post-media"><img width="570" height="310" src="<?php echo PATH; ?>images/blog/post-09-570x310.jpg" alt="" class="img-responsive"/></header>
+                    <!-- Post content-->
+                    <section class="post-content text-left">
+                      <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
+                      </div>
+                      <div class="post-body">
+                        <!-- Post Title-->
+                        <div class="post-title">
+                          <div class="h4 text-bold text-white"><a href="single-post.html">How To Take Long Bus Trips Like a Pro</a></div>
+                        </div>
+                        <div class="post-meta">
+                          <ul class="list-inline list-inline-sm p">
+                            <li><span class="text-middle icon-xxs mdi mdi-calendar"></span>
+                              <time datetime="2016-01-01" class="text-middle inset-left-6 text-ripe-lemon">2 days ago</time>
+                            </li>
+                            <li class="text-middle">by&nbsp;<span class="inset-left-3 text-ripe-lemon">Michael Ford</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              <div class="cell-xs-10 cell-sm-6 offset-top-30">
+                <!-- Post Boxed-->
+                <div class="reveal-block">
+                  <div class="post post-boxed">
+                    <!-- Post media-->
+                    <header class="post-media"><img width="570" height="310" src="<?php echo PATH; ?>images/blog/post-10-570x310.jpg" alt="" class="img-responsive"/></header>
+                    <!-- Post content-->
+                    <section class="post-content text-left">
+                      <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
+                      </div>
+                      <div class="post-body">
+                        <!-- Post Title-->
+                        <div class="post-title">
+                          <div class="h4 text-bold text-white"><a href="single-post.html">Wi-Fi on Buses: How Often Does It Work In the United States ?</a></div>
+                        </div>
+                        <div class="post-meta">
+                          <ul class="list-inline list-inline-sm p">
+                            <li><span class="text-middle icon-xxs mdi mdi-calendar"></span>
+                              <time datetime="2016-01-01" class="text-middle inset-left-6 text-ripe-lemon">2 days ago</time>
+                            </li>
+                            <li class="text-middle">by&nbsp;<span class="inset-left-3 text-ripe-lemon">Laura Wallace</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="offset-top-60"><a href="blog-classic.html" class="btn btn-default">View All News</a></div>
+          </div>
+        </section>
+        <!-- Take Part in the Discount Campaign-->
+        <section class="section-57 section-bg-animation context-dark">
+          <div class="shell">
+            <div class="range range-xs-center range-xs-middle">
+              <div class="cell-md-10 cell-lg-8 text-center text-md-right">
+                <h2 class="text-bold">Take Part in the Discount Campaign</h2>
+              </div>
+              <div class="cell-lg-3 offset-top-30 offset-lg-top-0 text-lg-left"><a href="single-tour.html" class="btn btn-ripe-lemon">Get Started</a></div>
+            </div>
+          </div>
+        </section>
+      </main>
       <!-- Page Footer-->
       <!-- Footer Default-->
       <?php
