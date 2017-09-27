@@ -303,7 +303,7 @@
                       </div>
                       <div class="cell-md-3 cell-lg-2">
                         <div class="reveal-block reveal-md-inline-block">
-                          <button type="button" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth">search</button>
+                          <button type="submit" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth">search</button>
                         </div>
                       </div>
                     </form>

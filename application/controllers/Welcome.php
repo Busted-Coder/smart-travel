@@ -25,6 +25,4 @@ class Welcome extends CI_Controller {
         $data['cityarray'] = $this->Ticket_options_model->getCity();
         $this->load->view('home/index', $data);
     }
-
-
 }
