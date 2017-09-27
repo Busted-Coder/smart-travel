@@ -58,5 +58,6 @@ class User extends MY_Controller {
 		$info = $this->UserModel->getuser($user_id);
 		$this->loadView('views/user_tech', array('info'=>$info), true);
 	}
-
+	
+	
 }
