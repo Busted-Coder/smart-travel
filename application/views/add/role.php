@@ -16,7 +16,6 @@
 						<option>INTER CRUD</option>
 						<option>RU</option>
 						<option>R</option>
-
 					</select>
 				</div>
 			</div>

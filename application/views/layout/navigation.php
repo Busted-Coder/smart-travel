@@ -1,7 +1,15 @@
+<<<<<<< HEAD
         
         
         
         <!-- RD Navbar Transparent-->
+=======
+<body>
+    <!-- Page-->
+    <div class="page text-center">
+      <!-- Page Head-->
+      <header class="page-head slider-menu-position">        <!-- RD Navbar Transparent-->
+>>>>>>> 3f205100a56589f765b6d2feddbd2ccda474fbe3
         <div class="rd-navbar-wrap">
           <nav data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-md-stick-up-offset="90px" data-lg-stick-up-offset="75px" data-auto-height="false" class="rd-navbar rd-navbar-top-panel rd-navbar-default rd-navbar-white rd-navbar-static-fullwidth-transparent" data-lg-auto-height="true" data-md-layout="rd-navbar-fullwidth" data-lg-layout="rd-navbar-static" data-lg-stick-up="true">
             <div class="rd-navbar-inner">

@@ -5,14 +5,11 @@
 </div>
 <div class="row">
 	<div class="col-sm-12">
-	<a href="<?php echo site_url('index.php/request/mydata') ?>" class="btn btn-primary">My Requests</a>
-	<a href="<?php echo site_url('index.php/request/lists') ?>" class="btn btn-primary">View All Requests</a>
-	<a href="<?php echo site_url('index.php/request/add') ?>" class="btn btn-primary">Push New Request</a>
 	<a class="btn btn-primary">Total Records : <?php echo count($info); ?></a>
 	</div>
 </div>
 <div class="row">
-	<div class="col-sm-10 col-sm-offset-1">
+	<div class="col-sm-12">
 		<table class="table">
 			<thead>
 				<tr>
