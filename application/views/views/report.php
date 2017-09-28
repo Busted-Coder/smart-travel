@@ -15,14 +15,14 @@
 			</thead>
 			<tbody>
 				<tr>
+					<th><a href="<?php echo site_url('index.php/pdf/ticket') ?>" class="btn btn-info" target="_blank">Ticket Sale</a></th>
 					<th>A</th>
-					<th>A</th>
-					<th>A</th>
+					<th><a href="<?php echo site_url('index.php/excel/ticket') ?>" class="btn btn-danger" target="_blank">Ticket Sale</a></th>
 				</tr>
 				<tr>
 					<th>B</th>
 					<th>B</th>
-					<th>B</th>
+					<th><a href="<?php echo site_url('index.php/excel/user') ?>" class="btn btn-danger" target="_blank">User's Info</a></th>
 				</tr>
 				<tr>
 					<th>C</th>

@@ -45,7 +45,7 @@
           center: LatLng
         });
 
-        var iconBase = 'http://localhost:80/smart-travel/assets/images/admin/';
+        var iconBase = 'http://localhost:8080/smart-travel/assets/images/admin/';
 
         var icons = {
           bus: {

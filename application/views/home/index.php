@@ -212,6 +212,7 @@
                   <div class="shell">
                     <div class="range range-xs-center range-lg-left section-sm-50 section-md-0">
                       <div class="cell-xs-10 cell-lg-7 cell-xl-6">
+                        <br><br><br><br><br><br><br><br><br><br><br><br>
                         <h1 data-caption-animate="fadeInDown" data-caption-delay="200" class="text-bold">Comfort & Style <br class="veil reveal-lg-inline-block"> Over Every Mile</h1>
                         <div data-caption-animate="fadeInUp" data-caption-delay="600" class="offset-top-20 offset-lg-top-49">
                           <p class="h6 text-mercury">Smart Travel is the leading go-to website for booking inter-city bus <br class="veil reveal-lg-inline-block"> online.</p>
@@ -229,6 +230,7 @@
                   <div class="shell">
                     <div class="range range-xs-center range-lg-left">
                       <div class="cell-xs-10 cell-lg-9 cell-xl-7">
+                        <br><br><br><br><br><br><br><br><br><br><br><br>
                         <h1 data-caption-animate="fadeInDown" data-caption-delay="200" class="text-bold">Providing quality service at unbeatable rates.</h1>
                         <div data-caption-animate="fadeInUp" data-caption-delay="600" class="offset-top-20 offset-lg-top-49">
                           <p class="h6 text-mercury">We provide affordable and reliable bus ticket booking services online <br class="veil reveal-lg-inline-block"> all over the Pakistan.</p>

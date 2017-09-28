@@ -8,8 +8,8 @@ class User_model extends CI_Model {
         $this->load->database();
     }
 
-    public function getList(){
-       return $this->db->get('user')->result_array();
+    public function getList($order){
+       return $this->db->order_by("user_id", $order)->get('user')->result_array();
     }  
 
     public function getuser($user_id){

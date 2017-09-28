@@ -37,7 +37,7 @@
 						<td> <?php echo $p['stops'] ?> </td>
 						<td> <?php echo $p['departure'] ?> </td>
 						<td> <?php echo $p['arrival'] ?> </td>
-						<td> <?php echo $p['day'] ?> </td>
+						<td> <?php  if($p['day'] == 1){ echo "Next Day";}else{echo "Same Day";} ?> </td>
 						<td> <?php echo $p['fare'] ?> </td>
 						<td> <?php echo $p['created_at'] ?> </td>
 						<td><form action="<?php echo site_url('index.php/route/edit') ?>" method="get" class="form-horizontal">

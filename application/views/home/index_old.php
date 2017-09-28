@@ -88,9 +88,9 @@
                                         <?php foreach ($cityarray as $value) {?>
 <<<<<<< HEAD:application/views/home/index_old.php
                                             <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
-=======
-                                            <option value = <?php $value['shortcode'] ?> > <?php echo $value['name']?> </option> <?php } ?>
->>>>>>> 3f205100a56589f765b6d2feddbd2ccda474fbe3:application/views/home/index_old.php
+=======o $value['name']?> </option> <?php } ?>
+>>>>>>> 3f205100a56589f765b6d2feddbd2ccda474fbe3:a
+                                            <option value = <?php $value['shortcode'] ?> > <?php echpplication/views/home/index_old.php
 
                                 </select>
                               </div>

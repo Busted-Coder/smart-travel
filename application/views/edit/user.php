@@ -20,6 +20,17 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Select Gender</b></div>
+					<select required name="gender" class="form-control">
+						<option>Select Class</option>
+						<option <?php echo $user->gender =='Male' ? 'selected':'' ?>>Male</option>
+						<option <?php echo $user->gender =='Female' ? 'selected':'' ?>>Female</option>
+						<option <?php echo $user->gender =='Others' ? 'selected':'' ?>>Others</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-4">
 					<div><b>E-mail</b></div>
 					<input name="email" type="email" placeholder="E-mail " class="form-control"
 					value="<?php echo $user->email ?>">
