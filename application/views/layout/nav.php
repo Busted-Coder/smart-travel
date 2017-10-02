@@ -70,10 +70,10 @@
                         <!-- RD Navbar Dropdown-->
        
                       </li>
-                      <li class="rd-navbar--has-dropdown rd-navbar-submenu"><a href="<?php echo site_url('index.php/nav_destinations/destinations') ?>">Destinations</a>
+                     <!-- <li class="rd-navbar--has-dropdown rd-navbar-submenu"><a href="<?php echo site_url('index.php/nav_destinations/destinations') ?>">Destinations</a></li>-->
                         <!-- RD Navbar Dropdown-->
                      
-                      </li>
+                      
                       <li><a href="<?php echo site_url('index.php/nav_deals/deals') ?>">Deals</a></li>
                      
                       <li><a href="<?php echo site_url('index.php/nav_tracking/tracking') ?>">Tracking</a></li>

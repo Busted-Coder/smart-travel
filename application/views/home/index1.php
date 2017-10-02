@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="wide wow-animation smoothscroll scrollTo">
-  <head>    <!-- Site Title-->
+  <head>
+    <!-- Site Title-->
     <title>Smart Travel</title>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
@@ -12,39 +13,17 @@
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:400,400italic,700%7CLato:400">
     <link rel="stylesheet" href="<?php echo PATH; ?>css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-    <script src="<?php echo PATH; ?>js/core.min.js"></script>
-    <script src="<?php echo PATH; ?>js/script.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <style>
-     input[type=date]::-webkit-inner-spin-button, 
-      input[type=date]::-webkit-outer-spin-button { 
-      -webkit-appearance: none; 
-      margin: 0;}
-    </style>
-        <!--[if lt IE 10]>
+    <!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"></script>
-        <![endif]-->
-</head>
+    <![endif]-->
+  </head>
   <body>
     <!-- Page-->
     <div class="page text-center">
       <!-- Page Head-->
       <header class="page-head slider-menu-position">
-
-
-        
-        
-        
         <!-- RD Navbar Transparent-->
-
-<body>
-    <!-- Page-->
-    <div class="page text-center">
-      <!-- Page Head-->
-      <header class="page-head slider-menu-position">        <!-- RD Navbar Transparent-->
-
         <div class="rd-navbar-wrap">
           <nav data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-md-stick-up-offset="90px" data-lg-stick-up-offset="75px" data-auto-height="false" class="rd-navbar rd-navbar-top-panel rd-navbar-default rd-navbar-white rd-navbar-static-fullwidth-transparent" data-lg-auto-height="true" data-md-layout="rd-navbar-fullwidth" data-lg-layout="rd-navbar-static" data-lg-stick-up="true">
             <div class="rd-navbar-inner">
@@ -99,7 +78,7 @@
                       <li><a><?php echo $this->session->userdata('username');?></a>
                         <ul class="rd-navbar-dropdown">
                           <li><a href="<?php echo site_url('index.php/auth/logout') ?>">Sign Off</a></li>
-                          <li><a href="<?php echo site_url('index.php/user_dashboard/viewProfile') ?>">Edit Profile</a></li>
+                            <li><a href="<?php echo site_url('index.php/user_dashboard/viewProfile') ?>">Edit Profile</a></li>
                             <li><a href="<?php echo site_url('index.php/user_dashboard/changePassword') ?>">Change Password</a></li>
                             <li><a href="<?php echo site_url('index.php/user_dashboard/viewTrips') ?>">View Trips</a></li>
                         </ul>
@@ -112,24 +91,110 @@
                       <?php } ?>
                       <li><a href="<?php echo base_url();?>index.php/nav_about/history">About</a>
                         <!-- RD Navbar Dropdown-->
-       
+                       <!-- <ul class="rd-navbar-dropdown">
+                          <li><a href="<?php echo site_url('index.php/nav_about/history') ?>">Our History</a></li>
+                          <li><a href="<?php echo site_url('index.php/nav_about/team')?>">Our Team</a></li>
+                          <li><a href="<?php echo site_url('index.php/nav_about/testimonials') ?>">Testimonials</a></li>
+                        </ul>-->
                       </li>
-                      <li class="rd-navbar--has-dropdown rd-navbar-submenu"><a href="<?php echo site_url('index.php/nav_destinations/destinations') ?>">Destinations</a>
+                     <!-- <li class="rd-navbar--has-dropdown rd-navbar-submenu"><a href="<?php echo site_url('index.php/nav_destinations/destinations') ?>">Destinations</a>-->
                         <!-- RD Navbar Dropdown-->
-                     
-                      </li>
+                        <!--<ul class="rd-navbar-dropdown">
+                          <li><a href="<?php echo site_url('index.php/nav_destinations/destinations') ?>">All Destinations</a></li>
+                          <li><a href="<?php echo site_url('index.php/nav_destinations/ticket_catalog') ?>">Ticket Catalog</a></li>
+                          <li><a href="<?php echo site_url('index.php/nav_destinations/single_ticket') ?>">Single Ticket</a></li>
+                        </ul>
+                      </li>-->
                       <li><a href="<?php echo site_url('index.php/nav_deals/deals') ?>">Deals</a></li>
-                     
+                       <!--<li class="rd-navbar--has-dropdown rd-navbar-submenu"><a href="<?php echo site_url('index.php/nav_news/classic') ?>">News</a>
+                        RD Navbar Dropdown
+                        <ul class="rd-navbar-dropdown">
+                          <li><a href="<?php echo site_url('index.php/nav_news/classic') ?>">Classic Blog</a></li>
+                          <li><a href="<?php echo site_url('index.php/nav_news/grid') ?>">Grid Blog</a></li>
+                          <li><a href="<?php echo site_url('index.php/nav_news/masonry') ?>">Masonry Blog</a></li>
+                          <li><a href="<?php echo site_url('index.php/nav_news/modern') ?>">Modern Blog</a></li>
+                          <li><a href="<?php echo site_url('index.php/nav_news/post') ?>">Post Page</a></li>
+                        </ul>
+                      </li>-->
                       <li><a href="<?php echo site_url('index.php/nav_tracking/tracking') ?>">Tracking</a></li>
-                   
-                      <li><a href="<?php echo site_url('index.php/nav_contact/contact') ?>">Contact</a></li>
+                      <!--<li class="rd-navbar--has-megamenu rd-navbar-submenu"><a href="#">Pages</a>
+                        <div class="rd-navbar-megamenu">
+                          <div class="row">
+                            <div class="col-md-3">
+                              <div class="veil reveal-md-block">
+                                <h6 class="text-bold">Gallery</h6>
+                              </div>
+                              <ul class="offset-md-top-20">
+                                <li><a href="grid-gallery.html">Grid Gallery</a></li>
+                                <li><a href="grid-without-padding-gallery.html">Grid Without Padding Gallery</a></li>
+                                <li><a href="masonry-gallery.html">Masonry Gallery</a></li>
+                                <li><a href="cobbles-gallery.html">Cobbles Gallery</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="veil reveal-md-block">
+                                <h6 class="text-bold">Elements</h6>
+                              </div>
+                              <ul class="offset-md-top-20">
+                                <li><a href="typography.html">Typography</a></li>
+                                <li><a href="tabs-accordions.html">Tabs &amp; Accordions</a></li>
+                                <li><a href="progress-bars.html">Progress Bars</a></li>
+                                <li><a href="tables.html">Tables</a></li>
+                                <li><a href="forms.html">Forms</a></li>
+                                <li><a href="buttons.html">Buttons</a></li>
+                                <li><a href="icons.html">Icons</a></li>
+                                <li><a href="grid.html">Grid</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="veil reveal-md-block">
+                                <h6 class="text-bold">Pages</h6>
+                              </div>
+                              <ul class="offset-md-top-20">
+                                <li><a href="team-member-profile.html">Team Member Profile</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="timetable.html">Timetable</a></li>
+                                <li><a href="careers.html">Careers</a></li>
+                                <li><a href="sitemap.html">Sitemap</a></li>
+                                <li><a href="404.html">404 Page</a></li>
+                                <li><a href="503.html">503 Page</a></li>
+                                <li><a href="under-construction.html">Under Construction</a></li>
+                                <li><a href="login-register.html">Login/Register</a></li>
+                                <li><a href="search-results.html">Search Results</a></li>
+                                <li><a href="privacy.html">Terms of Use</a></li>
+                                <li><a href="single-service.html">Single Service</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="veil reveal-md-block">
+                                <h6 class="text-bold">Layouts</h6>
+                              </div>
+                              <ul class="offset-md-top-20">
+                                <li><a href="index-variant-2.html">Home Variant 2</a></li>
+                                <li><a href="index-variant-3.html">Home Variant 3</a></li>
+                                <li><a href="transparent-header.html">Transparent Header</a></li>
+                                <li><a href="corporate-header.html">Corporate Header</a></li>
+                                <li><a href="minimal-header.html">Minimal Header</a></li>
+                                <li><a href="hamburger-menu-header.html">Hamburger Menu Header</a></li>
+                                <li><a href="footer-widget-light.html">Footer Widget Light</a></li>
+                                <li><a href="footer-widget-dark.html">Footer Widget Dark</a></li>
+                                <li><a href="footer-center-light.html">Footer Center Light</a></li>
+                                <li><a href="footer-center-dark.html">Footer Center Dark</a></li>
+                                <li><a href="footer-minimal-light.html">Footer Minimal Light</a></li>
+                                <li><a href="footer-minimal-dark.html">Footer Minimal Dark</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>-->
+                      <li><a href="<?php echo site_url('index.php/nav_contact/contact') ?>">Contacts</a></li>
                     </ul>
 
                   </div>
                 </div>
                 <!-- RD Navbar Search-->
                 <div class="rd-navbar-search rd-navbar-search-top-panel"><a data-rd-navbar-toggle=".rd-navbar-inner,.rd-navbar-search" href="#" class="rd-navbar-search-toggle mdi"><span></span></a>
-                  <form action="<?php echo site_url('index.php/nav_search/search') ?>" data-search-live="rd-search-results-live" method="GET" class="rd-navbar-search-form search-form-icon-right rd-search">
+                  <form action="search-results.html" data-search-live="rd-search-results-live" method="GET" class="rd-navbar-search-form search-form-icon-right rd-search">
                     <div class="form-group">
                       <label for="rd-navbar-search-form-input" class="form-label rd-input-label">Type and hit enter...</label>
                       <input id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off" class="rd-navbar-search-form-input form-control form-control-gray-lightest"/>
@@ -141,7 +206,6 @@
             </div>
           </nav>
         </div>
-
         <!-- Swiper-->
         <div data-height="" data-min-height="200px" data-slide-effect="fade" data-simulate-touch="false" class="swiper-container swiper-slider context-dark text-lg-left">
           <div class="swiper-wrapper">
@@ -151,6 +215,7 @@
                   <div class="shell">
                     <div class="range range-xs-center range-lg-left section-sm-50 section-md-0">
                       <div class="cell-xs-10 cell-lg-7 cell-xl-6">
+                        <br><br><br><br><br><br><br><br><br><br><br><br> 
                         <h1 data-caption-animate="fadeInDown" data-caption-delay="200" class="text-bold">Comfort & Style <br class="veil reveal-lg-inline-block"> Over Every Mile</h1>
                         <div data-caption-animate="fadeInUp" data-caption-delay="600" class="offset-top-20 offset-lg-top-49">
                           <p class="h6 text-mercury">Smart Travel is the leading go-to website for booking inter-city bus <br class="veil reveal-lg-inline-block"> online.</p>
@@ -168,9 +233,10 @@
                   <div class="shell">
                     <div class="range range-xs-center range-lg-left">
                       <div class="cell-xs-10 cell-lg-9 cell-xl-7">
+                        <br><br><br><br><br><br><br><br><br><br><br><br>
                         <h1 data-caption-animate="fadeInDown" data-caption-delay="200" class="text-bold">Providing quality service at unbeatable rates.</h1>
                         <div data-caption-animate="fadeInUp" data-caption-delay="600" class="offset-top-20 offset-lg-top-49">
-                          <p class="h6 text-mercury">We provide affordable and reliable bus ticket booking services online <br class="veil reveal-lg-inline-block"> all over the world.</p>
+                          <p class="h6 text-mercury">We provide affordable and reliable bus ticket booking services online <br class="veil reveal-lg-inline-block"> all over the Pakistan.</p>
                         </div>
                         <div data-caption-animate="fadeInUp" data-caption-delay="800" class="offset-top-20"><a href="deals.html" class="btn btn-default btn-skew">Learn More</a></div>
                       </div>
@@ -194,13 +260,11 @@
                             <div class="form-group text-left">
                               <label for="form-filter-location-from" class="form-label form-label-outside">Traveling From</label>
                               <div class="select2-whitout-border shadow-drop-md">
-
-                                  <select id="form-filter-location-from" style="background-color: white;" name="source" class="form-control">
-                                      <option>Select City</option>
+                                <select id="form-filter-location-from" name="source" data-minimum-results-for-search="Infinity" class="form-control">
+                                  <option>Select City</option>
                                       <?php foreach ($cityarray as $value) {?>
                                           <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
-                                  
-                                   </select>
+                                </select>
                               </div>
                             </div>
                           </div>
@@ -208,11 +272,10 @@
                             <div class="form-group text-left">
                               <label for="form-filter-location-to" class="form-label form-label-outside">Traveling To</label>
                               <div class="select2-whitout-border shadow-drop-md">
-                                <select style="background-color: white;" id="form-filter-location-to" name="dest" class="form-control">
-                                        <option>Select City</option>
+                                <select id="form-filter-location-to" name="dest" data-minimum-results-for-search="Infinity" class="form-control">
+                                  <option>Select City</option>
                                         <?php foreach ($cityarray as $value) {?>
                                             <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
-
                                 </select>
                               </div>
                             </div>
@@ -221,16 +284,31 @@
                             <div class="form-group text-left">
                               <label for="form-filter-location-from-date" class="form-label form-label-outside">Depart Date</label>
                               <div class="select2-whitout-border shadow-drop-md">
-                                <input style="background-color: white; " id="date" type="date" class="form-control" name="busdate"></input>
+                                <input id="form-filter-location-from-date" name="date" type="date" data-minimum-results-for-search="Infinity" class="form-control" style="background-color: white;">
+                                  <!--<option value="1">7-11-2016</option>
+                                  <option value="2">2-12-2016</option>
+                                  <option value="3">14-11-2016</option>
+                                  <option value="4">3-10-2016</option>-->
+                                </input>
                               </div>
                             </div>
                           </div>
-                          
+                          <!--<div class="group-item element-fullwidth">
+                            <div class="form-group text-left">
+                              <label for="form-filter-location-to-date" class="form-label form-label-outside">Ticket Type</label>
+                              <div class="select2-whitout-border shadow-drop-md">
+                                <select id="form-filter-location-to-date" name="date-to" data-minimum-results-for-search="Infinity" class="form-control">
+                                  <option value="1">One Way</option>
+                                  <option value="2">Round Trip</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>-->
                         </div>
                       </div>
                       <div class="cell-md-3 cell-lg-2">
                         <div class="reveal-block reveal-md-inline-block">
-                          <input type="submit" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth"></input>
+                          <button type="submit" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth">search</button>
                         </div>
                       </div>
                     </form>
@@ -443,20 +521,170 @@
             <div class="offset-top-60"><a href="destinations.html" class="btn btn-default">View All Destinations</a></div>
           </div>
         </section>
-       
-        </main>
+        <!-- Special Service: Bus Rental with Driver-->
+        <!--<section>
+          <div data-on="false" data-md-on="true" class="bg-gray-base context-dark rd-parallax">
+            <div data-speed="0.15" data-type="media" data-url="images/backgrounds/background-04-1920x950.jpg" class="rd-parallax-layer"></div>
+            <div data-speed="0" data-type="html" data-md-fade="false" class="rd-parallax-layer">
+              <div class="shell section-90 section-md-162">
+                <h2 class="text-bold text-white">Special Service: Bus Rental with Driver</h2>
+                <div class="offset-top-30"><a href="deals.html" class="btn btn-primary">Book Now</a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section-top-90 section-bottom-90 section-md-top-111">
+          <div class="shell owl-dots-60">
+            <div class="range range-xs-center">
+              <div class="cell-xs-8 cell-sm-12">
+                <div class="owl-items-middle">
+                  <div data-items="2" data-xs-items="2" data-sm-items="3" data-md-items="6" data-nav="false" data-dots="true" data-stage-padding="5" data-sm-stage-padding="20" data-margin="10" data-sm-margin="75" class="owl-carousel owl-carousel-classic"><a href="#"><img src="images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-01-132x88.png" width="132" height="88" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-02-112x83.png" width="112" height="83" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-03-132x75.png" width="132" height="75" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-04-107x85.png" width="107" height="85" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-05-132x74.png" width="132" height="74" alt="" class="img-responsive img-semi-transparent center-block"/></a><a href="#"><img src="images/products/product-06-128x77.png" width="128" height="77" alt="" class="img-responsive img-semi-transparent center-block"/></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section-90 section-md-111 bg-zircon">
+          <div class="shell">
+            <h2 class="text-bold">Latest News</h2>
+            <hr class="divider bg-chathams-blue">
+            <div class="range range-xs-center offset-top-60">
+              <div class="cell-xs-10 cell-sm-6">
+                <div class="reveal-block">
+                  <div class="post post-boxed">
+                    <header class="post-media"><img width="570" height="310" src="images/blog/post-07-570x310.jpg" alt="" class="img-responsive"/></header>
+                    
+                    <section class="post-content text-left">
+                      <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
+                      </div>
+                      <div class="post-body">
+                        
+                        <div class="post-title">
+                          <div class="h4 text-bold text-white"><a href="single-post.html">5 Reasons to Take the Bus in the USA</a></div>
+                        </div>
+                        <div class="post-meta">
+                          <ul class="list-inline list-inline-sm p">
+                            <li><span class="text-middle icon-xxs mdi mdi-calendar"></span>
+                              <time datetime="2016-01-01" class="text-middle inset-left-6 text-ripe-lemon">2 days ago</time>
+                            </li>
+                            <li class="text-middle">by&nbsp;<span class="inset-left-3 text-ripe-lemon">Michael Ford</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              <div class="cell-xs-10 cell-sm-6 offset-top-30 offset-sm-top-0">
+                
+                <div class="reveal-block">
+                  <div class="post post-boxed">
+                    
+                    <header class="post-media"><img width="570" height="310" src="images/blog/post-08-570x310.jpg" alt="" class="img-responsive"/></header>
+                   
+                    <section class="post-content text-left">
+                      <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
+                      </div>
+                      <div class="post-body">
+                        
+                        <div class="post-title">
+                          <div class="h4 text-bold text-white"><a href="single-post.html">Bus Booking in the USA – 7 Things You Need to Know Before Booking Your Ticket</a></div>
+                        </div>
+                        <div class="post-meta">
+                          <ul class="list-inline list-inline-sm p">
+                            <li><span class="text-middle icon-xxs mdi mdi-calendar"></span>
+                              <time datetime="2016-01-01" class="text-middle inset-left-6 text-ripe-lemon">2 days ago</time>
+                            </li>
+                            <li class="text-middle">by&nbsp;<span class="inset-left-3 text-ripe-lemon">Joyce Contreras</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              <div class="cell-xs-10 cell-sm-6 offset-top-30">
+           
+                <div class="reveal-block">
+                  <div class="post post-boxed">
+          
+                    <header class="post-media"><img width="570" height="310" src="images/blog/post-09-570x310.jpg" alt="" class="img-responsive"/></header>
+            
+                    <section class="post-content text-left">
+                      <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
+                      </div>
+                      <div class="post-body">
+                 
+                        <div class="post-title">
+                          <div class="h4 text-bold text-white"><a href="single-post.html">How To Take Long Bus Trips Like a Pro</a></div>
+                        </div>
+                        <div class="post-meta">
+                          <ul class="list-inline list-inline-sm p">
+                            <li><span class="text-middle icon-xxs mdi mdi-calendar"></span>
+                              <time datetime="2016-01-01" class="text-middle inset-left-6 text-ripe-lemon">2 days ago</time>
+                            </li>
+                            <li class="text-middle">by&nbsp;<span class="inset-left-3 text-ripe-lemon">Michael Ford</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              <div class="cell-xs-10 cell-sm-6 offset-top-30">
+            
+                <div class="reveal-block">
+                  <div class="post post-boxed">
+                
+                    <header class="post-media"><img width="570" height="310" src="images/blog/post-10-570x310.jpg" alt="" class="img-responsive"/></header>
+                  
+                    <section class="post-content text-left">
+                      <div class="post-tags group-sm"><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">Travel</span></a><a href="#"><span class="label-custom label-lg-custom label-ripe-lemon">USA</span></a>
+                      </div>
+                      <div class="post-body">
+              
+                        <div class="post-title">
+                          <div class="h4 text-bold text-white"><a href="single-post.html">Wi-Fi on Buses: How Often Does It Work In the United States ?</a></div>
+                        </div>
+                        <div class="post-meta">
+                          <ul class="list-inline list-inline-sm p">
+                            <li><span class="text-middle icon-xxs mdi mdi-calendar"></span>
+                              <time datetime="2016-01-01" class="text-middle inset-left-6 text-ripe-lemon">2 days ago</time>
+                            </li>
+                            <li class="text-middle">by&nbsp;<span class="inset-left-3 text-ripe-lemon">Laura Wallace</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="offset-top-60"><a href="blog-classic.html" class="btn btn-default">View All News</a></div>
+          </div>
+        </section>-->
+        
+        <section class="section-57 section-bg-animation context-dark">
+          <div class="shell">
+            <div class="range range-xs-center range-xs-middle">
+              <div class="cell-md-10 cell-lg-8 text-center text-md-right">
+                <h2 class="text-bold">Take Part in the Discount Campaign</h2>
+              </div>
+              <div class="cell-lg-3 offset-top-30 offset-lg-top-0 text-lg-left"><a href="single-tour.html" class="btn btn-ripe-lemon">Get Started</a></div>
+            </div>
+          </div>
+        </section>
+      </main>
       <!-- Page Footer-->
       <!-- Footer Default-->
-      <!DOCTYPE html>
-<html lang="en" class="wide wow-animation smoothscroll scrollTo">
-  <div class="page text-center">
-    <footer class="page-footer">
+      <footer class="page-footer">
         <section class="section-60">
           <div class="shell">
             <div class="range range-xs-center text-md-left">
               <div class="cell-xs-10 cell-sm-7 cell-md-4">
                 <!-- Footer brand-->
-                <div class="footer-brand"><a href="<?php echo base_url();?>index.php/Welcome/index"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-dark.png' alt=''/></a></div>
+                <div class="footer-brand"><a href="<?php echo base_url();?>index.php/Welcome/index"><img width='97' height='57' src='<?php echo PATH; ?>images/logo-dark1.png' alt=''/></a></div>
                 <div class="offset-top-30 inset-sm-right-20">
                   <p class="text-gray">Smart Travel is the leading go-to website for booking Inter-City bus ticket online. Our booking system allows travellers to search and book bus tickets all over Pakistan.</p>
                 </div>
@@ -524,9 +752,8 @@
             </p>
           </div>
         </section>
-    </footer>
-  </div>
-  </a>
+      </footer>
+    </div>
     <!-- Global Mailform Output-->
     <div id="form-output-global" class="snackbars"></div>
     <!-- PhotoSwipe Gallery-->
@@ -564,23 +791,8 @@
         </div>
       </div>
     </div>
-    <!-- Java script>
-      <script src="<?php echo PATH; ?>js/core.min.js"></script>
-    <script src="<?php echo PATH; ?>js/script.js"></script>-->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-      <script>
-    $(document).ready(function(){
-      var date_input=$('input[name="date"]'); //our date input has the name "date"
-      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-      var options={
-        format: 'mm/dd/yyyy',
-        container: container,
-        todayHighlight: true,
-        autoclose: true,
-      };
-      date_input.datepicker(options);
-    })
-</script>
-
-  </a>
+    <!-- Java script-->
+    <script src="<?php echo PATH; ?>js/core.min.js"></script>
+    <script src="<?php echo PATH; ?>js/script.js"></script>
+  </body>
 </html>

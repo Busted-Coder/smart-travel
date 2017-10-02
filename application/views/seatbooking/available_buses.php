@@ -4,7 +4,7 @@
             <div class="bg-primary-chathams-blue-reverse">
               <div class="shell section-top-57 section-bottom-30 section-md-top-210 section-lg-top-260">
                 <div class="veil reveal-md-block">
-                  <h1 class="text-bold">Destinations</h1>
+                  <h1 class="text-bold">Schedule</h1>
                 </div>
                 <ul class="list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-extra-small list-inline-icon-white p offset-top-30 offset-md-top-40 offset-lg-top-125">
                   <li><a href="index.html" class="text-white">Home</a></li>
@@ -45,6 +45,7 @@
                 <tbody>
                   <?php foreach($available_buses as $ab){ ?>
                   <tr>
+                    
                     <td style="font-weight:100;"><?= $ab['source'] ?></td>
                     <td style="font-weight:100;"><?= $ab['destination']?></td>
                     <td style="font-weight:100;"><?= date('Y-m-d', strtotime($ab['bus_time']))?></td>
@@ -56,12 +57,16 @@
                     <?php echo "<td><a class=\"btn btn-primary\" href=\"bookTicket?id=".$ab['schedule_id']."\">Book</a></td>"?>
                   </tr>
                   <?php } ?>
+
                 </tbody>
               </table> 
+
             </div>            
           </div>
-          <?php } ?>
+          <?php } else{ ?>
+          <td><?php echo "NO data found";?></td><?php } ?>
         </div>
+
       </main>
     </div>
   </body>

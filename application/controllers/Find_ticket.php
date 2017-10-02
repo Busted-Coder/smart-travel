@@ -2,7 +2,7 @@
 
 /**
  * Created by PhpStorm.
- * User: Rabai
+ * User: Rabail
  * Date: 8/23/2017
  * Time: 3:34 PM
  */
@@ -44,7 +44,9 @@ class Find_ticket extends CI_Controller
      $this->load->view('layout/header');
      $this->load->view('layout/nav');
      //echo count($viewdata);
+
      $this->load->view('seatbooking/available_buses',$viewdata);
+     //$this->load->view('seatbooking/bookings',$viewdata);
      $this->load->view('layout/footer');
 
 
@@ -66,7 +68,12 @@ class Find_ticket extends CI_Controller
     $data['id'] = $id;
     if ($schedule['avail_seats'] > 0)
     {
-        $this->load->view('seatbooking/bookings', $data);    //Actual site view. The CSS classes are clashing somehow.
+                $this->load->view('layout/header');
+                                $this->load->view('layout/nav');
+
+        $this->load->view('seatbooking/bookings', $data);
+                        $this->load->view('layout/footer');
+    //Actual site view. The CSS classes are clashing somehow.
         // $this->load->view('seatbooking/seatmap', $data);        //basic plugin view.     Link 2! Plugin working properly here. 
        // $this->load->view('seatbooking/seatbooking1', $data); 
     }

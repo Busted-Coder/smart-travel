@@ -97,7 +97,7 @@
             </div>
             <div class="offset-top-30 offset-md-top-49">
               <!-- Classic Responsive Table-->
-              <table data-responsive="true" class="table table-custom table-traking table-fixed table-hover-rows">
+             <!-- <table data-responsive="true" class="table table-custom table-traking table-fixed table-hover-rows">
                 <tr>
                   <th>Schedule</th>
                   <th>Origin & Destination</th>
@@ -153,7 +153,7 @@
                   <td>06:45 am</td>
                   <td>06:45 am</td>
                 </tr>
-              </table>
+              </table>-->
             </div>
           </div>
         </section>
