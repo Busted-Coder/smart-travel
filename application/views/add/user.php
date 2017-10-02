@@ -15,6 +15,16 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<select required name="class" class="form-control">
+						<option>Select Gender</option>
+						<option>Male</option>
+						<option>Female</option>
+						<option>Others</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-4">
 					<input name="email" type="email" placeholder="E-mail" class="form-control" required>
 				</div>
 			</div>

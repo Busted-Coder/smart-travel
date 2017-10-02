@@ -13,7 +13,7 @@ class Ticket extends MY_Controller {
 	public function lists()
 	{
 		$this->OnlyAdmin();
-		$info = $this->TicketModel->getList();
+		$info = $this->TicketModel->getList('desc');
 		$this->loadView('views/ticket', array('info'=> $info), true);
 	}
 

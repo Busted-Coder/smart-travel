@@ -60,10 +60,10 @@
 	      		</ul>
 	      	</li>
 	        <li class="dropdown" style="padding-top:8px; padding-left:4px">
-	      		<button data-toggle="dropdown" class="btn btn-info dropdown-toggle">Reporting &nbsp; <span class="caret"></span></button>
+	      		<form method="post" action="<?php echo site_url('index.php/report/lists') ?>"><button type="submit" class="btn btn-info">Reporting</button></form> <!--&nbsp; <span class="caret"></span></button>
 	      		<ul class="dropdown-menu">
 	      			<li><a href="<?php echo site_url('index.php/report/lists') ?>">Reporting</a></li>
-	      		</ul>
+	      		</ul>-->
 	      	</li><li class="dropdown" style="padding-top:8px; padding-left:4px">
 	      		<button data-toggle="dropdown" class="btn btn-info dropdown-toggle">Out Sourcing &nbsp; <span class="caret"></span></button>
 	      		<ul class="dropdown-menu">

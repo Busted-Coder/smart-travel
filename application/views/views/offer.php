@@ -18,6 +18,9 @@
 					<th>ID</th>
 					<th>Title</th>
 					<th>Discount %</th>
+					<th>Class Validity</th>
+					<th>Time Validity</th>
+					<th># of Seats Required</th>
 					<th>Creation Date</th>
 					<th>Action</th>
 				</tr>
@@ -29,6 +32,9 @@
 						<td> <?php echo $p['o_id'] ?></td>
 						<td> <?php echo $p['name'] ?></td>
 						<td> <?php echo $p['value'] ?> </td>
+						<td> <?php echo $p['class'] ?></td>
+						<td> <?php echo $p['validity'] ?></td>
+						<td> <?php echo $p['seat'] ?></td>
 						<td> <?php echo $p['created_at'] ?> </td>
 						<td><form action="<?php echo site_url('index.php/offer/edit') ?>" method="get" class="form-horizontal">
 						<input type="hidden" name="o_id" value="<?php echo $p['o_id'] ?>">

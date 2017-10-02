@@ -16,10 +16,10 @@
 				<tr>
 					<th>ID</th>
 					<th>NAME</th>
+					<th>Gender</th>
 					<th>E-Mail</th>
 					<th>Phone</th>
 					<th>CNIC</th>
-					<th>Image</th>
 					<th>Adress</th>
 					<th>Tech Info</th>
 					<th>Action</th>
@@ -31,10 +31,10 @@
 					<tr>
 						<td> <?php echo $p['user_id'] ?></td>
 						<td> <?php echo $p['fname']." ".$p['lname'] ?></td>
+						<td> <?php echo $p['gender'] ?> </td>
 						<td> <?php echo $p['email'] ?> </td>
 						<td> <?php echo $p['phone'] ?> </td>
 						<td> <?php echo $p['cnic'] ?> </td>
-						<td> <?php echo $p['image'] ?> </td>
 						<td> <?php echo $p['address'] ?> </td>
 						<td><form action="<?php echo site_url('index.php/user/tech') ?>" method="post" class="form-horizontal">
 						<input type="hidden" name="user_id" value="<?php echo $p['user_id'] ?>">

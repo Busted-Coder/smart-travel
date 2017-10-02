@@ -13,7 +13,7 @@ class User extends MY_Controller {
 	public function lists()
 	{
 		$this->OnlyAdmin();
-		$info = $this->UserModel->getList();
+		$info = $this->UserModel->getList('desc');
 		$this->loadView('views/user', array('info'=> $info), true);
 	}
 

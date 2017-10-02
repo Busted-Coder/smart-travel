@@ -8,8 +8,8 @@ class Ticket_model extends CI_Model {
         $this->load->database();
     }
 
-    public function getList(){
-       return $this->db->order_by("t_id", "desc")->get('ticket')->result_array();
+    public function getList($order){
+       return $this->db->order_by("t_id", $order)->get('ticket')->result_array();
     }  
     public function getticket($ticket_id){
 		return $this->db->where('t_id', $ticket_id)->get('ticket')->row();     
