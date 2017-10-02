@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <?php// $this->load->view('layout/header.php');?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Seat Booking</title>
+    <!--<title>Seat Booking</title>-->
 
     
     
@@ -126,11 +125,7 @@ span.seatCharts-legendDescription {
 
   </head>
   <body>
-  <?php
-
-   // $this->load->view('layout/navigation.php');
-    ?>
-<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+<!--<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
 				<div class="navbar-header">
 					 
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -162,7 +157,7 @@ span.seatCharts-legendDescription {
 					</ul>
 				</div>
 				
-			</nav>
+			</nav>-->
     <div class="container-fluid" style="margin-top: 75px;">
 	<div class="row">
 		<div class="col-md-12" align="center">

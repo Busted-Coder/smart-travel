@@ -29,7 +29,7 @@
                   <h2 class="text-bold text-center text-md-left">Get in Touch</h2>
                   <hr class="divider hr-sm-left-0 bg-chathams-blue">
                   <div class="offset-top-35 offset-md-top-65">
-                    <p>You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You can also use a quick contact form below or visit our office personally.</p>
+                    <p>You can contact us any way that is convenient for you. We are available 24/7 available for you. You can also use a quick contact form below or call us at the given number.</p>
                   </div>
                   <div class="offset-top-6">
                     <p>We would be happy to answer your questions.</p>
@@ -102,7 +102,9 @@
                         <div class="unit unit-middle unit-horizontal unit-spacing-xs">
                           <div class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-phone"></span></div>
                           <div class="unit-body text-gray-darker">
-                            <p><a href="callto:#" class="reveal-block reveal-xs-inline-block text-gray-darker">1-800-1234-567</a><span class="veil reveal-xs-inline-block">, &nbsp;</span><a href="callto:#" class="reveal-block reveal-xs-inline-block text-gray-darker">1-800-6547-321</a></p>
+                            <p><a href="callto:#" class="reveal-block reveal-xs-inline-block text-gray-darker">021-36502089
+ </a><span class="veil reveal-xs-inline-block">, &nbsp;</span><a href="callto:#" class="reveal-block reveal-xs-inline-block text-gray-darker">021-36502089
+ </a></p>
                           </div>
                         </div>
                       </div>
@@ -119,7 +121,7 @@
                         <div class="unit unit-middle unit-horizontal unit-spacing-xs">
                           <div class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-email-outline"></span></div>
                           <div class="unit-body">
-                            <p><a href="mailto:#" class="text-primary">info@demolink.org</a></p>
+                            <p><a href="mailto:#" class="text-primary">info@smarttravel.com</a></p>
                           </div>
                         </div>
                       </div>
@@ -136,7 +138,7 @@
                         <div class="unit unit-horizontal unit-spacing-xs">
                           <div class="unit-left"><span class="icon icon-xxs icon-primary icon-primary-filled icon-circle mdi mdi-map-marker"></span></div>
                           <div class="unit-body">
-                            <p><a href="#" class="text-gray-darker">2130 Fulton Street San Diego, <br class="veil reveal-sm-inline-block"> CA 94117-1080 USA</a></p>
+                            <p><a href="#" class="text-gray-darker">Karachi Pakistan</p>
                           </div>
                         </div>
                       </div>
@@ -166,7 +168,7 @@
           </div>
         </section>
         <section>
-          <!-- RD Google Map-->
+          <!-- RD Google Map
           <div class="rd-google-map">
             <div id="rd-google-map" data-zoom="15" data-x="-73.9874068" data-y="40.643180" data-styles='[{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]' class="rd-google-map__model"></div>
             <ul class="rd-google-map__locations">
@@ -175,7 +177,7 @@
               </li>
             </ul>
           </div>
-        </section>
+        </section>-->
       </main>
       <!-- Page Footer-->
       <!-- Footer Default-->
