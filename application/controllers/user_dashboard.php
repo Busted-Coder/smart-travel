@@ -31,7 +31,7 @@ class user_dashboard extends CI_Controller {
 	
 	public function viewTrips(){
 			
-		$id=$this->session->user_id;
+		$id = $this->session->userdata('user_id');
 		$this->load->model('User_model');
 		$trip_info=$this->User_model->viewTrips($id);
 		

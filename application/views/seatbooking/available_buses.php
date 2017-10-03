@@ -4,7 +4,7 @@
             <div class="bg-primary-chathams-blue-reverse">
               <div class="shell section-top-57 section-bottom-30 section-md-top-210 section-lg-top-260">
                 <div class="veil reveal-md-block">
-                  <h1 class="text-bold">Schedule</h1>
+                  <h1 class="text-bold">Schedules</h1>
                 </div>
                 <ul class="list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-extra-small list-inline-icon-white p offset-top-30 offset-md-top-40 offset-lg-top-125">
                   <li><a href="index.html" class="text-white">Home</a></li>
@@ -19,6 +19,24 @@
       </header>
 
 <html lang="en" class="wide wow-animation smoothscroll scrollTo">
+<head>
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;  
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover{background-color:#f5f5f5}
+</style>
+</head>
   <body>
     <!-- Page-->
     <div class="page text-center">
@@ -28,19 +46,19 @@
         <br>
         <div id="availablebuses">
           <?php if ($available_buses) { ?>
-          <div align="center" style="margin-top: 150px;padding-bottom: 50px;"> <h2 style="color: white"><?= count($available_buses); ?> Available Buses</h2>
+          <div align="center" style="margin-top: 150px;padding-bottom: 50px;"> <h2 style="color: #3256a4"><?php echo count($available_buses); ?> Available Buses</h2><br>
             <div class="col-md-12">
               <table class="table  table-hover" style="background-color: white; border-radius: 6px; margin-top: 10px;">
                 <thead>
                   <th style="font-size:18px;"> Source </th>
                   <th style="font-size:18px;"> Destination</th>
-                  <th style="font-size:18px;"> Date </th>
+                  <!--<th style="font-size:18px;"> Date </th>-->
                   <th style="font-size:18px;"> Stops</th>
                   <th style="font-size:18px;"> Departure</th>
                   <th style="font-size:18px;"> Arrival </th>
-                  <th style="font-size:18px;"> Days</th>
+                  <th style="font-size:18px;"> Arrival Day</th>
                   <th style="font-size:18px;"> Fare </th>
-                  <th style="font-size:18px;"> Book!</th>
+                  <th style="font-size:18px;"> Action</th>
                 </thead>
                 <tbody>
                   <?php foreach($available_buses as $ab){ ?>
@@ -48,13 +66,13 @@
                     
                     <td style="font-weight:100;"><?= $ab['source'] ?></td>
                     <td style="font-weight:100;"><?= $ab['destination']?></td>
-                    <td style="font-weight:100;"><?= date('Y-m-d', strtotime($ab['bus_time']))?></td>
+                    <!--<td style="font-weight:100;"><?= date('Y-m-d', strtotime($ab['bus_time']))?></td>-->
                     <td style="font-weight:100;"><?= $ab['stops']?></td>
                     <td style="font-weight:100;"><?= $ab['departure']?></td>
                     <td style="font-weight:100;"><?= $ab['arrival']?></td>
-                    <td style="font-weight:100;"><?= $ab['day']?></td>
+                    <td style="font-weight:100;"><?php if($ab['day'] == 1){ echo "Next Day";}else{echo "Same Day";} ?></td>
                     <td style="font-weight:100;"><?= $ab['fare']?></td>
-                    <?php echo "<td><a class=\"btn btn-primary\" href=\"bookTicket?id=".$ab['schedule_id']."\">Book</a></td>"?>
+                    <?php echo "<td><a class=\"btn btn-xs btn-ripe-lemon\" href=\"bookTicket?id=".$ab['schedule_id']."\">Select</a></td>"?>
                   </tr>
                   <?php } ?>
 
@@ -70,4 +88,5 @@
       </main>
     </div>
   </body>
+  <br><br><br><br>
 </html>

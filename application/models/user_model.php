@@ -33,12 +33,7 @@ class User_model extends CI_Model {
     }
 	public function viewTrips($id){
 		
-		return $this->db->select('*')
-			->from('passenger')
-			->join('schedule','schedule.schedule_id=passenger.schedule_id')
-			->join('route','schedule.route_id=route.route_id')
-			->where('passenger.user_id',$id)
-			->get()->result();
+		return $this->db->where('trav_id',$id)->get('ticket')->result_array();
 	}
 	public function editProfile($d){
 		$this->db->set('fname', $d['fname']);

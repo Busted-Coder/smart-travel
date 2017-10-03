@@ -284,7 +284,7 @@
                             <div class="form-group text-left">
                               <label for="form-filter-location-from-date" class="form-label form-label-outside">Depart Date</label>
                               <div class="select2-whitout-border shadow-drop-md">
-                                <input id="form-filter-location-from-date" name="date" type="date" data-minimum-results-for-search="Infinity" class="form-control" style="background-color: white;">
+                                <input id="form-filter-location-from-date" name="busdate" type="date" data-minimum-results-for-search="Infinity" class="form-control" style="background-color: white;">
                                   <!--<option value="1">7-11-2016</option>
                                   <option value="2">2-12-2016</option>
                                   <option value="3">14-11-2016</option>

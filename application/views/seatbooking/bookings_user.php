@@ -1,4 +1,4 @@
-<!--        <section class="section-height-800 breadcrumb-modern rd-parallax context-dark bg-gray-darkest text-lg-left">
+      <!--  <section class="section-height-800 breadcrumb-modern rd-parallax context-dark bg-gray-darkest text-lg-left">
           <div data-speed="0.2" data-type="media" data-url="<?php echo PATH; ?>images/backgrounds/background-01-1920x900.jpg" class="rd-parallax-layer"></div>
           <div data-speed="0" data-type="html" class="rd-parallax-layer">
             <div class="bg-primary-chathams-blue-reverse">
@@ -17,8 +17,7 @@
           </div>
         </section>
       </header>-->
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="wide wow-animation smoothscroll scrollTo">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -210,7 +209,9 @@
 								            <h3> Selected Seats (<span id="counter">0</span>):</h3>
                             <ul id="selected-seats"></ul>
 								            Total: <b>Rs. <span id="total">0</span></b>
-								            <button class="checkout-button">Checkout &raquo;</button>
+								            <form action="<?php echo site_url('index.php/ticket/final_booking') ?>" method="post">
+                              <input type="number" name="seatno" id="selected-seats" >
+                            <button class="checkout-button">Checkout</button></form>
 								            <div id="legend"></div>
 	  							        </div>
 		  					        </div>
@@ -229,45 +230,59 @@
 					    </div>
 			      </div>
 			      <div class="col-md-6" style="margin-top: 50px; ">
-			        <h3>Enter Details</h3>
+			        <h3>User's Details</h3>
 			        <br>
       					<form role="form" action = "confirmseat" method="POST" name="seatform">
                   <div class="form-group">
       							 
       							<label for="fname">
-      								First Name
+      								User Name
       							</label>
-      							<input style="width: 400px;" type="text"  name="fname" class="form-control" id="fname" required>
+      							<input style="width: 400px;" type="text"  name="fname" class="form-control" id="fname" value="<?php echo $this->session->userdata('username');?>" readonly>
       						</div>
-      						<div class="form-group">
-      							 
-      							<label for="lname">
-      								Last Name
-      							</label>
-      							<input style="width: 400px;" type="text" name="lname" class="form-control" id="lname" required>
-      						</div>
-						      <div class="form-group">
+						      
+                  <div class="form-group">
 							 
 						      	<label for="email">
-						      		Email address
+						      		Email Address
 						      	</label>
-						      	<input style="width: 400px;" type="email" name="email" class="form-control" id="email" required>
+						      	<input style="width: 400px;" type="email" name="email" class="form-control" id="email" value="<?php echo $this->session->userdata('email');?>" readonly>
 						      </div>
-						      <div class="form-group">
+						      
+                  <div class="form-group">
 							 
 							     <label for="phone">
-							     	Phone
-							          </label>
-							     <input style="width: 400px;" type="text" name="phone" class="form-control" id="phone" required>
+							     	Phone 
+							     </label>
+							     <input style="width: 400px;" type="text" name="phone" class="form-control" id="phone" value="<?php echo $this->session->userdata('phone');?>" readonly>
 						      </div>
-						      <div class="form-group">
+						      
+                  <div class="form-group">
 							 
 						      	<label for="cnic">
 						      		CNIC
 						      	</label>
-						      	<input style="width: 400px;" type="text" name="cnic" class="form-control" id="cnic" required>					  
+						      	<input style="width: 400px;" type="text" name="cnic" class="form-control" id="cnic" value="<?php echo $this->session->userdata('cnic');?>" readonly>
+                  	<!--<input style="width: 400px;" type="text" hidden name="seatstobook" id="seatstobook" required>-->						  
                   </div>
                   
+                  <div class="form-group">
+               
+                    <label for="dob">
+                      Date of Birth
+                    </label>
+                    <input style="width: 400px;" type="date" name="dob" class="form-control" id="dob" value="<?php echo $this->session->userdata('dob');?>" readonly>
+                    <!--<input style="width: 400px;" type="text" hidden name="seatstobook" id="seatstobook" required>-->              
+                  </div>
+                  
+                  <div class="form-group">
+               
+                    <label for="gender">
+                      Gender
+                    </label>
+                    <input style="width: 400px;" type="text" name="gender" class="form-control" id="gender" value="<?php echo $this->session->userdata('gender');?>" readonly>
+                    <!--<input style="width: 400px;" type="text" hidden name="seatstobook" id="seatstobook" required>-->              
+                  </div>
 
 
 						      <button type="submit" class="btn btn-default">
@@ -384,6 +399,7 @@
       
              return total;
               }
+              //document.getElementById('cartvalue').value = $cart;
     
           </script>
   </body>

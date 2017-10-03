@@ -38,10 +38,15 @@ class Auth extends MY_Controller {
 				if($username == $p['email'] && $password == $p['password'] && 2 == $p['role_id'] && $screen == 2)
 				{
 					$newdata = array(
-								'user_id'  => $p['user_id'],
-               					'username'  => $p['fname'],
-               					'email'     => $p['email'],
-               					'logged_in' => TRUE
+								'user_id'   =>  $p['user_id'],
+               					'username'  =>  $p['fname'].' '.$p['lname'],
+               					'email'     =>  $p['email'],
+               					'phone'     =>  $p['phone'],
+               					'cnic'      =>  $p['cnic'],
+               					'dob'       =>  $p['dob'],
+               					'gender'    =>  $p['gender'],
+               					'is_valued'     => $p['is_valued'],
+               					'logged_in' =>  TRUE
            );
 					$this->session->set_userdata($newdata);
 					redirect('index.php/Welcome/index');
@@ -63,7 +68,8 @@ class Auth extends MY_Controller {
 	}
 
 	public function logout(){
-		$this->session->unset_userdata('logged_in');
+		//$this->session->unset_userdata('logged_in');
+		$this->session->sess_destroy();
 		redirect('index.php/Welcome/index');
 	}
 

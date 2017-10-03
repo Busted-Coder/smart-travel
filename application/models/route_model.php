@@ -12,6 +12,14 @@ class Route_model extends CI_Model {
        return $this->db->order_by("route_id", "desc")->get('route')->result_array();
     }
 
+    public function getspecroute($id){
+        $schedule = $this->db->where('schedule_id',$id)->get('schedule')->row();
+        $route_info = $this->db->where('route_id',$schedule->route_id)->get('route')->row(); 
+        //$que = "select * from route where route_id = (select route_id from schedule where schedule_id = '$id')";
+        //$data = $this->db->query($que);
+        return $route_info;
+    }
+    
     public function getroute($route_id){
 		//return $this->db->where('route_id', $route_id)->get('route')->result_array();
         $que = "select * from route where route_id = '$route_id'";

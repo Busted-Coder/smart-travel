@@ -69,7 +69,7 @@ class Schedule_model extends CI_Model {
         ->join('route', 'route.route_id = schedule.route_id')
         ->where('route.source',$ticket['source'])
         ->where('route.destination',$ticket['dest'])
-        ->where('schedule.bus_time', $ticket['busdate'])
+        ->order_by('departure','asc')
         ->get()->result();
     }
 

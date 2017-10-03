@@ -6,7 +6,7 @@ class Ticket extends MY_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->OnlyAdmin();
+		$this->load->library('session');
 		$this->load->model('ticket_model','TicketModel');
 	}
 
@@ -66,6 +66,28 @@ class Ticket extends MY_Controller {
 		$this->OnlyAdmin();
 		$info = $this->TicketModel->getListUser($this->input->post('user_id'));
 		$this->loadView('views/ticket', array('info'=> $info), true);
+	}
+	public function final_booking(){
+		$seatno = array(
+			'seatno' => $this->input->post('seatno')
+		);
+		$this->session->set_userdata($seatno);
+		$this->load->view('layout/header');
+		$this->load->view('layout/nav');
+		$this->load->view('seatbooking/final_check');
+		$this->load->view('layout/footer');
+	}
+	public function book(){
+		$res_id = $this->TicketModel->RandomString('5');
+		$res = array(
+			'reservation_id'   => $res_id
+		);
+		$this->session->set_userdata($res);
+		$this->TicketModel->postbooking();
+		$this->load->view('layout/header');
+		$this->load->view('layout/nav');
+		$this->load->view('seatbooking/print_ticket');
+		$this->load->view('layout/footer');
 	}
 
 }

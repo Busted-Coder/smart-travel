@@ -17,13 +17,15 @@ class Find_ticket extends CI_Controller
  public function searchTicket()
  {
       $ticketdata = array(
-         'source' => $this->input->post('source'),
-         'dest' => $this->input->post('dest'),
+         'source'  => $this->input->post('source'),
+         'dest'    => $this->input->post('dest'),
          'busdate' => $this->input->post('busdate')
         
      );
       
-     $this->session->set_userdata('ticketData', $ticketdata);       //Getting data from session
+     $this->session->set_userdata('ticketData', $ticketdata);
+     $this->session->set_userdata($ticketdata);
+            //Getting data from session
 
          $this->load->model('Ticket_options_model','options');
          $availablebuses = $this->options->searchTicket($ticketdata);
@@ -40,7 +42,7 @@ class Find_ticket extends CI_Controller
 
 
             
-
+     $this->session->set_userdata($availablebuses);
      $this->load->view('layout/header');
      $this->load->view('layout/nav');
      //echo count($viewdata);
@@ -61,21 +63,41 @@ class Find_ticket extends CI_Controller
 
  	$id = $this->input->get('id');
     $this->load->model('schedule_model', 'schedules');
+    $this->load->model('route_model', 'route');
     $schedule = $this->schedules->getbyid($id);
-    
-    $data['ticketdata'] = $this->session->userdata('ticketData');       
+    $route = $this->route->getspecroute($id);
+    $route_info = array(
+        'schedule_id' => $id,
+        'km'          => $route->km,
+        'day'         => $route->day,
+        'source'      => $route->source,
+        'destination' => $route->destination,
+        'fare'        => $route->fare,
+        'departure'   => $route->departure,
+        'arrival'     => $route->arrival,
+
+    );
+    $this->session->set_userdata($route_info);
+    $data['ticketdata'] = $this->session->userdata('ticketData');
     $data['schedule'] = $schedule;
     $data['id'] = $id;
-    if ($schedule['avail_seats'] > 0)
+    if ($schedule['avail_seats'] > 0 && $this->session->userdata('logged_in'))
     {
-                $this->load->view('layout/header');
-                                $this->load->view('layout/nav');
-
-        $this->load->view('seatbooking/bookings', $data);
-                        $this->load->view('layout/footer');
+        //$this->load->view('layout/header');
+        //$this->load->view('layout/nav');
+        //$this->load->view('seatbooking/sel_schedule_header');
+        $this->load->view('seatbooking/bookings_user', $data);
+        //$this->load->view('layout/footer');
     //Actual site view. The CSS classes are clashing somehow.
         // $this->load->view('seatbooking/seatmap', $data);        //basic plugin view.     Link 2! Plugin working properly here. 
        // $this->load->view('seatbooking/seatbooking1', $data); 
+    }
+    elseif($schedule['avail_seats'] > 0){
+        //$this->load->view('layout/header');
+        //$this->load->view('layout/nav');
+        //$this->load->view('seatbooking/sel_schedule_header');
+        $this->load->view('seatbooking/bookings', $data);
+        //$this->load->view('layout/footer');
     }
  }
 

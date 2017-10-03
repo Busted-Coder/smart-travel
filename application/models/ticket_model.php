@@ -6,6 +6,7 @@ class Ticket_model extends CI_Model {
         // Call the Model constructor
         parent::__construct();
         $this->load->database();
+        $this->load->library('session');
     }
 
     public function getList($order){
@@ -15,7 +16,7 @@ class Ticket_model extends CI_Model {
 		return $this->db->where('t_id', $ticket_id)->get('ticket')->row();     
     }
     public function Add($ticket){
-        $ticket['created_at'] = date("Y-m-d H:i:s");
+        $ticket['created_at'] = date("Y-m-d H:i:s");//json_decode(date("Y-m-d H:i:s"),true);
         $this->db->insert('ticket', $ticket);
     }
     public function Get($id){
@@ -32,6 +33,8 @@ class Ticket_model extends CI_Model {
         $d['user_id'] = $data->user_id;
         $d['fname'] = $data->fname;
         $d['lname'] = $data->lname;
+        $d['dob'] = $data->dob;
+        $d['gender'] = $data->gender;
         $d['email'] = $data->email;
         $d['phone'] = $data->phone;
         $d['image'] = $data->image;
@@ -65,6 +68,39 @@ class Ticket_model extends CI_Model {
     }
     public function getListUser($id){
         return $this->db->where('trav_id',$id)->order_by("t_id", "desc")->get('ticket')->result_array(); 
+    }
+    //Random string generator for reservation_id
+    public function RandomString($length) {
+        $randstr = '';
+        srand((double) microtime(TRUE) * 1000000);
+        //our array add all letters and numbers if you wish
+        $chars = array(
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p',
+            'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5',
+            '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 
+            'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
+    
+        for ($rand = 0; $rand <= $length; $rand++) {
+            $random = rand(0, count($chars) - 1);
+            $randstr .= $chars[$random];
+        }
+        return $randstr;
+    }
+    //Ticket Booking from user panel
+    //Update User table KM Value
+    public function postbooking(){
+        $ticket['schedule_id'] = $this->session->userdata('schedule_id');
+        $ticket['trav_id'] = $this->session->userdata('user_id');
+        $ticket['trav_date'] = $this->session->userdata('busdate');
+        $ticket['seat#'] = $this->session->userdata('seatno');
+        $ticket['state'] = 1;
+        $ticket['reservation_id'] = $this->session->userdata('reservation_id');
+        $ticket['created_at'] = date("Y-m-d H:i:s");
+        $this->db->insert('ticket', $ticket);
+        $set_cond = "km + ".$this->session->userdata('km');
+        $this->db->where('user_id', $this->session->userdata('user_id'));
+        $this->db->set('km', $set_cond, FALSE);
+        $this->db->update('user');
     }
 }
 ?>
