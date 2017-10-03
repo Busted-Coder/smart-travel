@@ -20,6 +20,13 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Date of Birth</b></div>
+					<input name="dob" type="date" placeholder="Birthday" class="form-control"
+					value="<?php echo $user->dob ?>">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-4">
 					<div><b>Select Gender</b></div>
 					<select required name="gender" class="form-control">
 						<option>Select Class</option>
@@ -43,13 +50,13 @@
 					value="<?php echo $user->phone ?>">
 				</div>
 			</div>
-			<div class="form-group">
+			<!--<div class="form-group">
 				<div class="col-sm-4">
 					<div><b>Image</b></div>
 					<input name="image" type="text" placeholder="Image " class="form-control"
 					value="<?php echo $user->image ?>" readonly>
 				</div>
-			</div>
+			</div>-->
 			<div class="form-group">
 				<div class="col-sm-4">
 					<div><b>Password</b></div>

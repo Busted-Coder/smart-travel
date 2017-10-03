@@ -16,6 +16,7 @@ class Bus_model extends CI_Model {
     }
     public function Add($bus){
         $bus['created_at'] = date("Y-m-d H:i:s");
+        unset($bus['cam_id1']);
         $this->db->insert('bus', $bus);
     }
     public function add_t(){

@@ -22,8 +22,9 @@
 					<th>Departure</th>
 					<th>Arrival</th>
 					<th>Arrival Day</th>
+					<th>Distance</th>
 					<th>Fare</th>
-					<th>Start Date</th>
+					<th>Creation Date</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -38,6 +39,7 @@
 						<td> <?php echo $p['departure'] ?> </td>
 						<td> <?php echo $p['arrival'] ?> </td>
 						<td> <?php  if($p['day'] == 1){ echo "Next Day";}else{echo "Same Day";} ?> </td>
+						<td> <?php echo $p['km'] ?> </td>
 						<td> <?php echo $p['fare'] ?> </td>
 						<td> <?php echo $p['created_at'] ?> </td>
 						<td><form action="<?php echo site_url('index.php/route/edit') ?>" method="get" class="form-horizontal">

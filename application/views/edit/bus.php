@@ -6,7 +6,7 @@
 			<div class="form-group">
 				<div class="col-sm-4">
 					<input type="hidden" name="bus_id" value="<?php echo $bus->bus_id ?>">
-					<div><b>Excise #</b></div>
+					<div><b>Bus Registration #</b></div>
 					<input name="regs_no" type="text" placeholder="Excise #" class="form-control" required 
 					value="<?php echo $bus->regs_no ?>">
 				</div>
@@ -14,7 +14,7 @@
 			<div class="form-group">
 				<div class="col-sm-4">
 					<div><b>Seating Capacity</b></div>
-					<input name="seats" type="number" placeholder="Seating Capacity" class="form-control"
+					<input name="seats" type="number" placeholder="# of Seats" class="form-control"
 					value="<?php echo $bus->seats ?>">
 				</div>
 			</div>

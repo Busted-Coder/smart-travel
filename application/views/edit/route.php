@@ -55,6 +55,13 @@
 					value="<?php echo $route->fare ?>">
 				</div>
 			</div>
+			<div class="form-group">
+				<div class="col-sm-4">
+				<div><b>Distance</b></div>
+					<input name="km" type="number" placeholder="KM " class="form-control"
+					value="<?php echo $route->km ?>">
+				</div>
+			</div>
 			
 			<div class="form-group">
 				<div class="col-sm-4">

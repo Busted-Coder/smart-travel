@@ -5,7 +5,8 @@
 		<form action="<?php echo site_url('index.php/bus/add_cam') ?>" method="post" class="form-horizontal">
 			<div class="form-group">
 				<div class="col-sm-4">
-					<input name="model" type="text" placeholder="Model" class="form-control" required>
+					<div><b>Cam Model</b></div>
+					<input name="model" type="text" placeholder="Model #/Name" class="form-control" required>
 				</div>
 			</div>
 			

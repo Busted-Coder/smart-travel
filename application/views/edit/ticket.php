@@ -29,9 +29,15 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
-					<div><b>Schedule</b></div>
+					<div><b>Travelling Schedule ID</b></div>
 					<input name="schedule_id" type="number" placeholder="Schedule ID " class="form-control"
 					value="<?php echo $ticket->schedule_id ?>" readonly>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-4">
+					<div><b>Travelling Date</b></div>
+					<input name="trav_date" type="date" placeholder="Date" class="form-control" value="<?php echo $ticket->trav_date ?>" readonly>
 				</div>
 			</div>
 			

@@ -15,8 +15,10 @@
 			<thead>
 				<tr>
 					<th>ID</th>
+					<th>Reservation ID</th>
 					<th>Booking Status</th>
 					<th>Issuance Time</th>
+					<th>Travelling Date</th>
 					<th>User ID</th>
 					<th>Schedule ID</th>
 					<th>Action</th>
@@ -27,8 +29,10 @@
 				foreach ($info as $p) {?>
 					<tr>
 						<td> <?php echo $p['t_id'] ?></td>
+						<td> <?php echo $p['reservation_id'] ?></td>
 						<td> <?php echo $p['state'] ?></td>
-						<td> <?php echo $p['created_at'] ?> </td>
+						<td> <?php echo $p['created_at'] ?></td>
+						<td> <?php echo $p['trav_date'] ?></td>
 						<td> <form action="<?php echo site_url('index.php/ticket/spec_u') ?>" method="get" class="form-horizontal">
 						<input type="hidden" name="trav_id" value="<?php echo $p['trav_id'] ?>">
 						<div class="form-group">

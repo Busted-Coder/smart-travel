@@ -16,6 +16,7 @@
 				<tr>
 					<th>ID</th>
 					<th>NAME</th>
+					<th>Date of Birth</th>
 					<th>Gender</th>
 					<th>E-Mail</th>
 					<th>Phone</th>
@@ -31,6 +32,7 @@
 					<tr>
 						<td> <?php echo $p['user_id'] ?></td>
 						<td> <?php echo $p['fname']." ".$p['lname'] ?></td>
+						<td> <?php echo $p['dob'] ?></td>
 						<td> <?php echo $p['gender'] ?> </td>
 						<td> <?php echo $p['email'] ?> </td>
 						<td> <?php echo $p['phone'] ?> </td>

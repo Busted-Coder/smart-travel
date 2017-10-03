@@ -5,13 +5,15 @@
 		<form action="<?php echo site_url('index.php/role/add') ?>" method="post" class="form-horizontal">
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Role's Name</b></div>
 					<input name="type" type="text" placeholder="Role Title" class="form-control" required>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
+					<div><b>Role's Authority</b></div>
 					<select required name="role" class="form-control">
-						<option>Select Role</option>
+						<option>Select</option>
 						<option>FULL CRUD</option>
 						<option>INTER CRUD</option>
 						<option>RU</option>
