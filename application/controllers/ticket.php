@@ -67,9 +67,11 @@ class Ticket extends MY_Controller {
 		$info = $this->TicketModel->getListUser($this->input->post('user_id'));
 		$this->loadView('views/ticket', array('info'=> $info), true);
 	}
+	//
 	public function final_booking(){
 		$seatno = array(
-			'seatno' => $this->input->post('seatno')
+			'seatno' => $this->input->post('seatno'),
+			'state'  => 1
 		);
 		$this->session->set_userdata($seatno);
 		$this->load->view('layout/header');
@@ -77,6 +79,7 @@ class Ticket extends MY_Controller {
 		$this->load->view('seatbooking/final_check');
 		$this->load->view('layout/footer');
 	}
+	//make a tuple in ticket table from of registered user
 	public function book(){
 		$res_id = $this->TicketModel->RandomString('5');
 		$res = array(
@@ -89,5 +92,13 @@ class Ticket extends MY_Controller {
 		$this->load->view('seatbooking/print_ticket');
 		$this->load->view('layout/footer');
 	}
+	//save walking customer data
+	//make a tuple in ticket table with walking customer
+	public function final_booking_random(){
+		$seatno = $this->input->post('seatno');
+		$passenger = $this->TicketModel->add_customer($this->input->post());
+		echo $passenger->p_id;
 
+	}
+	
 }

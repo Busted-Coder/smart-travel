@@ -7,7 +7,7 @@
                   <h1 class="text-bold">Contacts</h1>
                 </div>
                 <ul class="list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-extra-small list-inline-icon-white p offset-top-30 offset-md-top-40 offset-lg-top-125">
-                  <li><a href="index.html" class="text-white">Home</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/Welcome/index" class="text-white">Home</a></li>
                   <li>Contacts
                   </li>
                 </ul>
@@ -83,11 +83,11 @@
                     </div>
                     <div class="offset-top-20">
                       <ul class="list-inline list-inline-2">
-                        <li><a href="#" class="icon icon-xxs icon-silver-filled icon-circle fa fa-facebook"></a></li>
-                        <li><a href="#" class="icon icon-xxs icon-silver-filled icon-circle fa fa-twitter"></a></li>
-                        <li><a href="#" class="icon icon-xxs icon-silver-filled icon-circle fa fa-google-plus"></a></li>
-                        <li><a href="#" class="icon icon-xxs icon-silver-filled icon-circle fa fa-instagram"></a></li>
-                        <li><a href="#" class="icon icon-xxs icon-silver-filled icon-circle fa fa-rss"></a></li>
+                        <li><a href="https://www.facebook.com" target="_blank" class="icon icon-xxs icon-silver-filled icon-circle fa fa-facebook"></a></li>
+                        <li><a href="https://twitter.com/login?lang=en" target="_blank" class="icon icon-xxs icon-silver-filled icon-circle fa fa-twitter"></a></li>
+                        <li><a href="https://plus.google.com/discover" target="_blank" class="icon icon-xxs icon-silver-filled icon-circle fa fa-google-plus"></a></li>
+                        <li><a href="https://www.instagram.com/?hl=en" target="_blank" class="icon icon-xxs icon-silver-filled icon-circle fa fa-instagram"></a></li>
+                        <!--<li><a href="" class="icon icon-xxs icon-silver-filled icon-circle fa fa-rss"></a></li>-->
                       </ul>
                     </div>
                     <!-- Phones-->

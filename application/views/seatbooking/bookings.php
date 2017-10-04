@@ -210,7 +210,6 @@
 								            <h3> Selected Seats (<span id="counter">0</span>):</h3>
                             <ul id="selected-seats"></ul>
 								            Total: <b>Rs. <span id="total">0</span></b>
-								            <button class="checkout-button">Checkout &raquo;</button>
 								            <div id="legend"></div>
 	  							        </div>
 		  					        </div>
@@ -220,7 +219,7 @@
 	  							    <button type="button" class="btn btn-default" data-dismiss="modal">
 		  							    Close
 			  					    </button> 
-				  				    <button type="button" class="btn btn-primary">
+				  				    <button type="button" class="btn btn-primary" data-dismiss="modal">
 					  				    Save changes
 						  		    </button>
 							      </div>
@@ -231,7 +230,7 @@
 			      <div class="col-md-6" style="margin-top: 50px; ">
 			        <h3>Enter Details</h3>
 			        <br>
-      					<form role="form" action = "confirmseat" method="POST" name="seatform">
+      					<form role="form"  action="<?php echo site_url('index.php/ticket/final_booking_random') ?>" method="POST" name="seatform">
                   <div class="form-group">
       							 
       							<label for="fname">
@@ -267,12 +266,14 @@
 						      	</label>
 						      	<input style="width: 400px;" type="text" name="cnic" class="form-control" id="cnic" required>					  
                   </div>
-                  
-
-
-						      <button type="submit" class="btn btn-default">
-							     Submit
-						      </button>
+                  <div class="form-group">
+               
+                    <label for="cnic">
+                      Seat #
+                    </label>
+                      <input style="width: 400px;" type="text" name="seatno" class="form-control" id="seatno" readonly>
+                  </div>
+                  <input type="submit" value="Proceed" class="btn btn-success"/>
 					     </form>
 				    </div>
 			   </div>
@@ -332,7 +333,8 @@
                       .attr('id', 'cart-item-'+this.settings.id)
                       .data('seatId', this.settings.id)
                       .appendTo($cart);
-              
+                      document.querySelector('#seatno').value = this.settings.label;
+                      console.log(this.settings.label);
                     /*
                      * Lets update the counter and total
                      *

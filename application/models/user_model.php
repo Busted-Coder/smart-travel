@@ -32,7 +32,6 @@ class User_model extends CI_Model {
        return $this->db->get('role')->result_array();
     }
 	public function viewTrips($id){
-		
 		return $this->db->where('trav_id',$id)->get('ticket')->result_array();
 	}
 	public function editProfile($d){
@@ -48,14 +47,11 @@ class User_model extends CI_Model {
 		
 	}
     public function getPassword($id){
-        return $this->db->select('*')
-        ->from('user')
-        ->where('user_id',$id)
-        ->get()->result();
+        return $this->db->where('user_id',$id)->get('user')->row();
     }
     public function changePassword($id,$pass){
         $this->db->set('password',$pass);
-        $this->db->where('$id',$id);
+        $this->db->where('user_id',$id);
         $this->db->update('user');
     }
 }

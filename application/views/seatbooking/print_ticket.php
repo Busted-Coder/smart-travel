@@ -7,7 +7,7 @@
                   <h1 class="text-bold">Destinations</h1>
                 </div>
                 <ul class="list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-extra-small list-inline-icon-white p offset-top-30 offset-md-top-40 offset-lg-top-125">
-                  <li><a href="index.html" class="text-white">Home</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/Welcome/index" class="text-white">Home</a></li>
                   <li><a href="destinations.html" class="text-white">Booking</a></li>
                   <li>Ticket
                   </li>
@@ -22,7 +22,7 @@
 table {
     border-collapse: collapse;
     width: 100%;
-    margin-left: 150px;
+    margin-left: 200px;
     margin-right: 150px;  
 }
 
@@ -106,6 +106,7 @@ tr:hover{background-color:#f5f5f5}
 			<thead>
 				<b><tr>
 					<th>Reservation ID</th>
+					<th>Status</th>
 					<th>Distance</th>
 					<th>Fare</th>
 					<th>Seat #</th>
@@ -114,6 +115,10 @@ tr:hover{background-color:#f5f5f5}
 			<tbody>
 				<tr>
 					<td style="color: red"> <?php echo $this->session->userdata('reservation_id'); ?></td>
+					<td> <?php if($this->session->userdata('state') == 1){echo "Booked, Payment Pending.";}
+								elseif($this->session->userdata('state') == 2){echo "Confirmed";}
+								elseif($this->session->userdata('state') == 3){echo "Refund";}
+								elseif($this->session->userdata('state') == 4){echo "Cancelled";} ?></td>
 					<td> <?php echo $this->session->userdata('km'); ?></td>
 					<td> <?php echo $this->session->userdata('fare'); ?></td>
 					<td> <?php echo $this->session->userdata('seatno'); ?> </td>

@@ -210,8 +210,8 @@
                             <ul id="selected-seats"></ul>
 								            Total: <b>Rs. <span id="total">0</span></b>
 								            <form action="<?php echo site_url('index.php/ticket/final_booking') ?>" method="post">
-                              <input type="number" name="seatno" id="selected-seats" >
-                            <button class="checkout-button">Checkout</button></form>
+                              <input type="hidden" name="seatno" id="seatno" >
+                            <input type="submit" value="Checkout" class="checkout-button"/></form>
 								            <div id="legend"></div>
 	  							        </div>
 		  					        </div>
@@ -301,8 +301,8 @@
           <script src="<?php echo PATH; ?>js/jquery.seat-charts.js"></script> 
           <script>
             var firstSeatLabel = 1;
-    
-            $(document).ready(function() {
+     
+                $(document).ready(function() {
               var $cart = $('#selected-seats'),
                 $counter = $('#counter'),
                 $total = $('#total'),
@@ -343,11 +343,13 @@
                 click: function () {
                   if (this.status() == 'available') {
                     //let's create a new <li> which we'll add to the cart items
-                    $('<li>'+this.data().category+' Seat # '+this.settings.label+': <b>Rs. '+this.data().price+'</b> <a href="#" class="cancel-cart-item">[cancel]</a></li>')
+
+                    $('<li>'+this.data().category+'Seat # <span id="num">'+this.settings.label+':</span> <b>Rs. '+this.data().price+'</b> <a href="#" class="cancel-cart-item">[cancel]</a></li>')
                       .attr('id', 'cart-item-'+this.settings.id)
                       .data('seatId', this.settings.id)
                       .appendTo($cart);
-              
+                      document.querySelector('#seatno').value = this.settings.label;
+                      console.log(this.settings.label);
                     /*
                      * Lets update the counter and total
                      *
@@ -356,7 +358,16 @@
                      */
                     $counter.text(sc.find('selected').length+1);
                     $total.text(recalculateTotal(sc)+this.data().price);
-              
+                    // $seats_Selected = $cart.children();
+                    // console.log($seats_Selected);
+                    // $("#seatno").value = "";
+                    // for($x in $seats_Selected){
+                    //   console.log($seats_Selected[$x]);
+                    //   $("#seatno").value += $seats_Selected[$x].find('#num').text()+";";
+                    // }   
+                    // while(1)
+                    //   console.log($seats_Selected);
+                    
                     return 'selected';
                   } else if (this.status() == 'selected') {
               //update the counter
@@ -386,6 +397,10 @@
 
               //let's pretend some seats have already been booked
               sc.get(['1_2','1_3', '4_1', '7_1', '7_2','10_3','8_3','11_2','14_4']).status('unavailable');
+              //document.getElementbytag('selected-seats').innerHTML=$cart;
+              //Session["seat"] = "'+ $cart +'";
+              //var session_value='<%=Session["seat"]%>';
+              //alert(session_value);
     
             });
 

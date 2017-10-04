@@ -1,15 +1,14 @@
-<<<<<<< HEAD
+
         
         
         
         <!-- RD Navbar Transparent-->
-=======
+
 <body>
     <!-- Page-->
     <div class="page text-center">
       <!-- Page Head-->
       <header class="page-head slider-menu-position">        <!-- RD Navbar Transparent-->
->>>>>>> 3f205100a56589f765b6d2feddbd2ccda474fbe3
         <div class="rd-navbar-wrap">
           <nav data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-md-stick-up-offset="90px" data-lg-stick-up-offset="75px" data-auto-height="false" class="rd-navbar rd-navbar-top-panel rd-navbar-default rd-navbar-white rd-navbar-static-fullwidth-transparent" data-lg-auto-height="true" data-md-layout="rd-navbar-fullwidth" data-lg-layout="rd-navbar-static" data-lg-stick-up="true">
             <div class="rd-navbar-inner">
@@ -29,7 +28,7 @@
                     <li><a href="https://twitter.com/login?lang=en" target="_blank" class="icon icon-xxs icon-silver-filled icon-circle fa fa-twitter"></a></li>
                     <li><a href="https://plus.google.com/discover" target="_blank" class="icon icon-xxs icon-silver-filled icon-circle fa fa-google-plus"></a></li>
                     <li><a href="https://www.instagram.com/?hl=en" target="_blank" class="icon icon-xxs icon-silver-filled icon-circle fa fa-instagram"></a></li>
-                    <li><a href="" class="icon icon-xxs icon-silver-filled icon-circle fa fa-rss"></a></li>
+                    <!--<li><a href="" class="icon icon-xxs icon-silver-filled icon-circle fa fa-rss"></a></li>-->
                   </ul>
                 </div>
               </div>
@@ -65,7 +64,7 @@
                         <ul class="rd-navbar-dropdown">
                           <li><a href="<?php echo site_url('index.php/auth/logout') ?>">Sign Off</a></li>
                           <li><a href="<?php echo site_url('index.php/user_dashboard/viewProfile') ?>">Edit Profile</a></li>
-                            <li><a href="<?php echo site_url('index.php/user_dashboard/changePassword') ?>">Change Password</a></li>
+                            <li><a href="<?php echo site_url('index.php/user_dashboard/changePassword_loader') ?>">Change Password</a></li>
                             <li><a href="<?php echo site_url('index.php/user_dashboard/viewTrips') ?>">View Trips</a></li>
                         </ul>
                       </li>

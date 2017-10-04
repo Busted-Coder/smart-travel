@@ -92,7 +92,7 @@ class Ticket_model extends CI_Model {
         $ticket['schedule_id'] = $this->session->userdata('schedule_id');
         $ticket['trav_id'] = $this->session->userdata('user_id');
         $ticket['trav_date'] = $this->session->userdata('busdate');
-        $ticket['seat#'] = $this->session->userdata('seatno');
+        $ticket['seatno'] = $this->session->userdata('seatno');
         $ticket['state'] = 1;
         $ticket['reservation_id'] = $this->session->userdata('reservation_id');
         $ticket['created_at'] = date("Y-m-d H:i:s");
@@ -101,6 +101,41 @@ class Ticket_model extends CI_Model {
         $this->db->where('user_id', $this->session->userdata('user_id'));
         $this->db->set('km', $set_cond, FALSE);
         $this->db->update('user');
+    }
+    public function gettickets($res_id){
+        return $this->db->where('reservation_id',$res_id)->get('ticket')->result_array();
+    }
+
+    public function get_ticket_preview($t_id){
+        $ticket = $this->db->where('t_id',$t_id)->get('ticket')->row();
+        $user = $this->db->where('user_id',$ticket->trav_id)->get('user')->row();
+        $schedule = $this->db->where('schedule_id',$ticket->schedule_id)->get('schedule')->row();
+        $route = $this->db->where('route_id',$schedule->route_id)->get('route')->row();
+        $tic_preview = array(
+            'user_id'         =>     $user->user_id,
+            'username'        =>     $user->fname.' '.$user->lname,
+            'cnic'            =>     $user->cnic,
+            'gender'          =>     $user->gender,
+            'source'          =>     $route->source,
+            'destination'     =>     $route->destination,
+            'busdate'         =>     $ticket->trav_date,
+            'departure'       =>     $route->departure,
+            'arrival'         =>     $route->arrival,
+            'day'             =>     $route->day,
+            'state'           =>     $ticket->state,
+            'reservation_id'  =>     $ticket->reservation_id,
+            't_id'            =>     $ticket->t_id,
+            'km'              =>     $route->km,
+            'fare'            =>     $route->fare,
+            'seatno'          =>     $ticket->seatno
+        );
+        $this->session->set_userdata($tic_preview);
+    }
+
+    public function add_customer($customer){
+        unset($customer['seatno']);
+        $this->db->insert('passenger', $customer);
+        return $this->db->order_by('p_id','desc')->limit(1)->get('passenger')->row();
     }
 }
 ?>

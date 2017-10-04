@@ -27,7 +27,7 @@ class Nav_tracking extends CI_Controller {
 	{
 		$this->load->view('layout/header');
 		$this->load->view('layout/nav');
-		$this->load->view('tracking/tracking');
+		$this->load->view('tracking/tracking1');
 		$this->load->view('layout/footer');
 	}
 

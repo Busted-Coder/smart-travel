@@ -7,8 +7,8 @@
                   <h1 class="text-bold">Schedules</h1>
                 </div>
                 <ul class="list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-extra-small list-inline-icon-white p offset-top-30 offset-md-top-40 offset-lg-top-125">
-                  <li><a href="index.html" class="text-white">Home</a></li>
-                  <li><a href="destinations.html" class="text-white">Ticket</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/Welcome/index" class="text-white">Home</a></li>
+                  <li><a class="text-white">Ticket</a></li>
                   <li>Schedule
                   </li>
                 </ul>

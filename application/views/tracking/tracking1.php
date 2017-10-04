@@ -16,8 +16,6 @@
           </div>
         </section>
       </header>
-<html lang="en" class="wide wow-animation smoothscroll scrollTo">
-
       <!-- Page Contents-->
       <main class="page-content">
         <!-- Tracking-->
@@ -31,14 +29,14 @@
                     <h5 class="text-bold"><span class="big"><span class="big"><span class="big">Search by Reservation Number</span></span></span></h5>
                   </div>
                   <div class="offset-top-10">
-                    <p>Enter the Reservation Number (found on your ticket) and Search It.</p>
+                    <p>Enter the Reservation Number (found on your ticket) and press Search.</p>
                   </div>
                   <!-- Form-->
                   <form action="<?php echo site_url('index.php/user_dashboard/track_by_res') ?>" method="post" class="offset-top-25">
                     <div class="group-item element-fullwidth offset-top-6 offset-md-top-0 offset-lg-top-6">
                       <div class="form-group form-group-label-outside text-left">
                         <label for="tracking-schedule-number" class="form-label form-label-outside text-dark">Reservation Number</label>
-                        <input id="res-num" type="text" name="res-num" style="color:#393a3c;" class="form-control shadow-drop-md bg-white">
+                        <input id="tracking-schedule-number" type="text" name="res-num" style="color:#393a3c;" class="form-control shadow-drop-md bg-white">
                       </div>
                     </div>
                     <div class="group-item element-fullwidth">
@@ -55,7 +53,7 @@
                       </div>-->
                     </div>
                     <div class="group-item reveal-sm-inline-block text-center text-sm-left">
-                      <input type="submit" value="Search" style="max-width: 140px; min-width: 140px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon">
+                      <input type="submit" style="max-width: 140px; min-width: 140px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon" value="search">
                     </div>
                   </form>
                 </div>
@@ -90,15 +88,14 @@
                     </div>
                     <div class="group-item reveal-sm-inline-block text-center text-sm-left">
                       <button type="button" style="max-width: 140px; min-width: 140px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon">search</button>
-                    </div>       
+                    </div>
                   </form>
                 </div>
               </div>
             </div>
-            
             <div class="offset-top-30 offset-md-top-49">
               <!-- Classic Responsive Table-->
-             <!-- <table data-responsive="true" class="table table-custom table-traking table-fixed table-hover-rows">
+              <!--<table data-responsive="true" class="table table-custom table-traking table-fixed table-hover-rows">
                 <tr>
                   <th>Schedule</th>
                   <th>Origin & Destination</th>
@@ -159,6 +156,3 @@
           </div>
         </section>
       </main>
-      <!-- Page Footer-->
-      <!-- Footer Default-->     
-</html>
