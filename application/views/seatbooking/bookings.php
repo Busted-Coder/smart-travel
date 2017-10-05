@@ -176,7 +176,7 @@
 				</div>
 				
 			</nav>-->
-    <div class="container-fluid" style="margin-top: 150px;">
+    <div class="container-fluid" style="margin-top: 50px;">
 	    <div class="row">
 		    <div class="col-md-12" align="center">
 			   <h2>
@@ -185,6 +185,7 @@
 			   <div class="row">
 				
 				    <div class="col-md-6">
+              <br><br><br><br>
 				      <a id="modal-788038" href="#modal-container-788038" role="button" style="margin-top: 75px;" class="btn btn-primary" data-toggle="modal">Select a    Seat here!</a>
 					
 					    <div class="modal fade" id="modal-container-788038" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -252,6 +253,17 @@
 						      	</label>
 						      	<input style="width: 400px;" type="email" name="email" class="form-control" id="email" required>
 						      </div>
+                  <div class="form-group">
+                    <label for="gender">
+                      Gender
+                    </label>
+                      <select style="width: 400px;" required name="gender" class="form-control">
+                        <option>Select</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Others</option>
+                      </select>
+                  </div>
 						      <div class="form-group">
 							 
 							     <label for="phone">

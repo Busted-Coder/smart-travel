@@ -209,9 +209,6 @@
 								            <h3> Selected Seats (<span id="counter">0</span>):</h3>
                             <ul id="selected-seats"></ul>
 								            Total: <b>Rs. <span id="total">0</span></b>
-								            <form action="<?php echo site_url('index.php/ticket/final_booking') ?>" method="post">
-                              <input type="hidden" name="seatno" id="seatno" >
-                            <input type="submit" value="Checkout" class="checkout-button"/></form>
 								            <div id="legend"></div>
 	  							        </div>
 		  					        </div>
@@ -221,7 +218,7 @@
 	  							    <button type="button" class="btn btn-default" data-dismiss="modal">
 		  							    Close
 			  					    </button> 
-				  				    <button type="button" class="btn btn-primary">
+				  				    <button type="button" class="btn btn-primary" data-dismiss="modal">
 					  				    Save changes
 						  		    </button>
 							      </div>
@@ -232,7 +229,7 @@
 			      <div class="col-md-6" style="margin-top: 50px; ">
 			        <h3>User's Details</h3>
 			        <br>
-      					<form role="form" action = "confirmseat" method="POST" name="seatform">
+      					<form role="form" action="<?php echo site_url('index.php/ticket/final_booking') ?>" method="post" name="seatform">
                   <div class="form-group">
       							 
       							<label for="fname">
@@ -283,11 +280,14 @@
                     <input style="width: 400px;" type="text" name="gender" class="form-control" id="gender" value="<?php echo $this->session->userdata('gender');?>" readonly>
                     <!--<input style="width: 400px;" type="text" hidden name="seatstobook" id="seatstobook" required>-->              
                   </div>
-
-
-						      <button type="submit" class="btn btn-default">
-							     Submit
-						      </button>
+                  <div class="form-group">
+               
+                    <label for="seatno">
+                      Seat #
+                    </label>
+                      <input style="width: 400px;" class="form-control" type="text" name="seatno" id="seatno" readonly>
+                  </div>
+						      <input type="submit" class="btn btn-success" value="Proceed">
 					     </form>
 				    </div>
 			   </div>

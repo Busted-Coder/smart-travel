@@ -90,17 +90,23 @@ class Ticket_model extends CI_Model {
     //Update User table KM Value
     public function postbooking(){
         $ticket['schedule_id'] = $this->session->userdata('schedule_id');
-        $ticket['trav_id'] = $this->session->userdata('user_id');
+        if($this->session->userdata('user_id')){
+            $ticket['trav_id'] = $this->session->userdata('user_id');
+        }
+        else{
+            $ticket['p_id'] = $this->session->userdata('p_id');
+        }
         $ticket['trav_date'] = $this->session->userdata('busdate');
         $ticket['seatno'] = $this->session->userdata('seatno');
         $ticket['state'] = 1;
         $ticket['reservation_id'] = $this->session->userdata('reservation_id');
         $ticket['created_at'] = date("Y-m-d H:i:s");
         $this->db->insert('ticket', $ticket);
+        if($this->session->userdata('user_id')){
         $set_cond = "km + ".$this->session->userdata('km');
         $this->db->where('user_id', $this->session->userdata('user_id'));
         $this->db->set('km', $set_cond, FALSE);
-        $this->db->update('user');
+        $this->db->update('user');}
     }
     public function gettickets($res_id){
         return $this->db->where('reservation_id',$res_id)->get('ticket')->result_array();
@@ -108,11 +114,18 @@ class Ticket_model extends CI_Model {
 
     public function get_ticket_preview($t_id){
         $ticket = $this->db->where('t_id',$t_id)->get('ticket')->row();
-        $user = $this->db->where('user_id',$ticket->trav_id)->get('user')->row();
+        if($ticket->trav_id){
+            $user = $this->db->where('user_id',$ticket->trav_id)->get('user')->row();
+            $a = array('user_id'         =>     $user->user_id);
+            $this->session->set_userdata($a);
+            }
+        else{
+            $user = $this->db->where('p_id',$ticket->p_id)->get('passenger')->row();
+            $a = array('p_id'         =>     $user->p_id);
+            $this->session->set_userdata($a);}
         $schedule = $this->db->where('schedule_id',$ticket->schedule_id)->get('schedule')->row();
         $route = $this->db->where('route_id',$schedule->route_id)->get('route')->row();
         $tic_preview = array(
-            'user_id'         =>     $user->user_id,
             'username'        =>     $user->fname.' '.$user->lname,
             'cnic'            =>     $user->cnic,
             'gender'          =>     $user->gender,

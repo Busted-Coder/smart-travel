@@ -54,7 +54,8 @@ tr:hover{background-color:#f5f5f5}
 			</thead>
 			<tbody>
 					<tr>
-						<td> <?php echo $this->session->userdata('user_id'); ?></td>
+						<td> <?php if($this->session->userdata('user_id')){ echo $this->session->userdata('user_id');}
+							 else{echo $this->session->userdata('p_id');}?></td>
 						<td> <?php echo $this->session->userdata('username'); ?></td>
 						<td> <?php echo $this->session->userdata('cnic'); ?> </td>
 						<td> <?php echo $this->session->userdata('gender'); ?> </td>

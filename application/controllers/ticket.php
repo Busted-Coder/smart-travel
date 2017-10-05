@@ -1,4 +1,4 @@
-<?php 
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Ticket extends MY_Controller {
@@ -97,8 +97,18 @@ class Ticket extends MY_Controller {
 	public function final_booking_random(){
 		$seatno = $this->input->post('seatno');
 		$passenger = $this->TicketModel->add_customer($this->input->post());
-		echo $passenger->p_id;
-
+		$p_id = array(
+			'p_id'     => $passenger->p_id,
+			'username' => $passenger->fname.' '.$passenger->lname,
+			'cnic'     => $passenger->cnic,
+			'gender'   => $passenger->gender,
+			'seatno'   => $seatno,
+			'state'    => 1
+		);
+		$this->session->set_userdata($p_id);
+		$this->load->view('layout/header');
+		$this->load->view('layout/nav');
+		$this->load->view('seatbooking/final_check');
+		$this->load->view('layout/footer');
 	}
-	
 }
