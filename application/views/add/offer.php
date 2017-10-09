@@ -45,6 +45,12 @@
 					<input name="seat" type="number" placeholder="# of Seats" class="form-control" required>
 				</div>
 			</div>
+			<div class="form-group">
+				<div class="col-sm-4">
+					<div><b>Discription/How user avail it</b></div>
+					<textarea name="disc" class="form-control" required cols="40" rows="10" placeholder="Discription"></textarea>
+				</div>
+			</div>
 		
 			<div class="form-group">
 				<div class="col-sm-4">

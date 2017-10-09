@@ -50,6 +50,12 @@
 					value="<?php echo $info->seat ?>">
 				</div>
 			</div>
+			<div class="form-group">
+				<div class="col-sm-4">
+				<div><b>Discription</b></div>
+					<textarea name="disc" class="form-control" required cols="40" rows="10" placeholder="Discription"><?php echo $info->disc ?></textarea>
+				</div>
+			</div>
 
 			<div class="form-group">
 				<div class="col-sm-4">

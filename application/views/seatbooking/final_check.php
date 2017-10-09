@@ -17,117 +17,93 @@
           </div>
         </section>
       </header>
-<head>
-<style>
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-left: 150px;
-    margin-right: 150px;  
-}
 
-th, td {
-    padding: 8px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-}
-
-tr:hover{background-color:#f5f5f5}
-</style>
-</head>
-<div class="row">
-	<br><br><br><br>
-	<div class="col-sm-12">
-		<h2  style="color: #3256a4">Traveller Info</h2><br>
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-9">
-		<table>
-			<thead>
-				<b><tr>
-					<th>Registration ID</th>
-					<th>Name</th>
-					<th>CNIC</th>
-					<th>Gender</th>
-				</tr></b>
-			</thead>
-			<tbody>
-					<tr>
-						<td> <?php if($this->session->userdata('user_id')){ echo $this->session->userdata('user_id');}
+<main class="page-content section-90 section-md-111 text-md-left">
+	<section class="offset-top-60 offset-md-top-111">
+    	<div class="shell">
+        <h2 class="text-bold">Traveller Info</h2>
+            <hr class="divider hr-md-left-0 bg-chathams-blue">
+        	<div class="range range-xs-center range-md-left offset-top-30 offset-md-top-65">
+            	<div class="cell-xs-10 cell-lg-9">
+            		<!-- Classic Responsive Table-->
+            		<table data-responsive="true" class="table table-custom table-primary table-fixed">
+              			<b><tr>
+                			<th>Registration ID</th>
+							<th>Name</th>
+							<th>CNIC</th>
+							<th>Gender</th>
+              			</tr></b>
+              			<tr>
+                			<td> <?php if($this->session->userdata('user_id')){ echo $this->session->userdata('user_id');}
 							 else{echo $this->session->userdata('p_id');}?></td>
-						<td> <?php echo $this->session->userdata('username'); ?></td>
-						<td> <?php echo $this->session->userdata('cnic'); ?> </td>
-						<td> <?php echo $this->session->userdata('gender'); ?> </td>
-					</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
-<div class="row">
-	<br><br><br><br>
-	<div class="col-sm-12">
-		<h2  style="color: #3256a4">Travelling Info</h2><br>
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-9">
-		<table>
-			<thead>
-				<b><tr>
-					<th>Source</th>
-					<th>Destination</th>
-					<th>Departure</th>
-					<th>Arrival</th>
-				</tr></b>
-			</thead>
-			<tbody>
-				<tr>
-					<td> <?php echo $this->session->userdata('source'); ?></td>
-					<td> <?php echo $this->session->userdata('destination'); ?></td>
-					<td> <?php echo $this->session->userdata('busdate').' - '.$this->session->userdata('departure'); ?> </td>
-					<td> <?php echo $this->session->userdata('arrival').' - '; 
+							<td> <?php echo $this->session->userdata('username'); ?></td>
+							<td> <?php echo $this->session->userdata('cnic'); ?> </td>
+							<td> <?php echo $this->session->userdata('gender'); ?> </td>
+    	        		</tr>
+            		</table>
+          		</div>
+        	</div>
+    	</div>
+	</section>
+	<section class="offset-top-60 offset-md-top-111">
+    	<div class="shell">
+        <h2 class="text-bold">Travelling Info</h2>
+            <hr class="divider hr-md-left-0 bg-chathams-blue">
+        	<div class="range range-xs-center range-md-left offset-top-30 offset-md-top-65">
+            	<div class="cell-xs-10 cell-lg-9">
+            		<!-- Classic Responsive Table-->
+            		<table data-responsive="true" class="table table-custom table-primary table-fixed">
+              			<b><tr>
+                			<th>Source</th>
+							<th>Destination</th>
+							<th>Departure</th>
+							<th>Arrival</th>
+              			</tr></b>
+              			<tr>
+                			<td> <?php echo $this->session->userdata('source'); ?></td>
+							<td> <?php echo $this->session->userdata('destination'); ?></td>
+							<td> <?php echo $this->session->userdata('busdate').' - '.$this->session->userdata('departure'); ?> </td>
+							<td> <?php echo $this->session->userdata('arrival').' - '; 
 							   if($this->session->userdata('day') == 1){ echo "Next Day";}
 							   else{echo "Same Day";}; ?> 
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
-<div class="row">
-	<br><br><br><br>
-	<div class="col-sm-12">
-		<h2  style="color: #3256a4">Technical Info</h2><br>
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-9">
-		<table>
-			<thead>
-				<b><tr>
-					<th>Distance</th>
-					<th>Fare</th>
-					<th>Seat #</th>
-					<th>Action</th>
-				</tr></b>
-			</thead>
-			<tbody>
-				<tr>
-					<td> <?php echo $this->session->userdata('km'); ?></td>
-					<td> <?php echo $this->session->userdata('fare'); ?></td>
-					<td> <?php echo $this->session->userdata('seatno'); ?> </td>
-					<td> <form action="<?php echo site_url('index.php/ticket/book') ?>" method="post" 		 class="form-horizontal">
-						 	  <div class="form-group">
-								<div class="col-sm-4">
-									<input type="submit" style="text-align: center;" class="btn btn-xs btn-ripe-lemon" value="Book">
-								</div>
-						 	  </div>
-						 </form> 
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
-</html><br><br><br><br>
+							</td>
+    	        		</tr>
+            		</table>
+          		</div>
+        	</div>
+    	</div>
+	</section>
+	<section class="offset-top-60 offset-md-top-111">
+    	<div class="shell">
+        <h2 class="text-bold">Technical Info</h2>
+            <hr class="divider hr-md-left-0 bg-chathams-blue">
+        	<div class="range range-xs-center range-md-left offset-top-30 offset-md-top-65">
+            	<div class="cell-xs-10 cell-lg-9">
+            		<!-- Classic Responsive Table-->
+            		<table data-responsive="true" class="table table-custom table-primary table-fixed">
+              			<b><tr>
+                			<th>Distance</th>
+							<th>Fare</th>
+							<th>Seat #</th>
+							<th>Action</th>
+              			</tr></b>
+              			<tr>
+                			<td> <?php echo $this->session->userdata('km'); ?></td>
+							<td> <?php echo $this->session->userdata('fare'); ?></td>
+							<td> <?php echo $this->session->userdata('seatno'); ?> </td>
+							<td> 
+								<form action="<?php echo site_url('index.php/ticket/book') ?>" method="post" class="form-horizontal">
+						 	  		<div class="form-group">
+										<div class="col-sm-4">
+											<input type="submit" class="btn btn-xs btn-ripe-lemon" value="Book">
+										</div>
+						 	  		</div>
+						 		</form> 
+							</td>
+    	        		</tr>
+            		</table>
+          		</div>
+        	</div>
+    	</div>
+	</section>
+</main>

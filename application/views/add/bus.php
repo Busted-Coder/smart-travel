@@ -29,7 +29,7 @@
 			<div class="form-group">
 				<div class="col-sm-4">
 					<div><b>About Bus/Bus Features</b></div>
-					<textarea name="des" class="form-control" required cols="40" rows="10" placeholder="Description"></textarea>
+					<textarea name="des" class="form-control" required cols="40" rows="10" placeholder="Discription"></textarea>
 				</div>
 			</div>
 			<div class="form-group">

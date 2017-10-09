@@ -31,8 +31,8 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
-				<div><b>Description</b></div>
-					<textarea name="des" class="form-control" required cols="40" rows="10" placeholder="Description"><?php echo $bus->des ?></textarea>
+				<div><b>Discription</b></div>
+					<textarea name="des" class="form-control" required cols="40" rows="10" placeholder="Discription"><?php echo $bus->des ?></textarea>
 				</div>
 			</div>
 			<div class="form-group">

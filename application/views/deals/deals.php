@@ -18,11 +18,13 @@
 <main class="page-content section-90 section-md-111 text-md-left">
 	<section class="offset-top-60 offset-md-top-111">
     	<div class="shell">
+        <h2 class="text-bold">Offers</h2>
+            <hr class="divider hr-md-left-0 bg-chathams-blue">
         	<div class="range range-xs-center range-md-left offset-top-30 offset-md-top-65">
             	<div class="cell-xs-10 cell-lg-9">
             		<!-- Classic Responsive Table-->
             		<table data-responsive="true" class="table table-custom table-primary table-fixed">
-              			<tr>
+              			<b><tr>
                 			<th>#</th>
                 			<th>Offer Name</th>
                 			<th>Discount %</th>
@@ -30,7 +32,7 @@
                 			<th>Availability</th>
                 			<th># of Seats Required</th>
                 			<th>Discription</th>
-              			</tr>
+              			</tr></b>
               			<?php $count = 0; 
               			foreach($info as $p){ 
               				$count = $count + 1;?>

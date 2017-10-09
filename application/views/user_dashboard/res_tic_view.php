@@ -17,71 +17,55 @@
           </div>
         </section>
       </header>
-<head>
-<style>
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-left: 225px;
-}
-
-th, td {
-    padding: 8px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-}
-
-tr:hover{background-color:#f5f5f5}
-</style>
-</head>
-<div class="row">
-	<br><br><br><br>
-	<div class="col-sm-12">
-		<!--<?php $title = "<u> ".$this->session->userdata('res_num')."</u>";?>-->
-		<h2 style = "color : #3256a4">Reservation(s) on <u style="color: red"><?php echo $this->session->userdata('res_num'); ?></u></h2><br>
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-9">
-		<table>
-			<thead>
-				<b><tr>
-					<th>Ticket ID</th>
-					<th>Status</th>
-					<th>Schedule ID</th>
-					<th>Travelling Date</th>
-					<th>Seat #</th>
-					<th>Issuance Date</th>
-					<th>Action</th>
-				</tr></b>
-			</thead>
-			<tbody>
-				<?php foreach($data as $p){ ?>
-					<tr>
-						<td> <?php echo $p['t_id']; ?></td>
-						<td> <?php if($p['state'] == 1){echo "Booked, Payment Pending.";}
+<main class="page-content section-90 section-md-111 text-md-left">
+	<section class="offset-top-60 offset-md-top-111">
+    	<div class="shell">
+    		<h2 style = "color : #3256a4">Reservation(s) on <u style="color: red"><?php echo $this->session->userdata('res_num'); ?></u></h2>
+            <hr class="divider hr-md-left-0 bg-chathams-blue">
+        	<div class="range range-xs-center range-md-left offset-top-30 offset-md-top-65">
+            	<div class="cell-xs-10 cell-lg-9">
+            		<!-- Classic Responsive Table-->
+            		<table data-responsive="true" class="table table-custom table-primary table-fixed">
+              			<b><tr>
+                			<th>#</th>
+                			<th>Ticket ID</th>
+							<th>Status</th>
+							<th>Schedule ID</th>
+							<th>Travelling Date</th>
+							<th>Seat #</th>
+							<th>Issuance Date</th>
+							<th>Action</th>
+              			</tr></b>
+              			<?php $count = 0; 
+              			foreach($data as $p){ 
+              				$count = $count + 1;?>
+              			<tr>
+                			<td> <?php echo $count;?> </td>
+                			<td> <?php echo $p['t_id']; ?></td>
+    		            	<td> <?php if($p['state'] == 1){echo "Booked, Payment Pending.";}
 									elseif($p['state'] == 2){echo "Confirmed";}
 									elseif($p['state'] == 3){echo "Refund";}
 									elseif($p['state'] == 4){echo "Cancelled";} ?>
-						</td>
-						<td> <?php echo $p['schedule_id']; ?> </td>
-						<td> <?php echo $p['trav_date']; ?> </td>
-						<td> <?php echo $p['seatno']; ?> </td>
-						<td> <?php echo $p['created_at']; ?> </td>
-						<td> 
-							<form action="<?php echo site_url('index.php/user_dashboard/ticket_preview') ?>" method="post" class="form-horizontal">
-								<input type="hidden" name="t_id" value="<?php echo $p['t_id'] ?>">
-								<div class="form-group">
-									<div class="col-sm-4">
-										<input type="submit" style="text-align: right;" class="btn btn-xs btn-ripe-lemon" value="Preview Ticket">
+							</td>
+            		    	<td> <?php echo $p['schedule_id']; ?> </td>
+							<td> <?php echo $p['trav_date']; ?> </td>
+							<td> <?php echo $p['seatno']; ?> </td>
+							<td> <?php echo $p['created_at']; ?> </td>
+							<td> 
+								<form action="<?php echo site_url('index.php/user_dashboard/ticket_preview') ?>" method="post" class="form-horizontal">
+									<input type="hidden" name="t_id" value="<?php echo $p['t_id'] ?>">
+									<div class="form-group">
+										<div class="col-sm-4">
+											<input type="submit" class="btn btn-xs btn-ripe-lemon" value="Preview">
+										</div>
 									</div>
-								</div>
-							</form>
-						</td>
-					</tr>
-					<?php } ?>
-			</tbody>
-		</table>
-	</div>
-</div>
-</html><br><br><br><br>
+								</form>
+							</td>
+    	        		</tr>
+    	        		<?php } ?>
+            		</table>
+          		</div>
+        	</div>
+    	</div>
+	</section>
+</main>
