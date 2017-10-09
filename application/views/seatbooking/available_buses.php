@@ -67,7 +67,7 @@ tr:hover{background-color:#f5f5f5}
                     <td style="font-weight:100;"><?= $ab['source'] ?></td>
                     <td style="font-weight:100;"><?= $ab['destination']?></td>
                     <!--<td style="font-weight:100;"><?= date('Y-m-d', strtotime($ab['bus_time']))?></td>-->
-                    <td style="font-weight:100;"><?= $ab['stops']?></td>
+                    <td style="font-weight:150;"><?= $ab['stops']?></td>
                     <td style="font-weight:100;"><?= $ab['departure']?></td>
                     <td style="font-weight:100;"><?= $ab['arrival']?></td>
                     <td style="font-weight:100;"><?php if($ab['day'] == 1){ echo "Next Day";}else{echo "Same Day";} ?></td>
