@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-sm-12">
-		<h2>User List</h2>
+		<h2>Register User</h2>
 	</div>
 </div>
 <div class="row">

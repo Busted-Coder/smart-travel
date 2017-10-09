@@ -18,7 +18,8 @@ class Route extends MY_Controller {
 	}
 	public function add1(){
 		$this->OnlyAdmin();
-		$this->loadView('add/route',false,true);
+		$data = $this->RouteModel->getcity();
+		$this->loadView('add/route',array("data" => $data),true);
 	}
 	public function edit(){
 		$this->OnlyAdmin();

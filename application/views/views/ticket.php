@@ -30,17 +30,29 @@
 					<tr>
 						<td> <?php echo $p['t_id'] ?></td>
 						<td> <?php echo $p['reservation_id'] ?></td>
-						<td> <?php echo $p['state'] ?></td>
+						<td> <?php if($p['state'] == 1){echo "Booked, Payment Pending.";}
+								elseif($p['state'] == 2){echo "Confirmed";}
+								elseif($p['state'] == 3){echo "Refund";}
+								elseif($p['state'] == 4){echo "Cancelled";} ?></td>
 						<td> <?php echo $p['created_at'] ?></td>
 						<td> <?php echo $p['trav_date'] ?></td>
-						<td> <form action="<?php echo site_url('index.php/ticket/spec_u') ?>" method="get" class="form-horizontal">
-						<input type="hidden" name="trav_id" value="<?php echo $p['trav_id'] ?>">
+						<td> <?php if($p['trav_id']) {?><form action="<?php echo site_url('index.php/ticket/spec_u') ?>" method="get" class="form-horizontal">
+						<input type="hidden" name="trav_id" value="<?php echo$p['trav_id'] ?>">
 						<div class="form-group">
 							<div class="col-sm-4">
 								<input type="submit" class="btn btn-success" value="<?php echo $p['trav_id'] ?>">
 							</div>
 						</div>
-						</form></td>
+						</form><?php } 
+						else if($p['p_id']){ ?> 
+						<form action="<?php echo site_url('index.php/ticket/spec_u_walking') ?>" method="get" class="form-horizontal">
+							<input type="hidden" name="p_id" value="<?php echo$p['p_id'] ?>">
+							<div class="form-group">
+								<div class="col-sm-4">
+									<input type="submit" class="btn btn-success" value="<?php echo $p['p_id'] ?>">
+								</div>
+							</div>
+						</form><?php } ?></td>
 						<td> <form action="<?php echo site_url('index.php/ticket/spec_s') ?>" method="get" class="form-horizontal">
 						<input type="hidden" name="schedule_id" value="<?php echo $p['schedule_id'] ?>">
 						<div class="form-group">

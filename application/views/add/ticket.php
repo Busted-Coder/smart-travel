@@ -8,10 +8,10 @@
 					<div><b>Ticket Satus</b></div>
 					<select required name="state" class="form-control">
 						<option>Select</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
+						<option value=1>Booked, Payment pending</option>
+						<option value=2>Confirm</option>
+						<option value=3>Refund</option>
+						<option value=4>Cancelled</option>
 					</select>
 				</div>
 			</div>

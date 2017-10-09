@@ -31,16 +31,20 @@ class Schedule_model extends CI_Model {
         $this->db->insert('schedule', $schedule);
     }   
     public function availroutebus(){
-        $d0 = $this->db->select('route_id')->get('route')->result();
+        $d0 = $this->db->select('route_id,source,destination,departure')->get('route')->result();
         $list = [];
         foreach ($d0 as $k) {
             $data['route_id'] = $k->route_id;
+            $data['source'] = $k->source;
+            $data['destination'] = $k->destination;
+            $data['departure'] = $k->departure;
             array_push($list, $data);
         }
-        $d1 = $this->db->select('bus_id')->where('`bus_id` NOT IN (SELECT `bus_id` FROM `schedule`)', NULL, FALSE)->get('bus')->result();
+        $d1 = $this->db->select('bus_id,regs_no')->where('`bus_id` NOT IN (SELECT `bus_id` FROM `schedule`)', NULL, FALSE)->get('bus')->result();
         $list1 = [];
         foreach ($d1 as $k1) {
             $data1['bus_id'] = $k1->bus_id;
+            $data1['regs_no'] = $k1->regs_no;
             array_push($list1, $data1);
         }
         return array('d0'=>$list,'d1'=>$list1);

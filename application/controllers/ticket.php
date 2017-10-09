@@ -9,15 +9,15 @@ class Ticket extends MY_Controller {
 		$this->load->library('session');
 		$this->load->model('ticket_model','TicketModel');
 	}
-
+	//return full ticket list
 	public function lists()
 	{
 		$this->OnlyAdmin();
 		$info = $this->TicketModel->getList('desc');
 		$this->loadView('views/ticket', array('info'=> $info), true);
 	}
-
-	
+	//take t_id
+	//return that ticket info
 	public function edit(){
 		$this->OnlyAdmin();
 		if($this->input->get()){
@@ -28,24 +28,36 @@ class Ticket extends MY_Controller {
 			redirect('index.php/ticket/lists');
 		}
 	}
-
+	//will load the add_ticket form
+	//with ticket status info
 	public function add1(){
 		$this->OnlyAdmin();
 		$data = $this->OnlyAdmin();$data = $this->TicketModel->avail_us();
 		$this->loadView('add/ticket',array('data' => $data),true);
 	}
-
+	//make a tuple in ticket by admin
 	public function add(){
 		$this->OnlyAdmin();
 		if($this->input->post()){
 			$this->TicketModel->Add($this->input->post());
 			redirect('index.php/ticket/lists');}
 	}
+	//take trav_id
+	//return registered user detail
 	public function spec_u(){
 		$this->OnlyAdmin();
 		$info = $this->TicketModel->getspec_u($this->input->get('trav_id'));
 		$this->loadView('views/user', array('info'=> $info), true);	 
 	}
+	//take p_id
+	//return walking customer detail
+	public function spec_u_walking(){
+		$this->OnlyAdmin();
+		$info = $this->TicketModel->getspec_u_walking($this->input->get('p_id'));
+		$this->loadView('views/user_walking', array('info'=> $info), true);	 
+	}
+	//take s_id
+	//return a specific schedule
 	public function spec_s(){
 		$this->OnlyAdmin();
 		$info = $this->TicketModel->getspec_s($this->input->get('schedule_id'));
@@ -56,6 +68,8 @@ class Ticket extends MY_Controller {
 		$detail = $this->ticketModel->get_tc();
 		$this->loadView('add/ticket',array('detail'=>$detail),true);
 	} 
+	//take t_id
+	//delete ticket
 	public function del(){
 		$this->OnlyAdmin();
 		if($this->input->post()){
@@ -67,7 +81,7 @@ class Ticket extends MY_Controller {
 		$info = $this->TicketModel->getListUser($this->input->post('user_id'));
 		$this->loadView('views/ticket', array('info'=> $info), true);
 	}
-	//
+	//final booking check to minimize error
 	public function final_booking(){
 		$seatno = array(
 			'seatno' => $this->input->post('seatno'),

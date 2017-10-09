@@ -6,13 +6,23 @@
 			<div class="form-group">
 				<div class="col-sm-4">
 					<div><b>Departure Terminal</b></div>
-					<input name="source" type="text" placeholder="Source" class="form-control" required>
+					<select required id="from" name="source" class="form-control">
+						<option>Select</option>
+						<?php foreach($data as $p){ ?>
+						<option value="<?php echo $p['shortcode']; ?>"><?php echo $p['name'];?></option>
+						<?php } ?>
+					</select>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
 					<div><b>Arrival Terminal</b></div>
-					<input name="destination" type="text" placeholder="Destination" class="form-control" required>
+					<select required id="to" name="destination" class="form-control">
+						<option>Select</option>
+						<?php foreach($data as $p){ ?>
+						<option value="<?php echo $p['shortcode']; ?>"><?php echo $p['name'];?></option>
+						<?php } ?>
+					</select>
 				</div>
 			</div>
 			<div class="form-group">
@@ -38,8 +48,8 @@
 					<div><b>Arrival Day</b></div>
 					<select required name="day" class="form-control">
 						<option>Select</option>
-						<option>0</option>
-						<option>1</option>
+						<option value=0>Same Day</option>
+						<option value=1>Next Day</option>
 					</select>
 				</div>
 			</div>			
@@ -58,10 +68,29 @@
 			
 			<div class="form-group">
 				<div class="col-sm-4">
-					<input type="submit" class="btn btn-primary" value="Submit">
+					<input type="submit" class="btn btn-primary" value="Submit" onClick="return doconfirm();">
 				</div>
 			</div>
 		</div>
 		</form>
 	</div>
 </div>
+<script>
+function doconfirm()
+{
+  var number = document.getElementById("from").value;
+  var number1 = document.getElementById("to").value;
+  if( number==number1){
+    alert("Please Select Diff Departure & Arrival Terminal");
+    return false;
+  }
+  else if(number=="Select"){
+    alert("Select a Valid Departure Terminal");
+    return false;
+  }
+  else if(number1=="Select"){
+    alert("Select a Valid Arrival Terminal");
+    return false;
+  }
+}
+</script>

@@ -43,6 +43,17 @@ class Ticket_model extends CI_Model {
         $d['role_id'] = $data->role_id;
         return array('info'=>$d);
     }
+    public function getspec_u_walking($id){
+        $data = $this->db->where('p_id', $id)->get('passenger')->row();
+        $d['p_id'] = $data->p_id;
+        $d['fname'] = $data->fname;
+        $d['lname'] = $data->lname;
+        $d['gender'] = $data->gender;
+        $d['email'] = $data->email;
+        $d['phone'] = $data->phone;
+        $d['cnic'] = $data->cnic;
+        return array('info' => $d);
+    }
     public function getspec_s($id){
         $data = $this->db->where('schedule_id', $id)->get('schedule')->row();
         $d['schedule_id'] = $data->schedule_id;

@@ -24,7 +24,7 @@
 			<div class="form-group">
 				<div class="col-sm-4">
 					<div><b>Gender</b></div>
-					<select required name="class" class="form-control">
+					<select required name="gender" class="form-control">
 						<option>Select</option>
 						<option>Male</option>
 						<option>Female</option>
@@ -73,10 +73,10 @@
 					<div><b>Role</b></div>
 					<select required name="role_id" class="form-control">
 						<option>Select</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
+						<option value=1>FULL CRUD</option>
+						<option value=2>INTER CRUD</option>
+						<option value=3>CAPTAIN</option>
+						<option value=4>REPORTER</option>
 					</select>
 				</div>
 			</div>

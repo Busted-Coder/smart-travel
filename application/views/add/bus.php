@@ -12,13 +12,13 @@
 			<div class="form-group">
 				<div class="col-sm-4">
 					<div><b>Seating Capacity</b></div>
-					<input name="seats" type="number" placeholder="# of Seats" class="form-control" required>
+					<input id="seats" name="seats" type="number" placeholder="# of Seats" class="form-control" required>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-4">
 					<div><b>Class Category</b></div>
-					<select required name="class" class="form-control">
+					<select required id="class" name="class" class="form-control">
 						<option>Select Class</option>
 						<option>Gold Luxury</option>
 						<option>Royal Luxury-I</option>
@@ -29,7 +29,7 @@
 			<div class="form-group">
 				<div class="col-sm-4">
 					<div><b>About Bus/Bus Features</b></div>
-					<textarea name="des" class="form-control" required cols="40" rows="10" placeholder="Discription"></textarea>
+					<textarea name="des" class="form-control" required cols="40" rows="10" placeholder="Discription" required></textarea>
 				</div>
 			</div>
 			<div class="form-group">
@@ -61,10 +61,25 @@
 		
 			<div class="form-group">
 				<div class="col-sm-4">
-					<input type="submit" class="btn btn-primary" value="Submit">
+					<input type="submit" class="btn btn-primary" value="Submit" onClick="return doconfirm();">
 				</div>
 			</div>
 			</div>
 		</form>
 	</div>
 </div>
+<script>
+function doconfirm()
+{
+    var number = document.getElementById("seats").value;
+	var number1 = document.getElementById("class").value;
+    if(number>40){
+    	alert("Seat Number should be < or = 40");
+    	return false;
+    }
+    else if(number1=="Select Class"){
+    	alert("Select a Valid Class");
+    	return false;
+    }
+}
+</script>

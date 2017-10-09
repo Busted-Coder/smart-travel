@@ -8,6 +8,7 @@ class Request extends MY_Controller {
 		parent::__construct();
 		$this->OnlyAdmin();
 		$this->load->model('request_model','RequestModel');
+		$this->load->model('route_model','RouteModel');
 	}
 
 	public function lists()
@@ -75,7 +76,8 @@ class Request extends MY_Controller {
 
 	public function add(){
 		$this->OnlyAdmin();
-		$this->loadView('add/request', null, true);
+		$data = $this->RouteModel->getcity();
+		$this->loadView('add/request', array("data" => $data), true);
 		if($this->input->post()){
 			$this->RequestModel->Add($this->input->post());
 			redirect('index.php/request/lists');}

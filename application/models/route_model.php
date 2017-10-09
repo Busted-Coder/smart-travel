@@ -49,6 +49,7 @@ class Route_model extends CI_Model {
         $d['source'] = $data->source;
         $d['destination'] = $data->destination;
         $d['stops'] = $data->stops;
+        $d['km'] = $data->km;
         $d['departure'] = $data->departure;
         $d['arrival'] = $data->arrival;
         $d['day'] = $data->day;
@@ -61,6 +62,10 @@ class Route_model extends CI_Model {
     {
         return $this->db->get_where('route',array('source'=>$source,'destination'=>$dest))->row_array();
 
+    }
+
+    public function getcity(){
+        return $this->db->get('city')->result_array();
     }
 }
 
