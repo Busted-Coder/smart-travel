@@ -18,75 +18,45 @@
         </section>
       </header>
 
-<html lang="en" class="wide wow-animation smoothscroll scrollTo">
-<head>
-<style>
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-left: 10px;
-    margin-right: 10px;  
-}
-
-th, td {
-    padding: 8px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-}
-
-tr:hover{background-color:#f5f5f5}
-</style>
-</head>
-  <body>
-    <!-- Page-->
-    <div class="page text-center">
-      <!-- Page Head-->
-      <!-- Page Contents-->
-      <main class="page-content">
-        <br>
-        <div id="availablebuses">
-          <?php if ($available_buses) { ?>
-          <div align="center" style="margin-top: 150px;padding-bottom: 50px;"> <h2 style="color: #3256a4"><?php echo count($available_buses); ?> Available Buses</h2><br>
-            <div class="col-md-12">
-              <table class="table  table-hover" style="background-color: white; border-radius: 6px; margin-top: 10px;">
-                <thead>
-                  <th style="font-size:18px;"> Source </th>
-                  <th style="font-size:18px;"> Destination</th>
-                  <!--<th style="font-size:18px;"> Date </th>-->
-                  <th style="font-size:18px;"> Stops</th>
-                  <th style="font-size:18px;"> Departure</th>
-                  <th style="font-size:18px;"> Arrival </th>
-                  <th style="font-size:18px;"> Arrival Day</th>
-                  <th style="font-size:18px;"> Fare </th>
-                  <th style="font-size:18px;"> Action</th>
-                </thead>
-                <tbody>
-                  <?php foreach($available_buses as $ab){ ?>
-                  <tr>
-                    
-                    <td style="font-weight:100;"><?= $ab['source'] ?></td>
-                    <td style="font-weight:100;"><?= $ab['destination']?></td>
-                    <!--<td style="font-weight:100;"><?= date('Y-m-d', strtotime($ab['bus_time']))?></td>-->
-                    <td style="font-weight:150;"><?= $ab['stops']?></td>
-                    <td style="font-weight:100;"><?= $ab['departure']?></td>
-                    <td style="font-weight:100;"><?= $ab['arrival']?></td>
-                    <td style="font-weight:100;"><?php if($ab['day'] == 1){ echo "Next Day";}else{echo "Same Day";} ?></td>
-                    <td style="font-weight:100;"><?= $ab['fare']?></td>
-                    <?php echo "<td><a class=\"btn btn-xs btn-ripe-lemon\" href=\"bookTicket?id=".$ab['schedule_id']."\">Select</a></td>"?>
+<main class="page-content section-90 section-md-111 text-md-left">
+  <section class="offset-top-60 offset-md-top-111">
+      <div class="shell">
+        <?php if ($available_buses) { ?>
+        <h2 class="text-bold"><?php echo count($available_buses); ?> Buses Available</h2>
+            <hr class="divider hr-md-left-0 bg-chathams-blue">
+          <div class="range range-xs-center range-md-left offset-top-30 offset-md-top-65">
+              <div class="cell-xs-10 cell-lg-9">
+                <!-- Classic Responsive Table-->
+                <table data-responsive="true" class="table table-custom table-primary table-fixed">
+                    <b><tr>
+                      <th>#</th>
+                      <th>Source</th>
+                      <th>Destination</th>
+                      <!--<th>Stops</th>-->
+                      <th>Departure</th>
+                      <th>Arrival</th>
+                      <th>Fare</th>
+                      <th>Action</th>
+                    </tr></b>
+                    <?php $count = 0; 
+                    foreach($available_buses as $p){ 
+                      $count = $count + 1;?>
+                    <tr>
+                      <td> <?php echo $count;?> </td>
+                      <td> <?php echo $p['source'] ?> </td>
+                      <td> <?php echo $p['destination'] ?> </td>
+                      <!--<td> <?php echo $p['stops'] ?> </td>-->
+                      <td> <?php echo $p['departure'] ?> </td>
+                      <td> <?php echo $p['arrival']; if($p['day'] == 1){ echo " - Next Day";}else{echo " - Same Day";} ?> </td>
+                      <td> <?php echo $p['fare'] ?> </td>
+                      <?php echo "<td><a class=\"btn btn-xs btn-ripe-lemon\" href=\"bookTicket?id=".$p['schedule_id']."\">Select</a></td>"?>
                   </tr>
                   <?php } ?>
-
-                </tbody>
-              </table> 
-
-            </div>            
+                </table>
+                <?php } else{ ?>
+                <td><?php echo "NO data found";?></td><?php } ?>
+              </div>
           </div>
-          <?php } else{ ?>
-          <td><?php echo "NO data found";?></td><?php } ?>
-        </div>
-
-      </main>
-    </div>
-  </body>
-  <br><br><br><br>
-</html>
+      </div>
+  </section>
+</main>
