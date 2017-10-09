@@ -105,7 +105,7 @@
                           <li><a href="<?php echo site_url('index.php/nav_destinations/single_ticket') ?>">Single Ticket</a></li>
                         </ul>
                       </li>-->
-                      <li><a href="<?php echo site_url('index.php/nav_deals/deals') ?>">Deals</a></li>
+                      <li><a href="<?php echo site_url('index.php/nav_deals/deals') ?>">Offers</a></li>
                        <!--<li class="rd-navbar--has-dropdown rd-navbar-submenu"><a href="<?php echo site_url('index.php/nav_news/classic') ?>">News</a>
                         RD Navbar Dropdown
                         <ul class="rd-navbar-dropdown">
@@ -258,9 +258,9 @@
                         <div class="group group-top">
                           <div class="group-item element-fullwidth">
                             <div class="form-group text-left">
-                              <label for="form-filter-location-from" class="form-label form-label-outside">Traveling From</label>
-                              <div class="select2-whitout-border shadow-drop-md">
-                                <select id="form-filter-location-from" name="source" data-minimum-results-for-search="Infinity" class="form-control">
+                              <label for="form-filter-location-from" class="form-label form-label-outside">Departure City</label>
+                              <div class="form-group form-group-label-outside">
+                                <select id="form-filter-location-from" name="source" data-minimum-results-for-search="Infinity" class="form-control" required>
                                   <option>Select City</option>
                                       <?php foreach ($cityarray as $value) {?>
                                           <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
@@ -270,9 +270,9 @@
                           </div>
                           <div class="group-item element-fullwidth">
                             <div class="form-group text-left">
-                              <label for="form-filter-location-to" class="form-label form-label-outside">Traveling To</label>
+                              <label for="form-filter-location-to" class="form-label form-label-outside">Arrival City</label>
                               <div class="select2-whitout-border shadow-drop-md">
-                                <select id="form-filter-location-to" name="dest" data-minimum-results-for-search="Infinity" class="form-control">
+                                <select id="form-filter-location-to" name="dest" data-minimum-results-for-search="Infinity" class="form-control" required>
                                   <option>Select City</option>
                                         <?php foreach ($cityarray as $value) {?>
                                             <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
@@ -280,11 +280,12 @@
                               </div>
                             </div>
                           </div>
+                          <?php $date = date("Y-m-d"); ?> 
                           <div class="group-item element-fullwidth">
                             <div class="form-group text-left">
-                              <label for="form-filter-location-from-date" class="form-label form-label-outside">Depart Date</label>
+                              <label for="form-filter-location-from-date" class="form-label form-label-outside">Departure Date</label>
                               <div class="select2-whitout-border shadow-drop-md">
-                                <input id="form-filter-location-from-date" name="busdate" type="date" data-minimum-results-for-search="Infinity" class="form-control" style="background-color: white;">
+                                <input id="form-filter-location-from-date" name="busdate" type="date" min="<?php echo date("Y-m-d"); ?>" max="<?php echo date('Y-m-d', strtotime($date. ' + 13 days')); ?>" data-minimum-results-for-search="Infinity" class="form-control" style="background-color: white;" required>
                                   <!--<option value="1">7-11-2016</option>
                                   <option value="2">2-12-2016</option>
                                   <option value="3">14-11-2016</option>
@@ -308,7 +309,7 @@
                       </div>
                       <div class="cell-md-3 cell-lg-2">
                         <div class="reveal-block reveal-md-inline-block">
-                          <button type="submit" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth">search</button>
+                          <button type="submit" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth" onClick="return doconfirm();">search</button>
                         </div>
                       </div>
                     </form>
@@ -518,9 +519,56 @@
                   </div></a>
               </div>
             </div>
-            <div class="offset-top-60"><a href="destinations.html" class="btn btn-default">View All Destinations</a></div>
+            <!--<div class="offset-top-60"><a href="destinations.html" class="btn btn-default">View All Destinations</a></div>-->
           </div>
+            <section class="section-top-90 section-bottom-90 section-md-bottom-75 bg-zircon">
+              <div class="shell">
+                <div class="range range-xs-center">
+                  <div class="cell-xs-10 cell-sm-8 cell-md-12">
+                    <div class="range range-xs-center">
+                      <div class="cell-xs-5 cell-md-3">
+                        <!-- Counter type 1-->
+                        <div class="counter-type-1">
+                          <div>
+                            <div class="h1"><span data-step="3000" data-from="0" data-to="235" class="counter text-bold text-primary-chathams-blue"></span></div>
+                          </div>
+                          <p class="text-gray-darker offset-top-6">Buses</p>
+                        </div>
+                      </div>
+                      <div class="cell-xs-5 cell-md-3 offset-top-52 offset-xs-top-0">
+                        <!-- Counter type 1-->
+                        <div class="counter-type-1">
+                          <div>
+                            <div class="h1"><span data-speed="2500" data-from="0" data-to="10578" class="counter text-bold text-primary-chathams-blue"></span><span class="text-bold text-chathams-blue">K</span></div>
+                          </div>
+                          <p class="text-gray-darker offset-top-6">Miles</p>
+                        </div>
+                      </div>
+                      <div class="cell-xs-5 cell-md-3 offset-top-52 offset-md-top-0">
+                        <!-- Counter type 1-->
+                        <div class="counter-type-1">
+                          <div>
+                            <div class="h1"><span data-step="1500" data-from="0" data-to="348" class="counter text-bold text-primary-chathams-blue"></span></div>
+                          </div>
+                          <p class="text-gray-darker offset-top-6">Drivers</p>
+                        </div>
+                      </div>
+                      <div class="cell-xs-5 cell-md-3 offset-top-52 offset-md-top-0">
+                        <!-- Counter type 1-->
+                        <div class="counter-type-1">
+                          <div>
+                            <div class="h1"><span data-speed="1300" data-from="0" data-to="591" class="counter text-bold text-primary-chathams-blue"></span><span class="text-bold text-chathams-blue">K</span></div>
+                          </div>
+                            <p class="text-gray-darker offset-top-6">Passengers</p>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </section>
         </section>
+
         <!-- Special Service: Bus Rental with Driver-->
         <!--<section>
           <div data-on="false" data-md-on="true" class="bg-gray-base context-dark rd-parallax">
@@ -796,3 +844,24 @@
     <script src="<?php echo PATH; ?>js/script.js"></script>
   </body>
 </html>
+
+
+<script>
+function doconfirm()
+{
+  var number = document.getElementById("form-filter-location-from").value;
+  var number1 = document.getElementById("form-filter-location-to").value;
+  if( number==number1){
+    alert("Please Select Diff Departure & Arrival City");
+    return false;
+  }
+  else if(number=="Select City"){
+    alert("Select a Valid Departure City");
+    return false;
+  }
+  else if(number1=="Select City"){
+    alert("Select a Valid Arrival City");
+    return false;
+  }
+}
+</script>

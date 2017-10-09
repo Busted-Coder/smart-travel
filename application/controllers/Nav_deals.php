@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Nav_deals extends CI_Controller {
+class Nav_deals extends MY_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,14 +21,15 @@ class Nav_deals extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('deal_model','deal');
 	}
 
 	public function deals()
-	{
-		$this->load->view('layout/header');
-		$this->load->view('layout/nav');
-		$this->load->view('deals/deals');
-		$this->load->view('layout/footer');
+	{	$info = $this->deal->getList();
+		//$this->load->view('layout/header');
+		//$this->load->view('layout/nav');
+		$this->loadView('deals/deals', array('info'=> $info),false);
+		//$this->load->view('layout/footer');
 	}
 
 }

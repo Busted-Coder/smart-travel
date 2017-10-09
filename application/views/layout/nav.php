@@ -74,7 +74,7 @@
                         <!-- RD Navbar Dropdown-->
                      
                       
-                      <li><a href="<?php echo site_url('index.php/nav_deals/deals') ?>">Deals</a></li>
+                      <li><a href="<?php echo site_url('index.php/nav_deals/deals') ?>">Offers</a></li>
                      
                       <li><a href="<?php echo site_url('index.php/nav_tracking/tracking') ?>">Tracking</a></li>
                    

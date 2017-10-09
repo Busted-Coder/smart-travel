@@ -16,7 +16,7 @@ class Ticket_options_model extends CI_Model
     public function getCity()
     {
         $this->load->database();
-        $query= $this->db->select('name,shortcode')->get('city');
+        $query= $this->db->select('name,shortcode')->order_by("name","asc")->get('city');
         $query-> result_array();
         return $query->result_array();
 

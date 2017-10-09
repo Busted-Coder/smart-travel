@@ -1,0 +1,8 @@
+sales report(interval based)
+ticket pdf
+sales report(gender based)
+bus information
+routes(top)
+passenger classes(top)
+individual user sales
+
