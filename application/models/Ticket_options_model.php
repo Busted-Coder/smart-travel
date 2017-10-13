@@ -11,11 +11,28 @@ class Ticket_options_model extends CI_Model
     public function __construct()
     {
         parent:: __construct();
+        $this->load->library('session');
     }
 
     public function getCity()
     {
         $this->load->database();
+       $pass = $this->db->query('SELECT * FROM ticket');
+       $passenger = $pass->num_rows();
+       $bu = $this->db->query('SELECT * FROM bus');
+       $bus = $bu->num_rows();
+       $mem = $this->db->query('SELECT * FROM user where role_id=2');
+       $member = $mem->num_rows();
+       $dri = $this->db->query('SELECT * FROM user where role_id=3');
+       $driver = $dri->num_rows();
+       $stat = array(
+        'passenger' => $passenger,
+        'bus' => $bus,
+        'member' => $member,
+        'driver' => $driver
+       );
+       $this->session->set_userdata($stat);
+
         $query= $this->db->select('name,shortcode')->order_by("name","asc")->get('city');
         $query-> result_array();
         return $query->result_array();
@@ -25,7 +42,7 @@ class Ticket_options_model extends CI_Model
     public function searchTicket($ticket)
     {
         
-        $this->load->database();
+       $this->load->database();
        $this->load->model('schedule_model','schedules');
        $avail_buses = $this->schedules->getavailablebuses($ticket);
        

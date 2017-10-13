@@ -36,7 +36,7 @@
                     <div class="group-item element-fullwidth offset-top-6 offset-md-top-0 offset-lg-top-6">
                       <div class="form-group form-group-label-outside text-left">
                         <label for="tracking-schedule-number" class="form-label form-label-outside text-dark">Reservation Number</label>
-                        <input id="tracking-schedule-number" type="text" name="res-num" style="color:#393a3c;" class="form-control shadow-drop-md bg-white">
+                        <input id="res-num" type="text" name="res-num" style="color:#393a3c;" class="form-control shadow-drop-md bg-white">
                       </div>
                     </div>
                     <div class="group-item element-fullwidth">
@@ -53,7 +53,7 @@
                       </div>-->
                     </div>
                     <div class="group-item reveal-sm-inline-block text-center text-sm-left">
-                      <input type="submit" style="max-width: 140px; min-width: 140px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon" value="search">
+                      <input type="submit" style="max-width: 140px; min-width: 140px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon" value="search" onClick="return doconfirm();">
                     </div>
                   </form>
                 </div>
@@ -156,3 +156,16 @@
           </div>
         </section>
       </main>
+<script src="<?php echo PATH; ?>js/core.min.js"></script>
+<script src="<?php echo PATH; ?>js/script.js"></script>
+<script>
+  function doconfirm()
+  {
+    var input = document.getElementById("res-num").value;
+    if(/^[a-zA-Z0-9]*$/.test(input) == false){
+    alert("Input has special characters, avoid them.");
+    document.getElementById("res-num").focus();
+    return false;
+    }
+  }
+</script>

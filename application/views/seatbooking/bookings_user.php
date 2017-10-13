@@ -19,6 +19,8 @@
       </header>-->
 <html lang="en" class="wide wow-animation smoothscroll scrollTo">
   <head>
+    <title>Smart Travel</title>
+    <link rel="icon" href="<?php echo PATH; ?>images/favicon.ico" type="image/x-icon">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">

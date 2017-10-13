@@ -11,6 +11,9 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:400,400italic,700%7CLato:400">
     <link rel="stylesheet" href="<?php echo PATH; ?>css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <script src="<?php echo PATH; ?>js/core.min.js"></script>
+    <script src="<?php echo PATH; ?>js/script.js"></script>
+
     <!--<script src="<?php echo PATH; ?>js/core.min.js"></script>
     <script src="<?php echo PATH; ?>js/script.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>

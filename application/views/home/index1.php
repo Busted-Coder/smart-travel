@@ -220,7 +220,7 @@
                         <div data-caption-animate="fadeInUp" data-caption-delay="600" class="offset-top-20 offset-lg-top-49">
                           <p class="h6 text-mercury">Smart Travel is the leading go-to website for booking inter-city bus <br class="veil reveal-lg-inline-block"> online.</p>
                         </div>
-                        <div data-caption-animate="fadeInUp" data-caption-delay="800" class="offset-top-20"><a href="deals.html" class="btn btn-default btn-skew">Learn More</a></div>
+                        <div data-caption-animate="fadeInUp" data-caption-delay="800" class="offset-top-20"><a href="<?php echo site_url('index.php/nav_deals/deals') ?>" class="btn btn-default btn-skew">Learn More</a></div>
                       </div>
                     </div>
                   </div>
@@ -238,7 +238,7 @@
                         <div data-caption-animate="fadeInUp" data-caption-delay="600" class="offset-top-20 offset-lg-top-49">
                           <p class="h6 text-mercury">We provide affordable and reliable bus ticket booking services online <br class="veil reveal-lg-inline-block"> all over the Pakistan.</p>
                         </div>
-                        <div data-caption-animate="fadeInUp" data-caption-delay="800" class="offset-top-20"><a href="deals.html" class="btn btn-default btn-skew">Learn More</a></div>
+                        <div data-caption-animate="fadeInUp" data-caption-delay="800" class="offset-top-20"><a href="<?php echo site_url('index.php/nav_deals/deals') ?>" class="btn btn-default btn-skew">Learn More</a></div>
                       </div>
                     </div>
                   </div>
@@ -530,7 +530,7 @@
                         <!-- Counter type 1-->
                         <div class="counter-type-1">
                           <div>
-                            <div class="h1"><span data-step="3000" data-from="0" data-to="235" class="counter text-bold text-primary-chathams-blue"></span></div>
+                            <div class="h1"><span data-step="3000" data-from="0" data-to="<?php echo $this->session->userdata('bus'); ?>" class="counter text-bold text-primary-chathams-blue"></span></div>
                           </div>
                           <p class="text-gray-darker offset-top-6">Buses</p>
                         </div>
@@ -539,16 +539,16 @@
                         <!-- Counter type 1-->
                         <div class="counter-type-1">
                           <div>
-                            <div class="h1"><span data-speed="2500" data-from="0" data-to="10578" class="counter text-bold text-primary-chathams-blue"></span><span class="text-bold text-chathams-blue">K</span></div>
+                            <div class="h1"><span data-speed="2500" data-from="0" data-to="<?php echo $this->session->userdata('member'); ?>" class="counter text-bold text-primary-chathams-blue"></span><span class="text-bold text-chathams-blue"></span></div>
                           </div>
-                          <p class="text-gray-darker offset-top-6">Miles</p>
+                          <p class="text-gray-darker offset-top-6">Members</p>
                         </div>
                       </div>
                       <div class="cell-xs-5 cell-md-3 offset-top-52 offset-md-top-0">
                         <!-- Counter type 1-->
                         <div class="counter-type-1">
                           <div>
-                            <div class="h1"><span data-step="1500" data-from="0" data-to="348" class="counter text-bold text-primary-chathams-blue"></span></div>
+                            <div class="h1"><span data-step="1500" data-from="0" data-to="<?php echo $this->session->userdata('driver');?>" class="counter text-bold text-primary-chathams-blue"></span></div>
                           </div>
                           <p class="text-gray-darker offset-top-6">Drivers</p>
                         </div>
@@ -557,7 +557,7 @@
                         <!-- Counter type 1-->
                         <div class="counter-type-1">
                           <div>
-                            <div class="h1"><span data-speed="1300" data-from="0" data-to="591" class="counter text-bold text-primary-chathams-blue"></span><span class="text-bold text-chathams-blue">K</span></div>
+                            <div class="h1"><span data-speed="1300" data-from="0" data-to="<?php echo $this->session->userdata('passenger');?>" class="counter text-bold text-primary-chathams-blue"></span><span class="text-bold text-chathams-blue"></span></div>
                           </div>
                             <p class="text-gray-darker offset-top-6">Passengers</p>
                           </div>

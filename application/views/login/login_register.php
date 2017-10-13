@@ -8,7 +8,6 @@
                 </div>
                 <ul class="list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-extra-small list-inline-icon-white p offset-top-30 offset-md-top-40 offset-lg-top-125">
                   <li><a href="<?php echo base_url();?>index.php/Welcome/index" class="text-white">Home</a></li>
-                  <li><a href="#" class="text-white">Pages</a></li>
                   <li>Login/Register
                   </li>
                 </ul>
@@ -43,7 +42,7 @@
                         </div>
                         <div class="form-group form-group-label-outside offset-top-20">
                           
-                          <input id="password" type="password" name="password" placeholder= "Password" data-constraints="@Required" class="form-control">
+                          <input id="a_password" type="password" name="password" placeholder= "Password" data-constraints="@Required" class="form-control">
                         </div>
                         <div class="form-group form-group-label-outside offset-top-20">
                           <select name="role" class="form-control">
@@ -53,10 +52,9 @@
                           </select>
                         </div>
                         <div class="offset-top-15 offset-sm-top-30 text-center text-md-left">
-                          <h6 style="color : red;"><?php if($Error != "NULL") echo $Error;?></h6><br>
+                          <h6 style="color : #3256a4;"><?php if($Error != "NULL") echo $Error;?></h6><br>
                           <div class="reveal-xs-inline-block text-middle">
-                          <?php if($Error != "NULL") echo $Error;?>
-                            <button type="submit" class="btn btn-ripe-lemon">sign in</button>
+                            <input type="submit" class="btn btn-ellipse-type-2 btn btn-ripe-lemon" value="sign in" onClick="return doconfirm1();">
                           </div>
                           <div class="reveal-xs-inline-block inset-xs-left-15 offset-top-15 offset-sm-top-0">
                             <div class="reveal-xs-inline-block text-middle">
@@ -113,21 +111,59 @@
                         
                         <div class="form-group form-group-label-outside">
                           <label for="password" class="form-label form-label-outside text-dark">Password</label>
-                          <input id="password" type="password" name="password" data-constraints="@Required" class="form-control" required>
+                          <input id="a_password" type="password" name="password" class="form-control" required>
                         </div>
                         <div class="form-group form-group-label-outside">
                           <label for="r_password" class="form-label form-label-outside text-dark">Repeat Password</label>
-                          <input id="r_password" type="password" name="r_password" data-constraints="@Required" class="form-control" required>
+                          <input id="r_password" type="password" name="r_password" class="form-control" required>
                         </div>
                         <div class="form-group offset-top-15 text-center text-md-left">
                           <label class="checkbox-inline">
-                            <input name="register-radio" value="checkbox-1" type="checkbox" class="checkbox-custom"><span class="small p"><span class="small">I agree with the <a href="<?php echo site_url('index.php/footer/privacy') ?>" class="text-primary">Terms of use</a></span></span><span>.</span>
+                            <input id="register-radio" name="register-radio" value="checkbox-1" type="checkbox" class="checkbox-custom"><span class="small p"><span class="small">I agree with the <a href="<?php echo site_url('index.php/footer/privacy') ?>" class="text-primary">Terms of use</a></span></span><span>.</span>
                           </label>
+                          <a id="modal-788038" href="#modal-container-788038" role="button" class="btn btn-xs btn btn-ellipse-type-2 btn btn-primary" data-toggle="modal">Hints</a>
                         </div>
                         <div class="offset-top-15 offset-sm-top-20 text-center text-md-left">
-                          <button type="submit" class="btn btn-ripe-lemon">Sign Up</button>
+                          <input type="submit" class="btn btn-ellipse-type-2 btn-ripe-lemon" value="Sign Up" onClick="return doconfirm();">
                         </div>
                       </form>
+                      <div class="col-md-6">
+          
+                        <div class="modal fade" id="modal-container-788038" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                      
+                                <h4 class="modal-title" id="myModalLabel">
+                                 Book a Ticket
+                                </h4>
+                              </div>
+                              <div class="modal-body" style="width: 350px">
+                                <div class="wrapper" style="margin-top: 0px">
+                                  <div class="container" style="margin-top: 0px">
+                                    <h2 style="color: #3256a4">Hints to Sign-up</h2>
+                                    <ul>
+                                      <li>Name Fields should be less than or equal to 15 characters.</li>
+                                      <li>Phone # should be 11 characters without (-).</li>
+                                      <li>CNIC # should be 13 characters without (-).</li>
+                                      <li>Address should be less than 50 characters including (# - ,).</li>
+                                      <li>Password should be 6-10 characters.</li>
+                                      <li>Special characters are not allowed unless mentioned.</li>
+                                      <li>E-mail and CNIC are once used, can't repeat.</li>
+                                      <li>You must agree with our <a href="<?php echo site_url('index.php/footer/privacy') ?>" class="text-primary">Terms of use</a>.</li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-xs btn btn-ellipse-type-2 btn btn-ripe-lemon" data-dismiss="modal">
+                              Close
+                                </button>         
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -139,3 +175,79 @@
   </div>
 </html>
  
+
+<script>
+  function doconfirm()
+  {
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var address = document.getElementById("address").value;
+    var phone = document.getElementById("phone").value;
+    var cnic = document.getElementById("cnic").value;
+    var password = document.getElementById("a_password").value;
+    var r_password = document.getElementById("r_password").value;
+    var radio = document.getElementById("register-radio").value;
+    if(/^[a-zA-Z0-9]*$/.test(fname) == false){
+    alert("First-Name has special characters");
+    document.getElementById("fname").focus();
+    return false;
+    }
+    else if(/^[a-zA-Z0-9]*$/.test(lname) == false){
+    alert("Last-Name has special characters");
+    document.getElementById("lname").focus();
+    return false;
+    }
+    else if(/^[a-zA-Z0-9#,-]*$/.test(address) == false){
+    alert("Address has special characters");
+    document.getElementById("address").focus();
+    return false;
+    }
+    else if(/^[a-zA-Z0-9]*$/.test(phone) == false){
+    alert("Phone # has special characters");
+    document.getElementById("phone").focus();
+    return false;
+    }
+    else if(phone.length > 11 || phone.length < 11){
+      alert("Phone Must be of 11 characters");
+      document.getElementById("phone").focus();
+      return false;
+    }
+    else if(/^[a-zA-Z0-9]*$/.test(cnic) == false){
+    alert("CNIC has special characters");
+    document.getElementById("cnic").focus();
+    return false;
+    }
+    else if(cnic.length > 13 || cnic.length < 13){
+      alert("CNIC Must be of 13 characters");
+      document.getElementById("cnic").focus();
+      return false;
+    }
+    else if(password.length > 10 || password.length < 6){
+    alert("Password Must be 6-10 characters.");
+    document.getElementById("a_password").focus();
+    return false;
+    }
+    else if(password !== r_password){
+    alert("Password do not match.");
+    console.log(password);
+    console.log(r_password);
+    document.getElementById("a_password").focus();
+    return false;
+    }
+    else if(!document.getElementById('register-radio').checked){
+    alert("You should agree with our Terms of use.");
+    document.getElementById("register-radio").focus();
+    return false;
+    }
+  }
+  
+  function doconfirm1()
+  {
+    var password = document.getElementById("a_password").value;
+    else if(password.length > 10 || password.length < 6){
+    alert("Password Must be 6-10 characters.");
+    document.getElementById("a_password").focus();
+    return false;
+    }
+  }
+</script>
