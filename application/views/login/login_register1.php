@@ -1,4 +1,4 @@
-    <section class="section-height-800 breadcrumb-modern rd-parallax context-dark bg-gray-darkest text-lg-left">
+<section class="section-height-800 breadcrumb-modern rd-parallax context-dark bg-gray-darkest text-lg-left">
           <div data-speed="0.2" data-type="media" data-url="<?php echo PATH; ?>images/backgrounds/background-01-1920x900.jpg" class="rd-parallax-layer"></div>
           <div data-speed="0" data-type="html" class="rd-parallax-layer">
             <div class="bg-primary-chathams-blue-reverse">
@@ -7,19 +7,17 @@
                   <h1 class="text-bold">Login/Register</h1>
                 </div>
                 <ul class="list-inline list-inline-icon list-inline-icon-type-1 list-inline-icon-extra-small list-inline-icon-white p offset-top-30 offset-md-top-40 offset-lg-top-125">
-                  <li><a href="<?php echo base_url();?>index.php/Welcome/index" class="text-white">Home</a></li>
+                  <li><a href="index.html" class="text-white">Home</a></li>
                   <li>Login/Register
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-    </section>
-  </header>
-</div>
-  <div class="page text-center">
+        </section>
+      </header>
       <!-- Page Contents-->
-    <main class="page-content">
+      <main class="page-content">
         <!-- Login and Register-->
         <section class="section-top-90 section-bottom-90 section-md-top-82 section-md-bottom-300 section-md-111 text-sm-left">
           <div class="shell">
@@ -29,10 +27,10 @@
                 <div data-type="horizontal" class="responsive-tabs responsive-tabs-classic horizontal">
                   <ul class="resp-tabs-list tabs-1 text-center tabs-group-default">
                     <li><a href="#login">Login</a></li>
-                    <li><a href="#sign-up">Register</a></li>
+                    <li><a href="#register">Register</a></li>
                   </ul>
                   <div data-group="tabs-group-default" class="resp-tabs-container text-sm-left tabs-group-default">
-                    <div id="login"><br><br><h3 style="color: #18377a">Log-in</h3><br>
+                    <div id="login">
                       <!-- RD Mailform-->
                       <form action="<?php echo site_url('index.php/auth/login') ?>" method="post" class="rd-mailform text-left">
                         <div class="form-group form-group-label-outside">
@@ -51,7 +49,7 @@
                           </select>
                         </div>
                         <div class="offset-top-15 offset-sm-top-30 text-center text-md-left">
-                          <h6 style="color : red;"><?php if($Error != "NULL") echo $Error;?></h6><br>
+                          <h6 style="color : #3256a4;"><?php if($Error != "NULL") echo $Error;?></h6><br>
                           <div class="reveal-xs-inline-block text-middle">
                             <input type="submit" class="btn btn-ellipse-type-2 btn btn-ripe-lemon" value="sign in" onClick="return doconfirm1();">
                           </div>
@@ -69,7 +67,7 @@
                         </div>
                       </form>
                     </div>
-                    <div id="sign-up"><br><br><h3 style="color: #18377a">Sign-up</h3><br>
+                    <div id="register">
                       <!-- RD Mailform-->
                       <form action="<?php echo site_url('index.php/auth/register');?>" method="post" class="rd-mailform text-left">
                         <div class="form-group form-group-label-outside">
@@ -91,7 +89,7 @@
                         </div>
                         <div class="form-group form-group-label-outside">
                           <label for="dob" class="form-label form-label-outside text-dark">Date of Birth</label>
-                          <input id="register-dob" type="date" name="dob" data-constraints="@Required" class="form-control" max="<?php echo date("Y-m-d"); ?>" required>
+                          <input id="register-dob" type="date" name="dob" data-constraints="@Required" class="form-control" required>
                         </div>
                         <div class="form-group form-group-label-outside">
                           <label for="address" class="form-label form-label-outside text-dark">Address</label>
@@ -118,7 +116,7 @@
                         </div>
                         <div class="form-group offset-top-15 text-center text-md-left">
                           <label class="checkbox-inline">
-                            <input id="register-radio" name="register-radio" value="checkbox-1" type="checkbox">I agree with the <a href="<?php echo site_url('index.php/footer/privacy') ?>" class="text-primary">Terms of use</a><span>.</span>
+                            <input id="register-radio" name="register-radio" value="checkbox-1" type="checkbox" class="checkbox-custom"><span class="small p"><span class="small">I agree with the <a href="<?php echo site_url('index.php/footer/privacy') ?>" class="text-primary">Terms of use</a></span></span><span>.</span>
                           </label>
                           <a id="modal-788038" href="#modal-container-788038" role="button" class="btn btn-xs btn btn-ellipse-type-2 btn btn-primary" data-toggle="modal">Hints</a>
                         </div>
@@ -168,6 +166,5 @@
             </div>
           </div>
         </section>
-    </main>
-  </div>
- 
+      </main>
+     

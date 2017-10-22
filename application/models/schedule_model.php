@@ -68,13 +68,24 @@ class Schedule_model extends CI_Model {
 
     public function getavailablebuses($ticket)
     {
-        return $this->db->select('*')
-        ->from('schedule')   
-        ->join('route', 'route.route_id = schedule.route_id')
-        ->where('route.source',$ticket['source'])
-        ->where('route.destination',$ticket['dest'])
-        ->order_by('departure','asc')
-        ->get()->result();
+        if($ticket['busdate'] == date("Y-m-d")){
+            return $this->db->select('*')
+            ->from('schedule')   
+            ->join('route', 'route.route_id = schedule.route_id')
+            ->where('route.source',$ticket['source'])
+            ->where('route.destination',$ticket['dest'])
+            ->where('route.departure >=', date('H:i:s', strtotime('+1 hour')))
+            ->order_by('departure','asc')
+            ->get()->result();}
+        else{
+            return $this->db->select('*')
+            ->from('schedule')   
+            ->join('route', 'route.route_id = schedule.route_id')
+            ->where('route.source',$ticket['source'])
+            ->where('route.destination',$ticket['dest'])
+            ->order_by('departure','asc')
+            ->get()->result();
+        }
     }
 
       public function Getbyid($id){

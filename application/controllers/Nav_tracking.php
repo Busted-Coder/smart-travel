@@ -21,13 +21,15 @@ class Nav_tracking extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('Ticket_options_model','TOM');
 	}
 
 	public function tracking()
 	{
 		$this->load->view('layout/header');
 		$this->load->view('layout/nav');
-		$this->load->view('tracking/tracking1');
+		$data['cityarray'] = $this->TOM->getCity();
+		$this->load->view('tracking/tracking', $data);
 		$this->load->view('layout/footer');
 	}
 

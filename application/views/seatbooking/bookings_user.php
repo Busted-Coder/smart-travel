@@ -195,19 +195,20 @@
 									    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 										     ×
   									  </button>
-	  								  <h4 class="modal-title" id="myModalLabel">
+	  								  <h4 class="modal-title" id="myModalLabel" style="color: #18377a">
 		 								    Book a Ticket
 		  							  </h4>
 			  					  </div>
 								    <div class="modal-body" style="width: 760px">
 								      <div class="wrapper" style="margin-top: 0px">
 							          <div class="container" style="margin-top: 0px">
-							            <h1>Book a Seat</h1>
+							            <h1 style="color: #18377a">Select Seat(s)</h1>
+                          <h5 style="padding-left: 25px"><?php echo "You can select only "?><span style="color: red"><?php echo $this->session->userdata('num-seat')?></span><?php echo " seat(s)."; ?></h5>
 			  				          <div id="seat-map">
 				  			            <div class="front-indicator">Front</div>
 					  		          </div>
 						  	          <div class="booking-details">
-							              <h2>Booking Details</h2>
+							              <h2 style="color: #18377a">Booking Details</h2>
 								            <h3> Selected Seats (<span id="counter">0</span>):</h3>
                             <ul id="selected-seats"></ul>
 								            Total: <b>Rs. <span id="total">0</span></b>
@@ -231,6 +232,7 @@
 			      <div class="col-md-6" style="margin-top: 50px; ">
 			        <h3>User's Details</h3>
 			        <br>
+              <!--action="<?php echo site_url('index.php/ticket/final_booking') ?>"-->
       					<form role="form" action="<?php echo site_url('index.php/ticket/final_booking') ?>" method="post" name="seatform">
                   <div class="form-group">
       							 
@@ -271,6 +273,7 @@
                       Date of Birth
                     </label>
                     <input style="width: 400px;" type="date" name="dob" class="form-control" id="dob" value="<?php echo $this->session->userdata('dob');?>" readonly>
+                    <input type="hidden" id="avail" name="avail">
                     <!--<input style="width: 400px;" type="text" hidden name="seatstobook" id="seatstobook" required>-->              
                   </div>
                   
@@ -289,7 +292,7 @@
                     </label>
                       <input style="width: 400px;" class="form-control" type="text" name="seatno" id="seatno" readonly>
                   </div>
-						      <input type="submit" class="btn btn-success" value="Proceed">
+						      <input type="submit" class="btn btn-success" value="Proceed" onClick="return doconfirm();">
 					     </form>
 				    </div>
 			   </div>
@@ -308,6 +311,8 @@
               var $cart = $('#selected-seats'),
                 $counter = $('#counter'),
                 $total = $('#total'),
+                $option = <?php echo $this->session->userdata('num-seat'); ?>,
+                $avail = 0;
                 sc = $('#seat-map').seatCharts({
                 map: [
                   'ee_ee',
@@ -324,8 +329,8 @@
                 seats: {
                   e: {
                     price   : <?= $schedule['fare'] ?>,
-                    classes : 'economy-class', //your custom CSS class
-                    category: 'Economy Class'
+                    classes : 'economy-class ', //your custom CSS class
+                    category: 'Economy Class '
                   }         
           
                 },
@@ -343,15 +348,17 @@
                     ]         
                 },
                 click: function () {
-                  if (this.status() == 'available') {
+                  if (this.status() == 'available' && $avail < $option) {
                     //let's create a new <li> which we'll add to the cart items
 
                     $('<li>'+this.data().category+'Seat # <span id="num">'+this.settings.label+':</span> <b>Rs. '+this.data().price+'</b> <a href="#" class="cancel-cart-item">[cancel]</a></li>')
                       .attr('id', 'cart-item-'+this.settings.id)
                       .data('seatId', this.settings.id)
                       .appendTo($cart);
-                      document.querySelector('#seatno').value = this.settings.label;
-                      console.log(this.settings.label);
+                      document.querySelector('#seatno').value += this.settings.label+',';
+                      $avail++;
+                      document.querySelector('#avail').value = $avail;
+                      //console.log(this.settings.label);
                     /*
                      * Lets update the counter and total
                      *
@@ -374,12 +381,45 @@
                   } else if (this.status() == 'selected') {
               //update the counter
                     $counter.text(sc.find('selected').length-1);
+                    $avail--;
+                    document.querySelector('#avail').value = $avail;
+                    
               //and total
                     $total.text(recalculateTotal(sc)-this.data().price);
+                    var seats_num = document.getElementById('seatno').value;
+                    var seats = seats_num.split(',');
+                    var i;
+                    var seat = [];
+                    for(i=0;i<=$option;i++){
+                      seat[i] = seats[i];
+                      console.log(seat[i]);
+                    }
+                    for(i=0;i<=$option;i++){
+                      if(seat[i] == this.settings.label){
+                        console.log(seat[i]);
+                        seat[i] = "";
+                      }
+                      //console.log(seat[i]);
+                    }
+                    for(i=0;i<=$option;i++){
+                      console.log(seat[i]);
+                      //console.log(seat[i]);
+                    }
+                    document.querySelector('#seatno').value = "";
+                    for(i=0;i<=$avail;i++){
+                      if(seat[i]){
+                      document.querySelector('#seatno').value += seat[i]+',';
+                      }
+                    }
+                    console.log(document.querySelector('#seatno').value);
+                    <?php  ?>
+
+
+                    //document.querySelector('#seatno').value -= this.settings.label+',';
             
               //remove the item from our cart
                     $('#cart-item-'+this.settings.id).remove();
-            
+                    //console.log(this.settings.label);
               //seat has been vacated
                     return 'available';
                           } else if (this.status() == 'unavailable') {
@@ -398,7 +438,7 @@
               });
 
               //let's pretend some seats have already been booked
-              sc.get(['1_2','1_3', '4_1', '7_1', '7_2','10_3','8_3','11_2','14_4']).status('unavailable');
+              sc.get(['1_2','1_4', '4_1', '2_1', '7_2','10_4','8_5']).status('unavailable');
               //document.getElementbytag('selected-seats').innerHTML=$cart;
               //Session["seat"] = "'+ $cart +'";
               //var session_value='<%=Session["seat"]%>';
@@ -415,9 +455,18 @@
              });
       
              return total;
+            }
+
+              function doconfirm(){
+                var avl = document.getElementById('avail').value;
+                if(avl < <?php echo $this->session->userdata('num-seat')?>){
+                  var rem = <?php echo $this->session->userdata('num-seat')?>-avl;
+                  var alr = "Please select "+ rem +" more seat(s).";
+                  alert(alr);
+                  return false;
+                }
               }
               //document.getElementById('cartvalue').value = $cart;
-    
           </script>
   </body>
 </html>

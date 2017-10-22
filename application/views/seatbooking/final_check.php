@@ -89,7 +89,7 @@
               			</tr></b>
               			<tr>
                 			<td> <?php echo $this->session->userdata('km'); ?></td>
-							<td> <?php echo $this->session->userdata('fare'); ?></td>
+							<td> <?php echo $this->session->userdata('fare') * $this->session->userdata('num-seat'); ?></td>
 							<td> <?php echo $this->session->userdata('seatno'); ?> </td>
 							<td> 
 								<form action="<?php echo site_url('index.php/ticket/book') ?>" method="post" class="form-horizontal">

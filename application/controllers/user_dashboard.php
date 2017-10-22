@@ -123,5 +123,25 @@ class User_dashboard extends MY_Controller {
 		$this->load->view('seatbooking/print_ticket');
 		$this->load->view('layout/footer');
 	}
+	public function track_by_city(){
+		$this->load->library('session');
+		$this->load->model('Ticket_model');
+		if($this->input->post('tracking-type') == 1){
+			$type = "Departure";
+		}
+		else{
+			$type = "Arrival";
+		}
+		$arr = array(
+			'tracking-city' => $this->input->post('tracking-city'),
+			'tracking-type' => $type
+		);
+		$this->session->set_userdata($arr);
+		$data = $this->Ticket_model->get_track_city($this->input->post());
+		//$this->load->view('layout/header');
+		//$this->load->view('layout/nav');
+		$this->loadView('user_dashboard/track_by_city',array('data' => $data),false);
+		//$this->load->view('layout/footer');
+	}
 }
 ?>

@@ -19,11 +19,11 @@ class Find_ticket extends CI_Controller
       $ticketdata = array(
          'source'  => $this->input->post('source'),
          'dest'    => $this->input->post('dest'),
-         'busdate' => $this->input->post('busdate')
-        
+         'busdate' => $this->input->post('busdate'),
+         'num-seat'=> $this->input->post('num-seat')
      );
       
-     $this->session->set_userdata('ticketData', $ticketdata);
+     //$this->session->set_userdata($ticketdata);
      $this->session->set_userdata($ticketdata);
             //Getting data from session
 
@@ -37,7 +37,7 @@ class Find_ticket extends CI_Controller
          $viewdata['available_buses'] = $availablebuses;
      }
      	else{
-     		$viewdata['available_buses']=false;	
+     		$viewdata['available_buses'] = false;	
      		}	
 
 

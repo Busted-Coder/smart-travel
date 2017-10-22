@@ -95,7 +95,7 @@
 								elseif($this->session->userdata('state') == 3){echo "Refund";}
 								elseif($this->session->userdata('state') == 4){echo "Cancelled";} ?></td>
 							<td> <?php echo $this->session->userdata('km'); ?></td>
-							<td> <?php echo $this->session->userdata('fare'); ?></td>
+							<td> <?php echo $this->session->userdata('fare')*$this->session->userdata('num-seat'); ?></td>
 							<td> <?php echo $this->session->userdata('seatno'); ?> </td>
     	        		</tr>
             		</table>

@@ -260,7 +260,7 @@
                             <div class="form-group text-left">
                               <label for="form-filter-location-from" class="form-label form-label-outside">Departure City</label>
                               <div class="form-group form-group-label-outside">
-                                <select id="form-filter-location-from" name="source" data-minimum-results-for-search="Infinity" class="form-control" required>
+                                <select id="form-filter-location-from" name="source" class="form-control shadow-drop-md bg-white" required>
                                   <option>Select City</option>
                                       <?php foreach ($cityarray as $value) {?>
                                           <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
@@ -272,7 +272,7 @@
                             <div class="form-group text-left">
                               <label for="form-filter-location-to" class="form-label form-label-outside">Arrival City</label>
                               <div class="select2-whitout-border shadow-drop-md">
-                                <select id="form-filter-location-to" name="dest" data-minimum-results-for-search="Infinity" class="form-control" required>
+                                <select id="form-filter-location-to" name="dest" class="form-control" required>
                                   <option>Select City</option>
                                         <?php foreach ($cityarray as $value) {?>
                                             <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
@@ -294,17 +294,24 @@
                               </div>
                             </div>
                           </div>
-                          <!--<div class="group-item element-fullwidth">
+                          <?php if($this->session->userdata('logged_in')){ ?>
+                          <div class="group-item element-fullwidth">
                             <div class="form-group text-left">
-                              <label for="form-filter-location-to-date" class="form-label form-label-outside">Ticket Type</label>
+                              <label for="form-filter-location-to-date" class="form-label form-label-outside">Number of tickets</label>
                               <div class="select2-whitout-border shadow-drop-md">
-                                <select id="form-filter-location-to-date" name="date-to" data-minimum-results-for-search="Infinity" class="form-control">
-                                  <option value="1">One Way</option>
-                                  <option value="2">Round Trip</option>
+                                <select id="form-filter-location-to-date" name="num-seat" data-minimum-results-for-search="Infinity" class="form-control">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                  <option>6</option>
+                                  <option>7</option>
+                                  <option>8</option>
                                 </select>
                               </div>
                             </div>
-                          </div>-->
+                          </div><?php } ?>
                         </div>
                       </div>
                       <div class="cell-md-3 cell-lg-2">

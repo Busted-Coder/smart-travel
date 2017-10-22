@@ -108,11 +108,14 @@ class Ticket_model extends CI_Model {
             $ticket['p_id'] = $this->session->userdata('p_id');
         }
         $ticket['trav_date'] = $this->session->userdata('busdate');
-        $ticket['seatno'] = $this->session->userdata('seatno');
         $ticket['state'] = 1;
         $ticket['reservation_id'] = $this->session->userdata('reservation_id');
         $ticket['created_at'] = date("Y-m-d H:i:s");
-        $this->db->insert('ticket', $ticket);
+        $seats = explode(',', $this->session->userdata('seatno'));
+        for($i=0;$i<sizeof($seats)-1;$i++){
+            $ticket['seatno'] = $seats[$i];
+            $this->db->insert('ticket', $ticket);
+        }
         if($this->session->userdata('user_id')){
         $set_cond = "km + ".$this->session->userdata('km');
         $this->db->where('user_id', $this->session->userdata('user_id'));
@@ -160,6 +163,25 @@ class Ticket_model extends CI_Model {
         unset($customer['seatno']);
         $this->db->insert('passenger', $customer);
         return $this->db->order_by('p_id','desc')->limit(1)->get('passenger')->row();
+    }
+
+    public function get_track_city($data){
+        if($data['tracking-type'] == 1){
+            return $this->db->select('*')
+            ->from('schedule')   
+            ->join('route', 'route.route_id = schedule.route_id')
+            ->where('route.source',$data['tracking-city'])
+            ->order_by('destination','asc')
+            ->get()->result();
+        }
+        else if($data['tracking-type'] == 2){
+            return $this->db->select('*')
+            ->from('schedule')   
+            ->join('route', 'route.route_id = schedule.route_id')
+            ->where('route.destination',$data['tracking-city'])
+            ->order_by('destination','asc')
+            ->get()->result();
+        }
     }
 }
 ?>
