@@ -1,4 +1,4 @@
-<!--        <section class="section-height-800 breadcrumb-modern rd-parallax context-dark bg-gray-darkest text-lg-left">
+<!--<section class="section-height-800 breadcrumb-modern rd-parallax context-dark bg-gray-darkest text-lg-left">
           <div data-speed="0.2" data-type="media" data-url="<?php echo PATH; ?>images/backgrounds/background-01-1920x900.jpg" class="rd-parallax-layer"></div>
           <div data-speed="0" data-type="html" class="rd-parallax-layer">
             <div class="bg-primary-chathams-blue-reverse">
@@ -205,6 +205,7 @@
 								      <div class="wrapper" style="margin-top: 0px">
 							          <div class="container" style="margin-top: 0px">
 							            <h1>Book a Seat</h1>
+                          <h5 style="padding-left: 25px">You can select only <span style="color: red">1</span> seat.</h5>
 			  				          <div id="seat-map">
 				  			            <div class="front-indicator">Front</div>
 					  		          </div>
@@ -278,7 +279,8 @@
 						      	<label for="cnic">
 						      		CNIC
 						      	</label>
-						      	<input style="width: 400px;" type="text" name="cnic" class="form-control" id="cnic" required>					  
+						      	<input style="width: 400px;" type="text" name="cnic" class="form-control" id="cnic" required>	
+                    <input type="hidden" id="avail" name="avail">				  
                   </div>
                   <div class="form-group">
                
@@ -287,7 +289,7 @@
                     </label>
                       <input style="width: 400px;" type="text" name="seatno" class="form-control" id="seatno" readonly>
                   </div>
-                  <input type="submit" value="Proceed" class="btn btn-success"/>
+                  <input type="submit" value="Proceed" class="btn btn-success" onClick="return doconfirm();" />
 					     </form>
 				    </div>
 			   </div>
@@ -306,6 +308,8 @@
               var $cart = $('#selected-seats'),
                 $counter = $('#counter'),
                 $total = $('#total'),
+                $option = 1,
+                $avail = 0;
                 sc = $('#seat-map').seatCharts({
                 map: [
                   'ee_ee',
@@ -321,7 +325,12 @@
                 ],
                 seats: {
                   e: {
-                    price   : <?= $schedule['fare'] ?>,
+                    price   : <?php
+                                $f = $schdeule['fare'];
+                                $this->session->set_userdata('offer_price',$f);
+                                $this->session->set_userdata('offer_value',0);
+                                echo $f;
+                                   ?>,
                     classes : 'economy-class', //your custom CSS class
                     category: 'Economy Class'
                   }         
@@ -341,13 +350,15 @@
                     ]         
                 },
                 click: function () {
-                  if (this.status() == 'available') {
+                  if (this.status() == 'available' && $avail < $option) {
                     //let's create a new <li> which we'll add to the cart items
                     $('<li>'+this.data().category+' Seat # '+this.settings.label+': <b>Rs. '+this.data().price+'</b> <a href="#" class="cancel-cart-item">[cancel]</a></li>')
                       .attr('id', 'cart-item-'+this.settings.id)
                       .data('seatId', this.settings.id)
                       .appendTo($cart);
                       document.querySelector('#seatno').value = this.settings.label;
+                      $avail++;
+                      document.querySelector('#avail').value = $avail;
                       console.log(this.settings.label);
                     /*
                      * Lets update the counter and total
@@ -362,6 +373,9 @@
                   } else if (this.status() == 'selected') {
               //update the counter
                     $counter.text(sc.find('selected').length-1);
+                    $avail--;
+                    document.querySelector('#avail').value = $avail;
+                    document.querySelector('#seatno').value = "";
               //and total
                     $total.text(recalculateTotal(sc)-this.data().price);
             
@@ -399,6 +413,15 @@
              });
       
              return total;
+              }
+
+              function doconfirm(){
+                var avl = document.getElementById('avail').value;
+                if(avl < 1){
+                  var alr = "Please select a seat.";
+                  alert(alr);
+                  return false;
+                } 
               }
     
           </script>

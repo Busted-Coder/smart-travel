@@ -37,15 +37,17 @@ class Auth extends MY_Controller {
 			foreach ($db_users as $p){
 				if($username == $p['email'] && $password == $p['password'] && 2 == $p['role_id'] && $screen == 2)
 				{
+					$diff = date("Y-m-d")-$p['dob'];
 					$newdata = array(
 								'user_id'   =>  $p['user_id'],
                					'username'  =>  $p['fname'].' '.$p['lname'],
                					'email'     =>  $p['email'],
                					'phone'     =>  $p['phone'],
                					'cnic'      =>  $p['cnic'],
-               					'dob'       =>  $p['dob'],
+               					'age'       =>  $diff, 
                					'gender'    =>  $p['gender'],
-               					'is_valued'     => $p['is_valued'],
+               					'is_valued' =>  $p['is_valued'],
+               					'is_new'    =>  $p['is_new'],
                					'logged_in' =>  TRUE
            );
 					$this->session->set_userdata($newdata);
@@ -65,6 +67,10 @@ class Auth extends MY_Controller {
 			{
 				$this->loadView('login/login_register', array('Error'=> 'Incorrect Username or password !!!'),false);
 			}
+	}
+
+	public function test(){
+		$this->load->view('test/test');
 	}
 
 	public function logout(){

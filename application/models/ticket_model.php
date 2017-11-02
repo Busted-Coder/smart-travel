@@ -103,24 +103,34 @@ class Ticket_model extends CI_Model {
         $ticket['schedule_id'] = $this->session->userdata('schedule_id');
         if($this->session->userdata('user_id')){
             $ticket['trav_id'] = $this->session->userdata('user_id');
-        }
+            $ticket['trav_date'] = $this->session->userdata('busdate');
+            $ticket['state'] = 1;
+            $ticket['offer_price'] = $this->session->userdata('offer_price');
+            $ticket['offer_value'] = $this->session->userdata('offer_value');
+            $ticket['reservation_id'] = $this->session->userdata('reservation_id');
+            $ticket['created_at'] = date("Y-m-d H:i:s");
+            $seats = explode(',', $this->session->userdata('seatno'));
+            for($i=0;$i<sizeof($seats)-1;$i++){
+                $ticket['seatno'] = $seats[$i];
+                $this->db->insert('ticket', $ticket);
+            }
+            $set_cond = "km + ".$this->session->userdata('km');
+            $this->db->where('user_id', $this->session->userdata('user_id'));
+            $this->db->set('km', $set_cond, FALSE);
+            $this->db->update('user');
+            }
         else{
             $ticket['p_id'] = $this->session->userdata('p_id');
-        }
-        $ticket['trav_date'] = $this->session->userdata('busdate');
-        $ticket['state'] = 1;
-        $ticket['reservation_id'] = $this->session->userdata('reservation_id');
-        $ticket['created_at'] = date("Y-m-d H:i:s");
-        $seats = explode(',', $this->session->userdata('seatno'));
-        for($i=0;$i<sizeof($seats)-1;$i++){
-            $ticket['seatno'] = $seats[$i];
+            $ticket['trav_id'] = $this->session->userdata('user_id');
+            $ticket['trav_date'] = $this->session->userdata('busdate');
+            $ticket['state'] = 1;
+            $ticket['offer_price'] = $this->session->userdata('offer_price');
+            $ticket['offer_value'] = $this->session->userdata('offer_value');
+            $ticket['reservation_id'] = $this->session->userdata('reservation_id');
+            $ticket['created_at'] = date("Y-m-d H:i:s");
+            $ticket['seatno'] = $this->session->userdata('seatno');
             $this->db->insert('ticket', $ticket);
         }
-        if($this->session->userdata('user_id')){
-        $set_cond = "km + ".$this->session->userdata('km');
-        $this->db->where('user_id', $this->session->userdata('user_id'));
-        $this->db->set('km', $set_cond, FALSE);
-        $this->db->update('user');}
     }
     public function gettickets($res_id){
         return $this->db->where('reservation_id',$res_id)->get('ticket')->result_array();
@@ -152,6 +162,8 @@ class Ticket_model extends CI_Model {
             'state'           =>     $ticket->state,
             'reservation_id'  =>     $ticket->reservation_id,
             't_id'            =>     $ticket->t_id,
+            'offer_value'     =>     $ticket->offer_value,
+            'offer_price'     =>     $ticket->offer_price,
             'km'              =>     $route->km,
             'fare'            =>     $route->fare,
             'seatno'          =>     $ticket->seatno

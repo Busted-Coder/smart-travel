@@ -270,9 +270,9 @@
                   <div class="form-group">
                
                     <label for="dob">
-                      Date of Birth
+                      Age
                     </label>
-                    <input style="width: 400px;" type="date" name="dob" class="form-control" id="dob" value="<?php echo $this->session->userdata('dob');?>" readonly>
+                    <input style="width: 400px;" type="text" name="dob" class="form-control" id="dob" value="<?php echo $this->session->userdata('age');?>" readonly>
                     <input type="hidden" id="avail" name="avail">
                     <!--<input style="width: 400px;" type="text" hidden name="seatstobook" id="seatstobook" required>-->              
                   </div>
@@ -328,7 +328,37 @@
                 ],
                 seats: {
                   e: {
-                    price   : <?= $schedule['fare'] ?>,
+                    price   : <?php 
+                              $fare = $schedule['fare'];
+                              if($this->session->userdata('is_valued') == 1){
+                                $f = ($fare/100)*95;
+                                $this->session->set_userdata('offer_price',$f);
+                                $this->session->set_userdata('offer_value',5); 
+                                echo $f;
+                              }
+                              elseif($this->session->userdata('age') >= 60) { 
+                                $f = ($fare/100)*90;
+                                $this->session->set_userdata('offer_price',$f);
+                                $this->session->set_userdata('offer_value',10); 
+                                echo $f;
+                              }
+                              elseif($this->session->userdata('is_new') == 1) { 
+                                $f = ($fare/100)*95;
+                                $this->session->set_userdata('offer_price',$f);
+                                $this->session->set_userdata('offer_value',5); 
+                                echo $f;
+                              }
+                              elseif($option >= 5) { 
+                                $f = ($fare/100)*95;
+                                $this->session->set_userdata('offer_price',$f);
+                                $this->session->set_userdata('offer_value',5); 
+                                echo $f;
+                              } 
+                              else {
+                                $this->session->set_userdata('offer_price',$fare);
+                                $this->session->set_userdata('offer_value',0);
+                                echo $fare;
+                              }?>,
                     classes : 'economy-class ', //your custom CSS class
                     category: 'Economy Class '
                   }         

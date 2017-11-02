@@ -85,7 +85,7 @@
                 			<th>Reservation ID</th>
 							<th>Status</th>
 							<th>Distance</th>
-							<th>Fare</th>
+							<th>Fare/Dicount(%)</th>
 							<th>Seat #</th>
               			</tr></b>
               			<tr>
@@ -95,7 +95,8 @@
 								elseif($this->session->userdata('state') == 3){echo "Refund";}
 								elseif($this->session->userdata('state') == 4){echo "Cancelled";} ?></td>
 							<td> <?php echo $this->session->userdata('km'); ?></td>
-							<td> <?php echo $this->session->userdata('fare')*$this->session->userdata('num-seat'); ?></td>
+							<td> <?php if($this->session->userdata('logged_in')){ echo $this->session->userdata('offer_price')*$this->session->userdata('num-seat').'/'.$this->session->userdata('offer_value');}
+              else echo $this->session->userdata('offer_price').'/'.$this->session->userdata('offer_value'); ?></td>
 							<td> <?php echo $this->session->userdata('seatno'); ?> </td>
     	        		</tr>
             		</table>

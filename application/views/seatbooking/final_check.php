@@ -83,13 +83,14 @@
             		<table data-responsive="true" class="table table-custom table-primary table-fixed">
               			<b><tr>
                 			<th>Distance</th>
-							<th>Fare</th>
+							<th>Fare/Discount(%)</th>
 							<th>Seat #</th>
 							<th>Action</th>
               			</tr></b>
               			<tr>
                 			<td> <?php echo $this->session->userdata('km'); ?></td>
-							<td> <?php echo $this->session->userdata('fare') * $this->session->userdata('num-seat'); ?></td>
+							<td> <?php if($this->session->userdata('logged_in')){echo $this->session->userdata('offer_price') * $this->session->userdata('num-seat').'/'.$this->session->userdata('offer_value');}
+              else echo $this->session->userdata('offer_price'); ?></td>
 							<td> <?php echo $this->session->userdata('seatno'); ?> </td>
 							<td> 
 								<form action="<?php echo site_url('index.php/ticket/book') ?>" method="post" class="form-horizontal">

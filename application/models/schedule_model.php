@@ -70,7 +70,7 @@ class Schedule_model extends CI_Model {
     {
         if($ticket['busdate'] == date("Y-m-d")){
             return $this->db->select('*')
-            ->from('schedule')   
+            ->from('schedule')
             ->join('route', 'route.route_id = schedule.route_id')
             ->where('route.source',$ticket['source'])
             ->where('route.destination',$ticket['dest'])
@@ -79,7 +79,7 @@ class Schedule_model extends CI_Model {
             ->get()->result();}
         else{
             return $this->db->select('*')
-            ->from('schedule')   
+            ->from('schedule')
             ->join('route', 'route.route_id = schedule.route_id')
             ->where('route.source',$ticket['source'])
             ->where('route.destination',$ticket['dest'])

@@ -23,6 +23,7 @@ class Welcome extends CI_Controller {
        // $this->load->view('home/index');
         $this->load->model('Ticket_options_model');
         $data['cityarray'] = $this->Ticket_options_model->getCity();
+        //redirect('index.php/auth/test');
         $this->load->view('home/index1', $data);
     }
 }
