@@ -326,16 +326,19 @@
                 seats: {
                   e: {
                     price   : <?php
-                                $f = $schdeule['fare'];
+                                $f = $schedule['fare'];
                                 $this->session->set_userdata('offer_price',$f);
                                 $this->session->set_userdata('offer_value',0);
-                                echo $f;
-                                   ?>,
+                                echo $f; ?>,
                     classes : 'economy-class', //your custom CSS class
                     category: 'Economy Class'
                   }         
-          
-                },
+          /*php
+                                $f = $schdeule['fare'];
+                                $this->session->set_userdata('offer_price',$f);
+                                $this->session->set_userdata('offer_value',0);
+                                echo $schdeule['fare'];
+            */    },
                 naming : {
                   top : false,
                   getLabel : function (character, row, column) {

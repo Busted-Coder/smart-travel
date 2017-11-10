@@ -17,13 +17,13 @@
     <!--<script src="<?php echo PATH; ?>js/core.min.js"></script>
     <script src="<?php echo PATH; ?>js/script.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    --><style>
+    <style>
      input[type=date]::-webkit-inner-spin-button, 
       input[type=date]::-webkit-outer-spin-button { 
       -webkit-appearance: none; 
       margin: 0;}
     </style>
-        <!--[if lt IE 10]>
+        [if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"></script>
         <![endif]-->

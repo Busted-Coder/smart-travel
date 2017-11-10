@@ -1,4 +1,4 @@
-    <section class="section-height-800 breadcrumb-modern rd-parallax context-dark bg-gray-darkest text-lg-left">
+   <section class="section-height-800 breadcrumb-modern rd-parallax context-dark bg-gray-darkest text-lg-left">
           <div data-speed="0.2" data-type="media" data-url="<?php echo PATH; ?>images/backgrounds/background-01-1920x900.jpg" class="rd-parallax-layer"></div>
           <div data-speed="0" data-type="html" class="rd-parallax-layer">
             <div class="bg-primary-chathams-blue-reverse">
@@ -36,11 +36,11 @@
                       <!-- RD Mailform-->
                       <form action="<?php echo site_url('index.php/auth/login') ?>" method="post" class="rd-mailform text-left">
                         <div class="form-group form-group-label-outside">
-                          
+                          <label for="login-email" class="form-label form-label-outside text-dark">Your e-mail</label>
                           <input id="login-email" type="email" name="username" placeholder= "Enter Username (E-mail)" data-constraints="@Email @Required" class="form-control">
                         </div>
                         <div class="form-group form-group-label-outside offset-top-20">
-                          
+                          <label for="login-password" class="form-label form-label-outside text-dark">Password</label>
                           <input id="login-password" type="password" name="password" placeholder= "Password" data-constraints="@Required" class="form-control">
                         </div>
                         <div class="form-group form-group-label-outside offset-top-20">
@@ -51,9 +51,9 @@
                           </select>
                         </div>
                         <div class="offset-top-15 offset-sm-top-30 text-center text-md-left">
-                          <h6 style="color : red;"><?php if($Error != "NULL") echo $Error;?></h6><br>
+                          <h6 style="color : red;"><?php if($data['Error'] != "NULL") echo $data['Error'];?></h6><br>
                           <div class="reveal-xs-inline-block text-middle">
-                            <input type="submit" class="btn btn-ellipse-type-2 btn btn-ripe-lemon" value="sign in" onClick="return doconfirm1();">
+                            <input type="submit" class="btn btn-ellipse-type-2 btn btn-ripe-lemon" value="sign in">
                           </div>
                           <div class="reveal-xs-inline-block inset-xs-left-15 offset-top-15 offset-sm-top-0">
                             <div class="reveal-xs-inline-block text-middle">
@@ -73,57 +73,60 @@
                       <!-- RD Mailform-->
                       <form action="<?php echo site_url('index.php/auth/register');?>" method="post" class="rd-mailform text-left">
                         <div class="form-group form-group-label-outside">
-                          <label for="register-lname" class="form-label form-label-outside text-dark">First-Name</label>
-                          <input id="fname" type="text" name="fname" data-constraints="@Required" class="form-control" required>
+                          <label for="register-name" class="form-label form-label-outside text-dark">First-Name</label>
+                          <input id="register-name" type="text" name="fname" data-constraints="@Required" class="form-control">
                         </div>
                         <div class="form-group form-group-label-outside">
-                          <label for="register-fname" class="form-label form-label-outside text-dark">Last-Name</label>
-                          <input id="lname" type="text" name="lname" data-constraints="@Required" class="form-control" required>
+                          <label for="register-name" class="form-label form-label-outside text-dark">Last-Name</label>
+                          <input id="register-name1" type="text" name="lname" data-constraints="@Required" class="form-control">
                         </div>
-                         <div class="form-group form-group-label-outside">
-                          <label for="phone" class="form-label form-label-outside text-dark">Contact #</label>
-                          <input id="register-phone" type="text" name="phone" data-constraints="@Required" class="form-control" required>
+                        <div class="form-group form-group-label-outside offset-top-20">
+                          <select name="gender" class="form-control">
+                            <option>Select Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Others</option>
+                          </select>
                         </div>
-
+                        <div class="form-group form-group-label-outside offset-top-20">
+                          <label for="register-email" class="form-label form-label-outside text-dark">E-mail Address</label>
+                          <input id="register-email" type="email" name="email" data-constraints="@Email @Required" class="form-control">
+                        </div>
+                        <div class="form-group form-group-label-outside">
+                          <label for="register-phone" class="form-label form-label-outside text-dark">Contact #</label>
+                          <input id="register-phone" type="text" name="phone" data-constraints="@Required" class="form-control">
+                        </div>
                         <div class="form-group form-group-label-outside">
                           <label for="register-cnic" class="form-label form-label-outside text-dark">CNIC</label>
-                          <input id="cnic" type="text" name="cnic" data-constraints="@Required" class="form-control" required>
+                          <input id="register-cnic" type="text" name="cnic" data-constraints="@Required" class="form-control">
                         </div>
                         <div class="form-group form-group-label-outside">
-                          <label for="dob" class="form-label form-label-outside text-dark">Date of Birth</label>
-                          <input id="register-dob" type="date" name="dob" data-constraints="@Required" class="form-control" max="<?php echo date("Y-m-d"); ?>" required>
+                          <label for="register-dob" class="form-label form-label-outside text-dark">Date of Birth</label>
+                          <input id="register-dob" type="date" name="dob" data-constraints="@Required" class="form-control" max="<?php echo date("Y-m-d"); ?>">
                         </div>
-                        <div class="form-group form-group-label-outside">
-                          <label for="address" class="form-label form-label-outside text-dark">Address</label>
-                          <input id="register-address" type="text" name="address" data-constraints="@Required" class="form-control">
+                        <div class="form-group form-group-label-outside offset-top-20">
+                          <label for="register-password" class="form-label form-label-outside text-dark">Password</label>
+                          <input id="register-password" type="password" name="password" data-constraints="@Required" class="form-control">
                         </div>
-                        
-                        <div class="form-group form-group-label-outside">
-                          <label for="email" class="form-label form-label-outside text-dark">E-mail Address</label>
-                          <input id="register-email" type="email" name="email" data-constraints="@Email @Required" class="form-control" required>
-                        </div>
-                        <!--<div class="form-group form-group-label-outside">
-                          <label for="image" class="form-label form-label-outside text-dark">Image</label>
-                          <input type="text" class="form-control">
-                        </div>-->
-                    
-                        
-                        <div class="form-group form-group-label-outside">
-                          <label for="password" class="form-label form-label-outside text-dark">Password</label>
-                          <input id="a_password" type="password" name="password" class="form-control" required>
-                        </div>
-                        <div class="form-group form-group-label-outside">
-                          <label for="r_password" class="form-label form-label-outside text-dark">Repeat Password</label>
-                          <input id="r_password" type="password" name="r_password" class="form-control" required>
+                        <div class="form-group form-group-label-outside offset-top-20">
+                          <label for="register-repeat-password" class="form-label form-label-outside text-dark">Repeat a password</label>
+                          <input id="register-repeat-password" type="password" name="r_password" data-constraints="@Required" class="form-control">
                         </div>
                         <div class="form-group offset-top-15 text-center text-md-left">
                           <label class="checkbox-inline">
-                            <input id="register-radio" name="register-radio" value="checkbox-1" type="checkbox">I agree with the <a href="<?php echo site_url('index.php/footer/privacy') ?>" class="text-primary">Terms of use</a><span>.</span>
+                            <input id="register-radio" name="register-radio" value="checkbox-1" type="checkbox" class="checkbox-custom"><span class="small p"><span class="small">I agree with the <a href="<?php echo site_url('index.php/footer/privacy') ?>" class="text-primary">Terms of use</a></span></span><span>.</span>
                           </label>
                           <a id="modal-788038" href="#modal-container-788038" role="button" class="btn btn-xs btn btn-ellipse-type-2 btn btn-primary" data-toggle="modal">Hints</a>
                         </div>
                         <div class="offset-top-15 offset-sm-top-20 text-center text-md-left">
-                          <input type="submit" class="btn btn-ellipse-type-2 btn-ripe-lemon" value="Sign Up" onClick="return doconfirm();">
+                          <h6><?php if($data['validation_error'] != "NULL"){?> 
+                          <h2 style="color: #3256a4">Errors</h2><?php
+                          foreach ($data['validation_error'] as $k) {
+                            ?><ul style="color : red;"><li><?php
+                            echo $k;?></li></ul><?php
+                          }}
+                          ?></h6><br>
+                         <input type="submit" class="btn btn-ellipse-type-2 btn-ripe-lemon" value="Sign Up">
                         </div>
                       </form>
                       <div class="col-md-6">
@@ -147,6 +150,7 @@
                                       <li>Password should be 6-10 characters.</li>
                                       <li>Special characters are not allowed unless mentioned.</li>
                                       <li>E-mail and CNIC are once used, can't repeat.</li>
+                                      <li>All Fields are Mendatory.</li>
                                       <li>You must agree with our <a href="<?php echo site_url('index.php/footer/privacy') ?>" class="text-primary">Terms of use</a>.</li>
                                     </ul>
                                   </div>
@@ -170,4 +174,3 @@
         </section>
     </main>
   </div>
- 

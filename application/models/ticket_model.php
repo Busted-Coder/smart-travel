@@ -173,6 +173,7 @@ class Ticket_model extends CI_Model {
 
     public function add_customer($customer){
         unset($customer['seatno']);
+        unset($customer['avail']);
         $this->db->insert('passenger', $customer);
         return $this->db->order_by('p_id','desc')->limit(1)->get('passenger')->row();
     }

@@ -22,9 +22,15 @@ class Auth_model extends CI_Model {
                             .$user_data['password'].")";*/
         unset($user_data['r_password']);
         unset($user_data['register-radio']);
-        $user_data['role_id'] = "2";
+        $user_data['role_id'] = 2;
+        $user_data['km'] = 0;
+        $user_data['is_new'] = 1;
+        $user_data['is_valued'] = 0;
         $user_data['created_at'] = date("Y-m-d H:i:s");
         $this->db->insert('user', $user_data);
+    }
+    public function get_email_cnic(){
+        return $this->db->select('email,cnic')->get('user')->result_array();
     }
     
 }

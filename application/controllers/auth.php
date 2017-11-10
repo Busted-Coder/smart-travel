@@ -13,13 +13,13 @@ class Auth extends MY_Controller {
 
 	}
 	public function login_loader(){
-		$this->load->view('layout/header');
-		$this->load->view('layout/nav');
-		$this->load->view('login/login_register',array('Error' => 'NULL'));
-		$this->load->view('layout/footer');
-		//$this->loadView('login/login_register',array('Error' => 'NULL'),false);
+		$data['validation_error'] = "NULL";
+		$data['Error'] = "NULL";
+		//$this->load->view('login/login_register_main',array('data' => $data));
+		$this->loadView('login/login_register',array('data' => $data),false);
 	}
 	public function login(){
+		$data['validation_error'] = "NULL";
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$role_s = $this->input->post('role');
@@ -59,13 +59,16 @@ class Auth extends MY_Controller {
 				}
 				elseif($username == $p['email'] && $password == $p['password'])
 				{
-					$this->loadView('login/login_register', array('Error'=> 'Incorrect Role!'),false);
+					$data['Error'] = "Incorrect Role";
+					$this->loadView('login/login_register', array('data'=> $data),false);
 				}}
-				$this->loadView('login/login_register', array('Error'=> 'Incorrect Username or password !!!'),false);
+				$data['Error'] = "Incorrect Username or password";
+				$this->loadView('login/login_register', array('data'=> $data),false);
 			}
 			else
 			{
-				$this->loadView('login/login_register', array('Error'=> 'Incorrect Username or password !!!'),false);
+				$data['Error'] = "Incorrect Username or password";
+				$this->loadView('login/login_register', array('Error'=> $data),false);
 			}
 	}
 
@@ -81,11 +84,15 @@ class Auth extends MY_Controller {
 
 	public function register()
 	{
-		$postedData = $_POST;
+		$postedData = $this->input->post();
 		$validation_result = $this->validate_form($postedData);
 		if(count($validation_result) > 0){
-			$data['validation_error']  = $validation_result;
-			$this->load->view('login/login_register', $data);
+			$data['validation_error'] = $validation_result;
+			$data['Error'] = "NULL";
+			//$this->load->view('layout/header');
+			//$this->load->view('layout/nav');
+			$this->loadView('login/login_register', array('data' => $data), false);
+			//$this->load->view('layout/footer');
 		}
 		else{
 			$this->AuthModel->AddNewUser($postedData);
@@ -120,9 +127,20 @@ class Auth extends MY_Controller {
 	private function validate_form($form_data)
 	{
 		$validation_error = array();
+		$datadb = $this->AuthModel->get_email_cnic();
 		if($form_data['password'] !== $form_data['r_password'])
 		{
-			array_push($validation_error, 'Passwod do not Match !!!');
+			array_push($validation_error, 'Passwod do not Match.');
+		}
+		foreach ($datadb as $key) {
+			if($form_data['cnic'] == $key['cnic']){
+				array_push($validation_error, 'CNIC Already Used.');
+			}
+		}
+		foreach ($datadb as $key) {
+			if($form_data['email'] == $key['email']){
+				array_push($validation_error, 'Email Already Used.');
+			}
 		}
 		return $validation_error;
 	}
