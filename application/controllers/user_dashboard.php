@@ -166,5 +166,16 @@ class User_dashboard extends MY_Controller {
 		$this->loadView('user_dashboard/track_by_city',array('data' => $data),false);
 		//$this->load->view('layout/footer');
 	}
+	public function track_bus(){
+		$this->OnlyUser();
+		$this->load->model('User_model');
+		$this->load->model('maps_model','MapsModel');
+		$trac_id = $this->User_model->get_tracid_by_tid($this->input->post('t_id'));
+		$loc1['position'] = $this->MapsModel->getloc($trac_id);
+		$loc = explode('/', $loc1['position']);
+		$info['lat'] = $loc[0];
+		$info['lng'] = $loc[1];
+		$this->load->view('views/maps',array('info' => $info));
+	}
 }
 ?>

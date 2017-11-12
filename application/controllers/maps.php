@@ -18,5 +18,4 @@ class Maps extends MY_Controller {
 		$info['lng'] = $loc[1];
 		$this->load->view('views/maps',array('info' => $info));
 	}
-
 }

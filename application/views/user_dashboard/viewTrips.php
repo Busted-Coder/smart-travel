@@ -58,6 +58,26 @@
 										</div>
 									</div>
 								</form>
+								<?php if($p['state'] != 3){?>
+								<form action="<?php echo site_url('index.php/user_dashboard/track_bus') ?>" method="post" target="_blank" class="form-horizontal">
+									<input type="hidden" name="t_id" value="<?php echo $p['t_id'] ?>">
+									<div class="form-group">
+										<div class="col-sm-4">
+											<input type="submit" class="btn btn-xs btn btn-ellipse-type-2 btn-ripe-lemon" value="Track Bus">
+										</div>
+									</div>
+								</form>
+								<?php } 
+								else{?>
+								<form action="" method="post" class="form-horizontal">
+									<input type="hidden" name="t_id" value="<?php echo $p['t_id'] ?>">
+									<div class="form-group">
+										<div class="col-sm-4">
+											<input type="submit" class="btn btn-xs btn btn-ellipse-type-2 btn-ripe-lemon" value="Track Bus" onClick="return error1();">
+										</div>
+									</div>
+								</form>
+								<?php }?>
 							</td>
 							<td>
 								<?php if($p['state'] != 3){?>
@@ -121,8 +141,8 @@
 		alert("Can't Perform This Operation.\nAlready Refunded.");
 		return false;
 	}
-	function cons(){
-		alert("Under Construction.");
+	function error1(){
+		alert("Feature is not Live.");
 		return false;
 	}
 </script>

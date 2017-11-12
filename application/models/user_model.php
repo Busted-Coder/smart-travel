@@ -54,5 +54,12 @@ class User_model extends CI_Model {
         $this->db->where('user_id',$id);
         $this->db->update('user');
     }
+
+    public function get_tracid_by_tid($tid){
+        $sid = $this->db->select('schedule_id')->where('t_id',$tid)->get('ticket')->row();
+        $busid = $this->db->select('bus_id')->where('schedule_id',$sid->schedule_id)->get('schedule')->row();
+        $tracid = $this->db->select('tracker_id')->where('bus_id',$busid->bus_id)->get('bus')->row();
+        return $tracid->tracker_id;
+    }
 }
 ?>
