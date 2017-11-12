@@ -104,12 +104,16 @@
                           <label for="register-dob" class="form-label form-label-outside text-dark">Date of Birth</label>
                           <input id="register-dob" type="date" name="dob" data-constraints="@Required" class="form-control" max="<?php echo date("Y-m-d"); ?>">
                         </div>
+                        <div class="form-group form-group-label-outside">
+                          <label for="register-address" class="form-label form-label-outside text-dark">Postal Address</label>
+                          <input id="register-address" type="text" name="address" data-constraints="@Required" class="form-control">
+                        </div>
                         <div class="form-group form-group-label-outside offset-top-20">
                           <label for="register-password" class="form-label form-label-outside text-dark">Password</label>
                           <input id="register-password" type="password" name="password" data-constraints="@Required" class="form-control">
                         </div>
                         <div class="form-group form-group-label-outside offset-top-20">
-                          <label for="register-repeat-password" class="form-label form-label-outside text-dark">Repeat a password</label>
+                          <label for="repeat-password" class="form-label form-label-outside text-dark">Repeat a password</label>
                           <input id="register-repeat-password" type="password" name="r_password" data-constraints="@Required" class="form-control">
                         </div>
                         <div class="form-group offset-top-15 text-center text-md-left">
@@ -126,7 +130,7 @@
                             echo $k;?></li></ul><?php
                           }}
                           ?></h6><br>
-                         <input type="submit" class="btn btn-ellipse-type-2 btn-ripe-lemon" value="Sign Up">
+                         <input type="submit" class="btn btn-ellipse-type-2 btn-ripe-lemon" onClick="return doconfirm();" value="Sign Up">
                         </div>
                       </form>
                       <div class="col-md-6">
@@ -174,3 +178,65 @@
         </section>
     </main>
   </div>
+  <script type="text/javascript">
+    function doconfirm(){
+      var fname = document.getElementById("register-name").value;
+      var lname = document.getElementById("register-name1").value;
+      var address = document.getElementById("register-address").value;
+      var cnic = document.getElementById("register-cnic").value;
+      var phone = document.getElementById("register-phone").value;
+      var pass = document.getElementById("register-password").value;
+      var r_pass = document.getElementById("register-repeat-password").value;
+      console.log(fname,lname,address,cnic,phone,pass,r_pass);
+      if(/^[a-zA-Z]*$/.test(fname) == false){
+        alert("First-Name has Special characters or digits avoid them.");
+        document.getElementById("register-name").focus();
+        return false;
+      }
+      else if(/^[a-zA-Z]*$/.test(lname) == false){
+        alert("Last-Name has Special charactersor or digits avoid them.");
+        document.getElementById("register-name1").focus();
+        return false;
+      }
+      else if(/^[a-zA-Z0-9#,.- ]*$/.test(address) == false){
+        alert("Postal Address has Special characters avoid them.");
+        document.getElementById("register-address").focus();
+        return false;
+      }
+      else if(/^[0-9]*$/.test(phone) == false){
+        alert("Phone has characters, avoid them.");
+        document.getElementById("register-phone").focus();
+        return false;
+      }
+      else if(/^[0-9]*$/.test(cnic) == false){
+        alert("CNIC has characters, avoid them.");
+        document.getElementById("register-cnic").focus();
+        return false;
+      }
+      else if(pass !== r_pass){
+        alert("Password do not match.");
+        document.getElementById("register-password").focus();
+        return false;
+      }
+      else if(phone.length > 11 || phone.length < 11){
+        alert("Phone # should be of 11 digits.");
+        document.getElementById("register-phone").focus();
+        return false; 
+      }
+      else if(cnic.length > 13 || cnic.length < 13){
+        alert("CNIC should be of 13 digits.");
+        document.getElementById("register-cnic").focus();
+        return false; 
+      }
+      else if(address.length > 50){
+        alert("Address should be less then 50 digits.");
+        document.getElementById("register-address").focus();
+        return false; 
+      }
+      else if(pass.length > 10 || pass.length < 6){
+        alert("Password shouls be between 6-10 digits.");
+        document.getElementById("register-password").focus();
+        return false; 
+      }
+    }
+  </script>

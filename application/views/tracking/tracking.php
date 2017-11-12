@@ -104,7 +104,7 @@
       <script>
         function doconfirm(){
           var num = document.getElementById("tracking-schedule-number").value;
-          if(/^[a-zA-Z0-9#,-]*$/.test(num) == false){
+          if(/^[a-zA-Z0-9]*$/.test(num) == false){
           alert("Reservation has Special characters, avoid them.");
           document.getElementById("tracking-schedule-number").focus();
           return false;
