@@ -60,7 +60,7 @@ class Find_ticket extends CI_Controller
 
  public function bookticket()
  {
-
+    $this->OnlyUser();
  	$id = $this->input->get('id');
     $this->load->model('schedule_model', 'schedules');
     $this->load->model('route_model', 'route');

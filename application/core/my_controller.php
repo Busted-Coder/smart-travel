@@ -14,6 +14,14 @@ class MY_Controller extends CI_Controller {
 
     }
 
+    public function OnlyUser()
+    {
+        $role = $this->session->userdata('logged_in');
+        if($role != true)
+        redirect('index.php/auth/login_loader', 'refresh');
+
+    }
+
     public function loadView($name, $data = null, $isAdmin = false){
         if($isAdmin){
             $this->load->view('layout/admin/header'); 

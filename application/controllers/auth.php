@@ -48,7 +48,7 @@ class Auth extends MY_Controller {
                					'gender'    =>  $p['gender'],
                					'is_valued' =>  $p['is_valued'],
                					'is_new'    =>  $p['is_new'],
-               					'logged_in' =>  TRUE
+               					'logged_in' =>  true
            );
 					$this->session->set_userdata($newdata);
 					redirect('index.php/Welcome/index');
@@ -79,6 +79,7 @@ class Auth extends MY_Controller {
 	public function logout(){
 		//$this->session->unset_userdata('logged_in');
 		$this->session->sess_destroy();
+		$this->session->set_userdata('logged_in','');
 		redirect('index.php/Welcome/index');
 	}
 
@@ -97,29 +98,44 @@ class Auth extends MY_Controller {
 		else{
 			$this->AuthModel->AddNewUser($postedData);
 			$to = $postedData['email'];
-			$subject = "Account successfully created on Smart-Travel";
-			$txt = "Greetings,
-			Welcome to Smart-Travel! We are excited to have you as part of our membership.
-			Membership is a lifelong journey and we look forward to helping you start yours.\n
-			As a member of Smart-Travel, you will enjoy many unique benefits. Please see our
-			upcoming news so we can explain these benefits and how you can get more.
-			\n
-			We look forward to seeing you there in near future!\n\n
-			Please let us know if you have any questions about your membership.\n
-			Best wishes,\n
-			Team Smart-Travel\n\n Electronicaly generated mail.PLZ don't reply.";
-			$headers = "From: support@smart-travel.com" . "\r\n" .
-			"CC: k132387@nu.edu.pk";
+			$subject = "Account successfully created at Smart-Travel.";
+			$body = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+				<html xmlns="http://www.w3.org/1999/xhtml">
+					<body>
+						<table cellspacing="0" cellpadding="0" width="100%" bgcolor="#ebebeb">
+							<tbody>
+								<tr>
+									<td><img src="<?php echo PATH; ?>/images/backgrounds/background-02-1920x950.jpg" height="300" width="100%"></td>
+								</tr>
+							</tbody>
+						</table>
+						<table style="padding-left:25%; padding-right:25%; border-left: 2px solid #e6e6e6; border-right: 2px solid #e6e6e6;" cellspacing="0" cellpadding="25" width="">
+							<tr>
+								<td style="background-color: #ffffff; border-top: 0px solid #000000; text-align: left; height: 50px;" align="center"><p><span style="margin-bottom: 10px; font-size: 20px; font-weight: normal; color: #494a48; font-family: arial; line-height: 110%;">Greetings,<br>
+									Welcome to Smart-Travel! We are excited to have you as part of our membership.
+									Membership is a lifelong journey and we look forward to helping you start yours.<br>
+									As a member of Smart-Travel, you will enjoy many unique benefits. Please see our upcoming news so we can explain these benefits and how you can get more.<br>
+									We look forward to see you there in near future!<br><br>
+									Please let us know if you have any questions about your membership.<br>
+									Best wishes,<br>
+									Team Smart-Travel<br><br> Electronicaly generated mail.PLZ don not reply.</span></p>
+								</td>
+							</tr>
+						</table>
+					</body>
+				</html>';
 			//mail($to,$subject,$txt,$headers);
-			$this->email->from($headers, 'Nisar Hassan'); 
-         	$this->email->to($postedData['email']);
-         	$this->email->subject($subject); 
-         	$this->email->message($txt);
+			$result = $this->email
+    		->from('support@smarttravel.pk')
+    		->reply_to('nisar.hassan@smarttravel.pk')    // Optional, an account where a 		human being reads.
+    		->to($postedData['email'])
+    		->subject($subject)
+    		->message($body);
          	if($this->email->send()){
          		redirect('index.php/Welcome/index');
          	}
          	else
-         		echo "Hum to yaro beech bichary lut gaiy";
+         		echo "Hum to yaro beech bichary lut gaiy.";
 
 		}
 	}

@@ -196,5 +196,9 @@ class Ticket_model extends CI_Model {
             ->get()->result();
         }
     }
+
+    public function refund($id){
+        $this->db->set('state', 3)->where('t_id', $id)->update('ticket');
+    }
 }
 ?>

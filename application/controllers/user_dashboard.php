@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class User_dashboard extends MY_Controller {
 	
 	public function viewProfile(){
-			
+		$this->OnlyUser();
 		$id=$this->session->user_id;
 		$this->load->model('User_model');
 		$user_info=$this->User_model->getuser($id);
@@ -30,7 +30,7 @@ class User_dashboard extends MY_Controller {
 	}
 
 	public function viewTrips(){
-			
+		$this->OnlyUser();
 		$id = $this->session->userdata('user_id');
 		$this->load->model('User_model');
 		$data = $this->User_model->viewTrips($id);
@@ -51,12 +51,14 @@ class User_dashboard extends MY_Controller {
 	}
 
 	public function editProfile(){
+		$this->OnlyUser();
 		$this->load->model('User_model');
 		$info= $this->User_model->editProfile($this->input->post());
 		redirect('index.php/user_dashboard/viewProfile');
 	}
 
 	public function changePassword_loader(){
+		$this->OnlyUser();
 		$this->load->view('layout/header');
    		$this->load->view('layout/nav');
    		$this->load->view('user_dashboard/changePassword', array('Error'=> ''));
@@ -64,6 +66,7 @@ class User_dashboard extends MY_Controller {
 	}
 
 	public function changePassword(){
+		$this->OnlyUser();
 		$pass_input=$this->input->post();
 		$id=$this->session->user_id;
 		$this->load->model('User_model');
@@ -123,6 +126,26 @@ class User_dashboard extends MY_Controller {
 		$this->load->view('seatbooking/print_ticket');
 		$this->load->view('layout/footer');
 	}
+	//change ticket status to refunded
+	//call by user_dashboard/res_tic_view
+	//intake Ticket_id
+	//using ticket-model function refund()
+	public function ticket_refund(){
+		$this->OnlyUser();
+		$this->load->model('Ticket_model');
+		$this->Ticket_model->refund($this->input->post('t_id'));
+		redirect('index.php/user_dashboard/viewTrips');
+	}
+	//change ticket status to exchanged
+	//call by user_dashboard/res_tic_view
+	//intake Ticket_id
+	//using ticket-model function exchange()
+	public function ticket_exchange(){
+		$this->load->model('Ticket_options_model');
+        $data['cityarray'] = $this->Ticket_options_model->getCity();
+		$this->loadView('user_dashboard/exchange_ticket',$data,false);
+	}
+
 	public function track_by_city(){
 		$this->load->library('session');
 		$this->load->model('Ticket_model');

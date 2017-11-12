@@ -251,40 +251,39 @@
               <div class="range range-xs-center">
                 <div class="cell-sm-10 cell-md-12">
                   <!-- Panel-->
-                  <div class="panel panel-lg bg-overlay-chathams-blue text-lg-left">
-                    <h3><span class="small text-bold text-white">Find Bus Tickets</span></h3>
-                    <form action="<?php echo site_url('index.php/Find_ticket/searchTicket') ?>" method="post" class="range range-md-bottom offset-top-20">
-                      <div class="cell-md-9 cell-lg-10">
-                        <div class="group group-top">
-                          <div class="group-item element-fullwidth">
-                            <div class="form-group text-left">
-                              <label for="form-filter-location-from" class="form-label form-label-outside">Departure City</label>
-                              <div class="form-group form-group-label-outside">
-                                <select id="form-filter-location-from" name="source" class="form-control shadow-drop-md bg-white" required>
-                                  <option>Select City</option>
+                  <div class="panel panel-md bg-chathams-blue context-dark text-lg-left">
+                  <h3><span class="small text-bold text-white">Find Bus Tickets</span></h3>
+                  <form action="<?php echo site_url('index.php/Find_ticket/searchTicket') ?>" method="post" class="offset-top-10 offset-sm-top-15">
+                    <div class="group group-bottom">
+                      <div class="group-item element-fullwidth element-fullwidth-sm">
+                        <div class="form-group text-left">
+                          <label for="form-filter-location-from" class="form-label form-label-outside">Departure City</label>
+                            <div class="form-group form-group-label-outside">
+                              <select id="form-filter-location-from" name="source" class="form-control shadow-drop-md bg-white" required>
+                                <option>Select City</option>
+                                    <?php foreach ($cityarray as $value) {?>
+                                        <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
+                              </select>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="group-item element-fullwidth element-fullwidth-sm">
+                        <div class="form-group text-left">
+                          <label for="form-filter-location-to" class="form-label form-label-outside">Arrival City</label>
+                            <div class="select2-whitout-border shadow-drop-md">
+                              <select id="form-filter-location-to" name="dest" class="form-control" required>
+                                <option>Select City</option>
                                       <?php foreach ($cityarray as $value) {?>
                                           <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
-                                </select>
-                              </div>
+                              </select>
                             </div>
-                          </div>
-                          <div class="group-item element-fullwidth">
-                            <div class="form-group text-left">
-                              <label for="form-filter-location-to" class="form-label form-label-outside">Arrival City</label>
-                              <div class="select2-whitout-border shadow-drop-md">
-                                <select id="form-filter-location-to" name="dest" class="form-control" required>
-                                  <option>Select City</option>
-                                        <?php foreach ($cityarray as $value) {?>
-                                            <option value=<?= $value['shortcode']?>><?php echo $value['name']?> </option> <?php } ?>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                          <?php $date = date("Y-m-d"); ?> 
-                          <div class="group-item element-fullwidth">
-                            <div class="form-group text-left">
-                              <label for="form-filter-location-from-date" class="form-label form-label-outside">Departure Date</label>
-                              <div class="select2-whitout-border shadow-drop-md">
+                        </div>
+                      </div>
+                      <?php $date = date("Y-m-d"); ?> 
+                      <div class="group-item element-fullwidth element-fullwidth-xs">
+                        <div class="form-group text-left">
+                          <label for="form-filter-location-from-date" class="form-label form-label-outside">Departure Date</label>
+                          <div class="select2-whitout-border shadow-drop-md">
                                 <input id="form-filter-location-from-date" name="busdate" type="date" min="<?php echo date("Y-m-d"); ?>" max="<?php echo date('Y-m-d', strtotime($date. ' + 13 days')); ?>" data-minimum-results-for-search="Infinity" class="form-control" style="background-color: white;" required>
                                   <!--<option value="1">7-11-2016</option>
                                   <option value="2">2-12-2016</option>
@@ -292,35 +291,36 @@
                                   <option value="4">3-10-2016</option>-->
                                 </input>
                               </div>
-                            </div>
+                        </div>
+                      </div>
+                      <?php if($this->session->userdata('logged_in')){ ?>
+                      <div class="group-item element-fullwidth element-fullwidth-xs offset-lg-top-4">
+                        <div class="form-group text-left">
+                          <label for="passengers" class="form-label form-label-outside">Passengers</label>
+                          <div class="select2-whitout-border shadow-drop-md">
+                            <select id="passengers" name="passengers" data-minimum-results-for-search="Infinity" class="form-control">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                            </select>
                           </div>
-                          <?php if($this->session->userdata('logged_in')){ ?>
-                          <div class="group-item element-fullwidth">
-                            <div class="form-group text-left">
-                              <label for="form-filter-location-to-date" class="form-label form-label-outside">Number of tickets</label>
-                              <div class="select2-whitout-border shadow-drop-md">
-                                <select id="form-filter-location-to-date" name="num-seat" data-minimum-results-for-search="Infinity" class="form-control">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                                  <option>6</option>
-                                  <option>7</option>
-                                  <option>8</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div><?php } ?>
                         </div>
                       </div>
-                      <div class="cell-md-3 cell-lg-2">
-                        <div class="reveal-block reveal-md-inline-block">
-                          <button type="submit" style="max-width: 147px; min-width: 147px; min-height: 50px;" class="shadow-drop-md btn btn-ripe-lemon element-fullwidth" onClick="return doconfirm();">search</button>
-                        </div>
+                      <?php } else{?>
+                      <div class="group-item element-fullwidth element-fullwidth-xs offset-lg-top-4">
                       </div>
-                    </form>
-                  </div>
+                      <?php } ?>
+                      <div class="group-item element-fullwidth element-fullwidth-xs offset-lg-top-4">
+                        <input type="submit" class="btn btn-ellipse-type-2 btn btn-block btn-ripe-lemon" value="search">
+                      </div>
+                    </div>
+                  </form>
+                </div>
                 </div>
               </div>
             </div>
@@ -455,7 +455,7 @@
                       </ul>
                     </div>
                     <div class="offset-top-10">
-                      <div class="post-meta text-gray">16 hours</div>
+                      <div class="post-meta text-gray">21 hours</div>
                     </div>
                   </div></a>
               </div>
@@ -477,7 +477,7 @@
                       </ul>
                     </div>
                     <div class="offset-top-10">
-                      <div class="post-meta text-gray">22 hours</div>
+                      <div class="post-meta text-gray">25 hours</div>
                     </div>
                   </div></a>
               </div>
@@ -726,7 +726,7 @@
               <div class="cell-md-10 cell-lg-8 text-center text-md-right">
                 <h2 class="text-bold">Take Part in the Discount Campaign</h2>
               </div>
-              <div class="cell-lg-3 offset-top-30 offset-lg-top-0 text-lg-left"><a href="single-tour.html" class="btn btn-ripe-lemon">Get Started</a></div>
+              <div class="cell-lg-3 offset-top-30 offset-lg-top-0 text-lg-left"><a href="<?php echo base_url();?>index.php/user_dashboard/ticket_exchange" class="btn btn-ellipse-type-2 btn btn-ripe-lemon">Get Started</a></div>
             </div>
           </div>
         </section>
@@ -787,15 +787,18 @@
                   <p class="text-gray">Enter your email address to get the latest about Smart-Travel, Special events and Student activities delivered right to your inbox.</p>
                 </div>
                 <div class="offset-top-20">
-                        <form data-form-output="form-subscribe-footer" data-form-type="subscribe" method="post" action="bat/rd-mailform.php" class="rd-mailform rd-mailform-subscribe">
+                        <form method="post" action="<?php echo site_url('index.php/sendmail/subs') ?> " class="rd-mailform-subscribe">
                           <div class="form-group form-group-sm">
                             <div class="input-group">
                               <input placeholder="Your e-mail..." type="email" name="email" data-constraints="@Email @Required" class="form-control"><span class="input-group-btn">
-                                <button type="submit" class="btn btn-xs btn-ripe-lemon">Subscribe</button></span>
+                                <input type="submit" class="btn btn-xs btn-ripe-lemon" value="Subscribe"></span>
                             </div>
                           </div>
                           <div id="form-subscribe-footer" class="form-output"></div>
                         </form>
+                        <div class="offset-top-25">
+                          <p class="text-gray">For Confirmation Check Your Mailbox.</p>
+                        </div>
                 </div>
               </div>
             </div>
@@ -803,7 +806,7 @@
         </section>
         <section class="section-12 bg-gray-darker text-md-left">
           <div class="shell">
-            <p class="font-accent"><span class="small text-silver-dark">&copy; <span id="copyright-year"></span> All Rights Reserved Terms of Use and <a href="privacy.html">Privacy Policy</a></span>
+            <p class="font-accent"><span class="small text-silver-dark">&copy; <span id="copyright-year"></span> All Rights Reserved Terms of Use and <a href="<?php echo site_url('index.php/footer/privacy') ?>">Privacy Policy</a></span>
             </p>
           </div>
         </section>

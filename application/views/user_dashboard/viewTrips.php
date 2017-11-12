@@ -31,10 +31,9 @@
                 			<th>#</th>
                 				<th>Ticket ID</th>
 								<th>Status</th>
-								<th>Schedule ID</th>
 								<th>Travelling Date</th>
-								<th>Seat #</th>
 								<th>Issuance Date</th>
+								<th>Details</th>
 								<th>Action</th>
               			</tr></b>
               			<?php $count = 0; 
@@ -48,19 +47,55 @@
 											elseif($p['state'] == 3){echo "Refund";}
 											elseif($p['state'] == 4){echo "Cancelled";} ?>
 							</td>
-							<td> <?php echo $p['schedule_id']; ?> </td>
 							<td> <?php echo $p['trav_date']; ?> </td>
-							<td> <?php echo $p['seatno']; ?> </td>
 							<td> <?php echo $p['created_at']; ?> </td>
 							<td> 
 								<form action="<?php echo site_url('index.php/user_dashboard/ticket_preview') ?>" method="post" class="form-horizontal">
 									<input type="hidden" name="t_id" value="<?php echo $p['t_id'] ?>">
 									<div class="form-group">
 										<div class="col-sm-4">
-											<input type="submit" style="text-align: right;" class="btn btn-xs btn-ripe-lemon" value="Preview">
+											<input type="submit" class="btn btn-xs btn btn-ellipse-type-2 btn-ripe-lemon" value="Preview">
 										</div>
 									</div>
 								</form>
+							</td>
+							<td>
+								<?php if($p['state'] != 3){?>
+								<form action="<?php echo site_url('index.php/user_dashboard/ticket_refund') ?>" method="post" class="form-horizontal">
+									<input type="hidden" name="t_id" value="<?php echo $p['t_id'] ?>">
+									<div class="form-group">
+										<div class="col-sm-4">
+											<input type="submit" class="btn btn-xs btn btn-ellipse-type-2 btn-ripe-lemon" value="Refund" onClick="return do_confirm_refund();">
+										</div>
+									</div>
+								</form>
+								<form action="<?php echo site_url('index.php/user_dashboard/ticket_exchange') ?>" method="post" class="form-horizontal">
+									<input type="hidden" name="t_id" value="<?php echo $p['t_id'] ?>">
+									<div class="form-group">
+										<div class="col-sm-4">
+											<input type="submit" class="btn btn-xs btn btn-ellipse-type-2 btn-ripe-lemon" value="Exchange">
+										</div>
+									</div>
+								</form>
+								<?php } 
+								else{?>
+								<form action="" method="post" class="form-horizontal">
+									<input type="hidden" name="t_id" value="<?php echo $p['t_id'] ?>">
+									<div class="form-group">
+										<div class="col-sm-4">
+											<input type="submit" class="btn btn-xs btn btn-ellipse-type-2 btn-ripe-lemon" value="Refund" onClick="return error();">
+										</div>
+									</div>
+								</form>
+								<form action="" method="post" class="form-horizontal">
+									<input type="hidden" name="t_id" value="<?php echo $p['t_id'] ?>">
+									<div class="form-group">
+										<div class="col-sm-4">
+											<input type="submit" class="btn btn-xs btn btn-ellipse-type-2 btn-ripe-lemon" value="Exchange" onClick="return error();">
+										</div>
+									</div>
+								</form>
+								<?php }?>
 							</td>
     	        		</tr>
     	        		<?php } ?>
@@ -70,3 +105,24 @@
     	</div>
 	</section>
 </main>
+
+<script>
+	function do_confirm_refund(){
+		job = confirm("Are you sure to refund?");
+		if(!job){
+			return false;
+		}
+		else{
+			alert("Collect Your Money From Nearest Smart-Travel Terminal.\nHope to see you again.");
+			return true;
+		}	
+	}
+	function error(){
+		alert("Can't Perform This Operation.\nAlready Refunded.");
+		return false;
+	}
+	function cons(){
+		alert("Under Construction.");
+		return false;
+	}
+</script>

@@ -56,15 +56,18 @@
                   <p class="text-silver">Enter your email address to get the latest about Smart-Travel, Special events and Student activities delivered right to your inbox.</p>
                 </div>
                 <div class="offset-top-20">
-                        <form data-form-output="form-subscribe-footer" data-form-type="subscribe" method="post" action="bat/rd-mailform.php" class="rd-mailform rd-mailform-subscribe">
+                        <form method="post" action="<?php echo site_url('index.php/sendmail/subs') ?> " class="rd-mailform-subscribe">
                           <div class="form-group form-group-sm">
                             <div class="input-group">
                               <input placeholder="Your e-mail..." type="email" name="email" data-constraints="@Email @Required" class="form-control"><span class="input-group-btn">
-                                <button type="submit" class="btn btn-xs btn-ripe-lemon">Subscribe</button></span>
+                                <input type="submit" class="btn btn-xs btn-ripe-lemon" value="Subscribe"></span>
                             </div>
                           </div>
                           <div id="form-subscribe-footer" class="form-output"></div>
                         </form>
+                        <div class="offset-top-25">
+                          <p class="text-silver">For Confirmation Check Your Mailbox.</p>
+                        </div>
                 </div>
               </div>
             </div>
